@@ -17,6 +17,12 @@ The repository is currently on local Git branch `main` with a clean worktree.
 - Generated outputs are ignored by Git
 - GitHub remote is not configured yet because GitHub authentication is pending
 
+## Latest milestone: first TikTok production slice
+
+`outputs/first_tiktok_production_slice/` is the current presentation milestone. It is an 8.47-second, four-shot, vertical slice built around the approved production-skin hero exchange and corrected Omni-Man sole binding. The canonical event SHA-256 remains `4240f6768af86ccecf43d79136bbf5d56200b2358003bc38a9aa338ca4afe861`; protected body/root Action signatures and the frames 82–84 Rasengan hold are unchanged.
+
+The slice contains a simple held establishment, the existing attack/slip approach, the approved Rasengan hero exchange, and an editorial aftermath hold. It adds no complex combat choreography. The locked shot manifest, scene, clean preview, 720×1280 quality preview, 1080×1920 delivery, contact sheet, provenance, validation, and review are stored inside the milestone directory. Classification: **A for controlled slice expansion only**, not full-fight or publication readiness. Add at most one separately reviewed supporting shot at a time.
+
 ## Major architecture
 
 ```text
@@ -168,4 +174,3 @@ git push -u origin main
 ```
 
 Use the actual GitHub account and repository URL; do not invent either value. Keep the repository private unless the owner explicitly requests public visibility.
-
