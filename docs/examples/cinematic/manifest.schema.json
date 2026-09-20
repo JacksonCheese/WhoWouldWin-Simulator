@@ -1,0 +1,335 @@
+{
+  "$defs": {
+    "AssetRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "title": "Path",
+          "type": "string"
+        },
+        "sha256": {
+          "title": "Sha256",
+          "type": "string"
+        },
+        "shot_version": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Shot Version"
+        },
+        "provider": {
+          "default": "local",
+          "title": "Provider",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "title": "AssetRecord",
+      "type": "object"
+    },
+    "DirectorSettings": {
+      "additionalProperties": false,
+      "properties": {
+        "duration_seconds": {
+          "default": 60,
+          "maximum": 90,
+          "minimum": 30,
+          "title": "Duration Seconds",
+          "type": "number"
+        },
+        "aspect_ratio": {
+          "default": "9:16",
+          "enum": [
+            "9:16",
+            "16:9"
+          ],
+          "title": "Aspect Ratio",
+          "type": "string"
+        },
+        "shot_count": {
+          "default": 24,
+          "maximum": 35,
+          "minimum": 15,
+          "title": "Shot Count",
+          "type": "integer"
+        },
+        "fps": {
+          "default": 30,
+          "maximum": 60,
+          "minimum": 10,
+          "title": "Fps",
+          "type": "integer"
+        },
+        "width": {
+          "default": 1080,
+          "maximum": 2160,
+          "minimum": 144,
+          "title": "Width",
+          "type": "integer"
+        },
+        "height": {
+          "default": 1920,
+          "maximum": 3840,
+          "minimum": 144,
+          "title": "Height",
+          "type": "integer"
+        },
+        "intro_seconds": {
+          "default": 2.5,
+          "maximum": 4,
+          "minimum": 0.5,
+          "title": "Intro Seconds",
+          "type": "number"
+        },
+        "outro_seconds": {
+          "default": 3,
+          "maximum": 4,
+          "minimum": 0.5,
+          "title": "Outro Seconds",
+          "type": "number"
+        },
+        "visual_style": {
+          "default": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting.",
+          "title": "Visual Style",
+          "type": "string"
+        },
+        "screen_shake": {
+          "default": 0.65,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Screen Shake",
+          "type": "number"
+        }
+      },
+      "title": "DirectorSettings",
+      "type": "object"
+    },
+    "ProviderSettings": {
+      "additionalProperties": false,
+      "properties": {
+        "image_provider": {
+          "const": "mock",
+          "default": "mock",
+          "title": "Image Provider",
+          "type": "string"
+        },
+        "video_provider": {
+          "const": "mock",
+          "default": "mock",
+          "title": "Video Provider",
+          "type": "string"
+        },
+        "network_enabled": {
+          "const": false,
+          "default": false,
+          "title": "Network Enabled",
+          "type": "boolean"
+        },
+        "estimated_cost_usd": {
+          "default": 0,
+          "title": "Estimated Cost Usd",
+          "type": "number"
+        },
+        "credentials_required": {
+          "const": false,
+          "default": false,
+          "title": "Credentials Required",
+          "type": "boolean"
+        }
+      },
+      "title": "ProviderSettings",
+      "type": "object"
+    },
+    "SelectorSettings": {
+      "additionalProperties": false,
+      "properties": {
+        "group_window": {
+          "default": 0.4,
+          "maximum": 2,
+          "minimum": 0,
+          "title": "Group Window",
+          "type": "number"
+        },
+        "minimum_score": {
+          "default": 0.23,
+          "minimum": 0,
+          "title": "Minimum Score",
+          "type": "number"
+        },
+        "max_moments": {
+          "default": 28,
+          "maximum": 100,
+          "minimum": 3,
+          "title": "Max Moments",
+          "type": "integer"
+        },
+        "repetition_penalty": {
+          "default": 0.07,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Repetition Penalty",
+          "type": "number"
+        },
+        "near_defeat_fraction": {
+          "default": 0.2,
+          "exclusiveMaximum": 1,
+          "exclusiveMinimum": 0,
+          "title": "Near Defeat Fraction",
+          "type": "number"
+        }
+      },
+      "title": "SelectorSettings",
+      "type": "object"
+    },
+    "ShotStatus": {
+      "enum": [
+        "DRAFT",
+        "APPROVED",
+        "REJECTED",
+        "NEEDS_REGENERATION",
+        "RENDERED"
+      ],
+      "title": "ShotStatus",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "episode_id": {
+      "title": "Episode Id",
+      "type": "string"
+    },
+    "created_at": {
+      "title": "Created At",
+      "type": "string"
+    },
+    "updated_at": {
+      "title": "Updated At",
+      "type": "string"
+    },
+    "simulation_seed": {
+      "title": "Simulation Seed",
+      "type": "integer"
+    },
+    "source_checksum": {
+      "title": "Source Checksum",
+      "type": "string"
+    },
+    "outcome_digest": {
+      "title": "Outcome Digest",
+      "type": "string"
+    },
+    "fighter_versions": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Fighter Versions",
+      "type": "object"
+    },
+    "visual_versions": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Visual Versions",
+      "type": "object"
+    },
+    "representative_battle": {
+      "title": "Representative Battle",
+      "type": "string"
+    },
+    "director_settings": {
+      "$ref": "#/$defs/DirectorSettings"
+    },
+    "selector_settings": {
+      "$ref": "#/$defs/SelectorSettings"
+    },
+    "provider_settings": {
+      "$ref": "#/$defs/ProviderSettings",
+      "default": {
+        "image_provider": "mock",
+        "video_provider": "mock",
+        "network_enabled": false,
+        "estimated_cost_usd": 0.0,
+        "credentials_required": false
+      }
+    },
+    "shot_versions": {
+      "additionalProperties": {
+        "type": "integer"
+      },
+      "title": "Shot Versions",
+      "type": "object"
+    },
+    "approval_status": {
+      "additionalProperties": {
+        "$ref": "#/$defs/ShotStatus"
+      },
+      "title": "Approval Status",
+      "type": "object"
+    },
+    "assets": {
+      "additionalProperties": {
+        "$ref": "#/$defs/AssetRecord"
+      },
+      "title": "Assets",
+      "type": "object"
+    },
+    "render_approvals": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Render Approvals",
+      "type": "object"
+    },
+    "actual_cost_usd": {
+      "default": 0,
+      "title": "Actual Cost Usd",
+      "type": "number"
+    },
+    "stage": {
+      "default": "DIRECTED",
+      "title": "Stage",
+      "type": "string"
+    },
+    "history": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "History",
+      "type": "array"
+    }
+  },
+  "required": [
+    "episode_id",
+    "created_at",
+    "updated_at",
+    "simulation_seed",
+    "source_checksum",
+    "outcome_digest",
+    "fighter_versions",
+    "visual_versions",
+    "representative_battle",
+    "director_settings",
+    "selector_settings",
+    "shot_versions",
+    "approval_status"
+  ],
+  "title": "EpisodeManifest",
+  "type": "object"
+}

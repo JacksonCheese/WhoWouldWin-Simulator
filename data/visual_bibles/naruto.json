@@ -1,0 +1,31 @@
+{
+  "character_id": "naruto",
+  "version_id": "development-visual-v1",
+  "development_fixture": true,
+  "appearance_description": "Agile youthful ninja development fixture.",
+  "body_description": "Lean athletic build.",
+  "face_description": "Expressive eyes and a determined youthful face.",
+  "hair_description": "Spiky dark hair; fixture appearance, not a verified canonical design.",
+  "costume_description": "Indigo tactical vest with amber panels, wrapped forearms, dark trousers and boots.",
+  "color_palette": [
+    "#49D8DB",
+    "#F4AA52"
+  ],
+  "distinctive_features": [
+    "Amber headband without logo",
+    "Ninja stance"
+  ],
+  "reference_image_paths": [],
+  "transformation_visuals": {
+    "chakra": "Distinct luminous aura and brighter material highlights while this recorded form is active."
+  },
+  "prohibited_visual_changes": [
+    "Do not change identity, hair or costume palette between shots.",
+    "Do not invent weapons, anatomical wounds or persistent destruction.",
+    "Do not portray a missed attack as a hit."
+  ],
+  "prompt_aliases": [
+    "naruto",
+    "Naruto"
+  ]
+}

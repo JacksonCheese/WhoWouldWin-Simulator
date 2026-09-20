@@ -1,0 +1,222 @@
+[
+  {
+    "ability_visual_id": "naruto-energy_orb-visual-v1",
+    "fighter_profile_id": "naruto",
+    "simulation_ability_id": "energy_orb",
+    "development_fixture": true,
+    "display_name": "Spiral chakra projectile",
+    "action_description": "Naruto releases one compact blue spiraling chakra sphere from his palm.",
+    "windup_description": "A blue spiral gathers above his cupped palm.",
+    "movement_description": "One sphere crosses toward the recorded target.",
+    "impact_description": "The single sphere blooms at the recorded contact.",
+    "energy_or_effect_description": "Blue concentric filaments, compact luminous core.",
+    "pose_guidance": "Maintain the tagged character silhouette and one readable line of action.",
+    "environment_interaction": "Surface dust or air response only; no broken architecture unless explicitly recorded.",
+    "reference_asset_paths": [],
+    "form_requirements": [],
+    "prohibited_visual_changes": [
+      "No canonical attack names; no extra contacts, powers or damage."
+    ],
+    "prompt_constraints": [
+      "Honor the recorded hit/miss."
+    ]
+  },
+  {
+    "ability_visual_id": "naruto-charged_vortex-visual-v1",
+    "fighter_profile_id": "naruto",
+    "simulation_ability_id": "charged_vortex",
+    "development_fixture": true,
+    "display_name": "Charged spiral chakra burst",
+    "action_description": "Naruto releases one large compressed spiraling chakra projectile.",
+    "windup_description": "Both hands brace a swelling blue-white spiral.",
+    "movement_description": "One charged projectile surges forward.",
+    "impact_description": "One bright spiral burst at recorded contact.",
+    "energy_or_effect_description": "Dense blue-white vortex with short amber accents.",
+    "pose_guidance": "Maintain the tagged character silhouette and one readable line of action.",
+    "environment_interaction": "Surface dust or air response only; no broken architecture unless explicitly recorded.",
+    "reference_asset_paths": [],
+    "form_requirements": [],
+    "prohibited_visual_changes": [
+      "No canonical attack names; no extra contacts, powers or damage."
+    ],
+    "prompt_constraints": [
+      "Honor the recorded hit/miss."
+    ]
+  },
+  {
+    "ability_visual_id": "naruto-melee_combo-visual-v1",
+    "fighter_profile_id": "naruto",
+    "simulation_ability_id": "melee_combo",
+    "development_fixture": true,
+    "display_name": "Ninja close strike",
+    "action_description": "Naruto drives one compact close-range strike through a low pivot.",
+    "windup_description": "Weight settles on his lead foot, forearm tucked.",
+    "movement_description": "One decisive pivot and strike; no additional combo contacts.",
+    "impact_description": "One recorded contact with a brief pressure ring.",
+    "energy_or_effect_description": "Chakra aura only if the recorded form is active.",
+    "pose_guidance": "Maintain the tagged character silhouette and one readable line of action.",
+    "environment_interaction": "Surface dust or air response only; no broken architecture unless explicitly recorded.",
+    "reference_asset_paths": [],
+    "form_requirements": [],
+    "prohibited_visual_changes": [
+      "No canonical attack names; no extra contacts, powers or damage."
+    ],
+    "prompt_constraints": [
+      "Honor the recorded hit/miss."
+    ]
+  },
+  {
+    "ability_visual_id": "naruto-decoy-visual-v1",
+    "fighter_profile_id": "naruto",
+    "simulation_ability_id": "decoy",
+    "development_fixture": true,
+    "display_name": "Chakra afterimage feint",
+    "action_description": "A translucent silhouette echoes Naruto as an evasion decoy.",
+    "windup_description": "Naruto shifts his shoulder off the attack line.",
+    "movement_description": "One non-solid afterimage trails his pivot.",
+    "impact_description": "The afterimage cannot deal damage.",
+    "energy_or_effect_description": "Brief translucent blue silhouette; no independent fighters.",
+    "pose_guidance": "Maintain the tagged character silhouette and one readable line of action.",
+    "environment_interaction": "Surface dust or air response only; no broken architecture unless explicitly recorded.",
+    "reference_asset_paths": [],
+    "form_requirements": [],
+    "prohibited_visual_changes": [
+      "No canonical attack names; no extra contacts, powers or damage."
+    ],
+    "prompt_constraints": [
+      "Honor the recorded hit/miss."
+    ]
+  },
+  {
+    "ability_visual_id": "naruto-chakra_form-visual-v1",
+    "fighter_profile_id": "naruto",
+    "simulation_ability_id": "chakra_form",
+    "development_fixture": true,
+    "display_name": "Chakra mantle reveal",
+    "action_description": "Naruto enters his recorded luminous chakra mantle.",
+    "windup_description": "Fine amber filaments gather around his outline.",
+    "movement_description": "The aura expands around a stable, braced stance.",
+    "impact_description": "Transformation light settles; no attack or new damage.",
+    "energy_or_effect_description": "Amber rim aura; retain costume and facial identity.",
+    "pose_guidance": "Maintain the tagged character silhouette and one readable line of action.",
+    "environment_interaction": "Surface dust or air response only; no broken architecture unless explicitly recorded.",
+    "reference_asset_paths": [],
+    "form_requirements": [],
+    "prohibited_visual_changes": [
+      "No canonical attack names; no extra contacts, powers or damage."
+    ],
+    "prompt_constraints": [
+      "Honor the recorded hit/miss."
+    ]
+  },
+  {
+    "ability_visual_id": "naruto-recover-visual-v1",
+    "fighter_profile_id": "naruto",
+    "simulation_ability_id": "recover",
+    "development_fixture": true,
+    "display_name": "Chakra recovery breath",
+    "action_description": "Naruto steadies his breathing as recorded regeneration continues.",
+    "windup_description": "Hands lower, shoulders relax slightly.",
+    "movement_description": "A controlled breath, body stays alert.",
+    "impact_description": "No instant restoration of costume or injury.",
+    "energy_or_effect_description": "Restrained chakra shimmer only.",
+    "pose_guidance": "Maintain the tagged character silhouette and one readable line of action.",
+    "environment_interaction": "Surface dust or air response only; no broken architecture unless explicitly recorded.",
+    "reference_asset_paths": [],
+    "form_requirements": [],
+    "prohibited_visual_changes": [
+      "No canonical attack names; no extra contacts, powers or damage."
+    ],
+    "prompt_constraints": [
+      "Honor the recorded hit/miss."
+    ]
+  },
+  {
+    "ability_visual_id": "naruto-dash-visual-v1",
+    "fighter_profile_id": "naruto",
+    "simulation_ability_id": "dash",
+    "development_fixture": true,
+    "display_name": "Burst reposition",
+    "action_description": "Naruto makes one short recorded repositioning burst.",
+    "windup_description": "Weight shifts toward the chosen direction.",
+    "movement_description": "A short burst with trailing cloth.",
+    "impact_description": "No attack or added contact.",
+    "energy_or_effect_description": "Motion streaks only.",
+    "pose_guidance": "Maintain the tagged character silhouette and one readable line of action.",
+    "environment_interaction": "Surface dust or air response only; no broken architecture unless explicitly recorded.",
+    "reference_asset_paths": [],
+    "form_requirements": [],
+    "prohibited_visual_changes": [
+      "No canonical attack names; no extra contacts, powers or damage."
+    ],
+    "prompt_constraints": [
+      "Honor the recorded hit/miss."
+    ]
+  },
+  {
+    "ability_visual_id": "naruto-evade-visual-v1",
+    "fighter_profile_id": "naruto",
+    "simulation_ability_id": "evade",
+    "development_fixture": true,
+    "display_name": "Close evasion",
+    "action_description": "Naruto slips off the incoming attack line.",
+    "windup_description": "Eyes track the incoming threat.",
+    "movement_description": "A tight torso slip and foot adjustment.",
+    "impact_description": "The incoming attack misses when recorded as dodged.",
+    "energy_or_effect_description": "A brief motion smear, no teleportation.",
+    "pose_guidance": "Maintain the tagged character silhouette and one readable line of action.",
+    "environment_interaction": "Surface dust or air response only; no broken architecture unless explicitly recorded.",
+    "reference_asset_paths": [],
+    "form_requirements": [],
+    "prohibited_visual_changes": [
+      "No canonical attack names; no extra contacts, powers or damage."
+    ],
+    "prompt_constraints": [
+      "Honor the recorded hit/miss."
+    ]
+  },
+  {
+    "ability_visual_id": "naruto-guard-visual-v1",
+    "fighter_profile_id": "naruto",
+    "simulation_ability_id": "guard",
+    "development_fixture": true,
+    "display_name": "Braced forearm guard",
+    "action_description": "Naruto braces a compact forearm guard.",
+    "windup_description": "Forearms rise across the torso.",
+    "movement_description": "Body absorbs the recorded pressure without a counterattack.",
+    "impact_description": "Only the recorded blocked damage and recoil.",
+    "energy_or_effect_description": "Short pressure lines; no unrecorded energy shield.",
+    "pose_guidance": "Maintain the tagged character silhouette and one readable line of action.",
+    "environment_interaction": "Surface dust or air response only; no broken architecture unless explicitly recorded.",
+    "reference_asset_paths": [],
+    "form_requirements": [],
+    "prohibited_visual_changes": [
+      "No canonical attack names; no extra contacts, powers or damage."
+    ],
+    "prompt_constraints": [
+      "Honor the recorded hit/miss."
+    ]
+  },
+  {
+    "ability_visual_id": "naruto-jump-visual-v1",
+    "fighter_profile_id": "naruto",
+    "simulation_ability_id": "jump",
+    "development_fixture": true,
+    "display_name": "Tactical leap",
+    "action_description": "Naruto makes one recorded tactical leap.",
+    "windup_description": "Knees compress over planted feet.",
+    "movement_description": "One upward leg drive into the recorded arc.",
+    "impact_description": "No attack is added to the leap.",
+    "energy_or_effect_description": "Cloth and hair trail the leap.",
+    "pose_guidance": "Maintain the tagged character silhouette and one readable line of action.",
+    "environment_interaction": "Surface dust or air response only; no broken architecture unless explicitly recorded.",
+    "reference_asset_paths": [],
+    "form_requirements": [],
+    "prohibited_visual_changes": [
+      "No canonical attack names; no extra contacts, powers or damage."
+    ],
+    "prompt_constraints": [
+      "Honor the recorded hit/miss."
+    ]
+  }
+]

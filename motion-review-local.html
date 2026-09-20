@@ -1,0 +1,4 @@
+<!doctype html><meta charset="utf-8"><title>Motion review</title>
+<style>body{background:#181818;color:white;font:16px sans-serif}video{width:216px;height:384px}section{display:inline-block;margin:6px}button{padding:10px}</style>
+<button onclick="document.querySelectorAll('video').forEach(v=>{v.currentTime=0;v.playbackRate=1;v.play()})">Play all from start at 1×</button><br>
+<script>const project=new URLSearchParams(location.search).get('project')==='astra'?'combat_motion_lab_astra':'combat_motion_lab';const only=new URLSearchParams(location.search).get('only');const names=only?[only]:['cinematic-test','three-quarter','side','front-diagonal','top-debug'];for(const name of names)document.write(`<section>${name}<br><video controls muted preload="auto" src="outputs/${project}/${name}.mp4"></video></section>`)</script>

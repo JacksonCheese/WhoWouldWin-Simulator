@@ -1,0 +1,214 @@
+{
+  "identity": {
+    "id": "naruto",
+    "name": "Naruto",
+    "universe": "Naruto",
+    "version": "Development demo / no canonical scaling"
+  },
+  "scaling_note": "Development placeholder scaling. Replace with researched feat-based values before publishing matchup claims.",
+  "physical": {
+    "strength": {
+      "low": 85.0,
+      "expected": 100,
+      "high": 115.0
+    },
+    "striking_power": {
+      "low": 93.5,
+      "expected": 110,
+      "high": 126.5
+    },
+    "durability": {
+      "low": 85.0,
+      "expected": 100,
+      "high": 115.0
+    },
+    "movement_speed": {
+      "low": 14.45,
+      "expected": 17,
+      "high": 19.55
+    },
+    "combat_speed": 1.15,
+    "reaction_speed": 1.25,
+    "stamina": 100,
+    "mass": 75,
+    "reach": 1.5
+  },
+  "resources": {
+    "health": 820,
+    "stamina": 100,
+    "energy": 130,
+    "stamina_regen": 13,
+    "energy_regen": 5,
+    "regeneration": 1.5
+  },
+  "combat": {
+    "battle_iq": 0.85,
+    "aggression": 0.65,
+    "risk_tolerance": 0.5,
+    "preferred_range": 12,
+    "accuracy": 0.86,
+    "evasion": 0.28,
+    "blocking": 0.75,
+    "grappling": 0.5
+  },
+  "mobility": {
+    "grounded": true,
+    "flight": false,
+    "jump": true,
+    "dash": true,
+    "teleport": true
+  },
+  "resistances": {},
+  "abilities": [
+    {
+      "id": "melee_combo",
+      "name": "Melee Combination",
+      "type": "melee",
+      "range": 3.5,
+      "damage": 52,
+      "cooldown": 0.8,
+      "stamina_cost": 7,
+      "knockback": 3
+    },
+    {
+      "id": "energy_orb",
+      "name": "Energy Orb",
+      "type": "projectile",
+      "range": 48,
+      "damage": 67,
+      "damage_type": "energy",
+      "projectile_speed": 49,
+      "energy_cost": 10,
+      "cooldown": 1.6,
+      "startup": 0.25,
+      "knockback": 4
+    },
+    {
+      "id": "charged_vortex",
+      "name": "Charged Energy Vortex",
+      "type": "projectile",
+      "range": 70,
+      "damage": 175,
+      "damage_type": "energy",
+      "projectile_speed": 42,
+      "area_of_effect": 4,
+      "energy_cost": 32,
+      "cooldown": 6,
+      "startup": 1.15,
+      "recovery": 0.7,
+      "knockback": 14,
+      "stun": 0.3,
+      "utility": 1.25
+    },
+    {
+      "id": "decoy",
+      "name": "Decoy Feint",
+      "type": "buff",
+      "targeting": "self",
+      "energy_cost": 14,
+      "cooldown": 10,
+      "startup": 0.12,
+      "status_effects": [
+        {
+          "id": "decoy",
+          "duration": 4,
+          "magnitude": 0.3
+        }
+      ]
+    },
+    {
+      "id": "chakra_form",
+      "name": "Chakra Surge",
+      "type": "transform",
+      "targeting": "self",
+      "transformation": "chakra",
+      "energy_cost": 26,
+      "cooldown": 35,
+      "startup": 0.45,
+      "condition": {
+        "max_health_fraction": 0.82
+      }
+    },
+    {
+      "id": "recover",
+      "name": "Focused Recovery",
+      "type": "regenerate",
+      "targeting": "self",
+      "energy_cost": 18,
+      "cooldown": 20,
+      "startup": 0.4,
+      "status_effects": [
+        {
+          "id": "regen",
+          "duration": 5,
+          "magnitude": 13
+        }
+      ]
+    },
+    {
+      "id": "blink",
+      "name": "Rapid Reposition",
+      "type": "teleport",
+      "mobility_distance": 20,
+      "energy_cost": 17,
+      "cooldown": 9,
+      "startup": 0.08
+    },
+    {
+      "id": "evade",
+      "name": "Evasive Step",
+      "type": "dodge",
+      "startup": 0,
+      "active": 0.45,
+      "recovery": 0.12,
+      "cooldown": 1.9,
+      "stamina_cost": 12,
+      "mobility_distance": 5
+    },
+    {
+      "id": "guard",
+      "name": "Focused Guard",
+      "type": "block",
+      "startup": 0,
+      "active": 0.75,
+      "recovery": 0.08,
+      "cooldown": 1.5,
+      "stamina_cost": 7
+    },
+    {
+      "id": "jump",
+      "name": "Combat Leap",
+      "type": "jump",
+      "startup": 0,
+      "active": 0.1,
+      "recovery": 0.12,
+      "cooldown": 2.8,
+      "stamina_cost": 6,
+      "mobility_distance": 17
+    },
+    {
+      "id": "dash",
+      "name": "Quick Dash",
+      "type": "dash",
+      "startup": 0.05,
+      "active": 0.22,
+      "recovery": 0.12,
+      "cooldown": 2.5,
+      "stamina_cost": 10,
+      "mobility_distance": 7
+    }
+  ],
+  "transformations": [
+    {
+      "id": "chakra",
+      "name": "Chakra Surge",
+      "duration": 13,
+      "modifiers": {
+        "striking_power": 1.4,
+        "movement_speed": 1.2,
+        "combat_speed": 1.15
+      }
+    }
+  ],
+  "ai": {}
+}

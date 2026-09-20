@@ -1,0 +1,29 @@
+{
+  "character_id": "homelander",
+  "version_id": "development-visual-v1",
+  "development_fixture": true,
+  "appearance_description": "Aggressive flying-hero development fixture.",
+  "body_description": "Tall muscular build.",
+  "face_description": "Angular expressive face.",
+  "hair_description": "Short swept blond hair.",
+  "costume_description": "Dark blue textured suit with red boots and a red cape.",
+  "color_palette": [
+    "#668BD7",
+    "#E37A6E"
+  ],
+  "distinctive_features": [
+    "Rigid military posture",
+    "Beam attack eye glow only when recorded"
+  ],
+  "reference_image_paths": [],
+  "transformation_visuals": {},
+  "prohibited_visual_changes": [
+    "Do not change identity, hair or costume palette between shots.",
+    "Do not invent weapons, anatomical wounds or persistent destruction.",
+    "Do not portray a missed attack as a hit."
+  ],
+  "prompt_aliases": [
+    "homelander",
+    "Homelander"
+  ]
+}

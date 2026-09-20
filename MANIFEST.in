@@ -1,0 +1,2 @@
+recursive-include data *.json *.yaml
+include README.md

@@ -1,0 +1,28 @@
+{
+  "character_id": "naruto",
+  "version_id": "golden-reference-fixture-v1",
+  "development_fixture": true,
+  "appearance_description": "Match the supplied and approved character reference board.",
+  "body_description": "Athletic ninja build.",
+  "face_description": "Match reference face and markings.",
+  "hair_description": "Match reference hair shape and color.",
+  "costume_description": "Exact reference costume.",
+  "color_palette": [
+    "#49D8DB",
+    "#F4AA52"
+  ],
+  "distinctive_features": [
+    "Reference image defines appearance; development fixture until reviewed."
+  ],
+  "reference_image_paths": [],
+  "transformation_visuals": {
+    "chakra": "Luminous aura and brighter material highlights."
+  },
+  "prohibited_visual_changes": [
+    "Preserve reference identity, hair and costume."
+  ],
+  "prompt_aliases": [
+    "naruto",
+    "naruto"
+  ]
+}

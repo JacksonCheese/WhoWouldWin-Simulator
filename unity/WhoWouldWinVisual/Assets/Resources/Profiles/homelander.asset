@@ -1,0 +1,187 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5133668f0efd34ba48a0f4760a340078, type: 3}
+  m_Name: homelander
+  m_EditorClassIdentifier: WhoWouldWin.Visual::WhoWouldWin.Visual.CharacterVisualProfile
+  characterId: homelander
+  artPrefix: Art/titan
+  artMode: 0
+  prefab: {fileID: 7546068901532208710, guid: e131956a39dd140e9a568fd3abc8d4d8, type: 3}
+  scale: 1.12
+  accent: {r: 0.9411765, g: 0.3647059, b: 0.32941177, a: 1}
+  secondary: {r: 1, g: 0.77254903, b: 0.43137255, a: 1}
+  abilities:
+  - abilityId: punch
+    state: LightAttack
+    primitive: Lunge
+    vfx: melee
+    sound: punch
+    anticipation: 0.22
+    weight: 0.45
+  - abilityId: heat_beam
+    state: RangedAttack
+    primitive: BeamCast
+    vfx: beam
+    sound: projectile
+    anticipation: 0.45
+    weight: 0.5222222
+  - abilityId: charged_punch
+    state: HeavyAttack
+    primitive: Lunge
+    vfx: heavy
+    sound: heavy
+    anticipation: 0.85
+    weight: 0.8055556
+  - abilityId: fly
+    state: FlightMove
+    primitive: Flight
+    vfx: speed
+    sound: dash
+    anticipation: 0.2
+    weight: 0
+  - abilityId: evade
+    state: Dodge
+    primitive: SuccessfulDodge
+    vfx: afterimage
+    sound: dash
+    anticipation: 0
+    weight: 0
+  - abilityId: guard
+    state: Block
+    primitive: Guard
+    vfx: block
+    sound: block
+    anticipation: 0
+    weight: 0
+  - abilityId: jump
+    state: Jump
+    primitive: JumpAttack
+    vfx: dust
+    sound: dash
+    anticipation: 0
+    weight: 0
+  - abilityId: dash
+    state: Dash
+    primitive: DashPast
+    vfx: speed
+    sound: dash
+    anticipation: 0.05
+    weight: 0
+  animations:
+  - state: Idle
+    animatorState: Idle
+    clip: {fileID: 0}
+    loop: 0
+  - state: CombatIdle
+    animatorState: CombatIdle
+    clip: {fileID: 0}
+    loop: 0
+  - state: Run
+    animatorState: Run
+    clip: {fileID: 0}
+    loop: 0
+  - state: Sprint
+    animatorState: Sprint
+    clip: {fileID: 0}
+    loop: 0
+  - state: Dash
+    animatorState: Dash
+    clip: {fileID: 0}
+    loop: 0
+  - state: Jump
+    animatorState: Jump
+    clip: {fileID: 0}
+    loop: 0
+  - state: Fall
+    animatorState: Fall
+    clip: {fileID: 0}
+    loop: 0
+  - state: FlightIdle
+    animatorState: FlightIdle
+    clip: {fileID: 0}
+    loop: 0
+  - state: FlightMove
+    animatorState: FlightMove
+    clip: {fileID: 0}
+    loop: 0
+  - state: LightAttack
+    animatorState: LightAttack
+    clip: {fileID: 0}
+    loop: 0
+  - state: HeavyAttack
+    animatorState: HeavyAttack
+    clip: {fileID: 0}
+    loop: 0
+  - state: SpecialAttack
+    animatorState: SpecialAttack
+    clip: {fileID: 0}
+    loop: 0
+  - state: RangedAttack
+    animatorState: RangedAttack
+    clip: {fileID: 0}
+    loop: 0
+  - state: Block
+    animatorState: Block
+    clip: {fileID: 0}
+    loop: 0
+  - state: Dodge
+    animatorState: Dodge
+    clip: {fileID: 0}
+    loop: 0
+  - state: HitLight
+    animatorState: HitLight
+    clip: {fileID: 0}
+    loop: 0
+  - state: HitHeavy
+    animatorState: HitHeavy
+    clip: {fileID: 0}
+    loop: 0
+  - state: Knockback
+    animatorState: Knockback
+    clip: {fileID: 0}
+    loop: 0
+  - state: Knockdown
+    animatorState: Knockdown
+    clip: {fileID: 0}
+    loop: 0
+  - state: Recovery
+    animatorState: Recovery
+    clip: {fileID: 0}
+    loop: 0
+  - state: Transformation
+    animatorState: Transformation
+    clip: {fileID: 0}
+    loop: 0
+  - state: Defeat
+    animatorState: Defeat
+    clip: {fileID: 0}
+    loop: 0
+  sounds:
+  - key: punch
+    clip: {fileID: 8300000, guid: 61b646854a7c9433ba10f41511b0d526, type: 3}
+  - key: heavy
+    clip: {fileID: 8300000, guid: 304a44a08f2f34e7dbbd2a6181ea0f3d, type: 3}
+  - key: dash
+    clip: {fileID: 8300000, guid: f24d920fca9f24b11995f3affb5e1b08, type: 3}
+  - key: projectile
+    clip: {fileID: 8300000, guid: c00400f6adc48415084ef4245a35e17e, type: 3}
+  - key: explosion
+    clip: {fileID: 8300000, guid: c623114d59ded47058526b544ef1d8b5, type: 3}
+  - key: charge
+    clip: {fileID: 8300000, guid: 0ce5a1cecc267451a996ca4435634b2f, type: 3}
+  - key: block
+    clip: {fileID: 8300000, guid: 41e62011bb9bb40fea433e2e0795b339, type: 3}
+  - key: transform
+    clip: {fileID: 8300000, guid: f99f45aeb51ee421f992bd4b4c0762d4, type: 3}
+  - key: ko
+    clip: {fileID: 8300000, guid: 5b983f57dfba741b09adc7c855cfdf71, type: 3}
+  layers: []

@@ -1,0 +1,2 @@
+Original project-generated geometric illustrations and synthesized sounds. No downloaded character artwork or voice recordings.
+Source: scripts/generate_proxy_art.py. These are temporary ninja and flying-bruiser proxies, not canonical character assets.

@@ -1,0 +1,26 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.DS_Store
+reports/*
+!reports/.gitkeep
+replays/*
+!replays/.gitkeep
+
+# Generated high-resolution film intermediates and local players
+captures/
+
+# Generated cinematic episode assets and local mock videos
+outputs/
+
+# Local credentials and user-supplied reference imagery
+.env
+.env.*
+references/**/*.png
+references/**/*.jpg
+references/**/*.jpeg
+references/**/*.webp

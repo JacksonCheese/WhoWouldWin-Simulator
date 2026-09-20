@@ -1,0 +1,113 @@
+{
+  "$defs": {
+    "AssetReference": {
+      "additionalProperties": false,
+      "properties": {
+        "asset_id": {
+          "title": "Asset Id",
+          "type": "string"
+        },
+        "path": {
+          "title": "Path",
+          "type": "string"
+        },
+        "role": {
+          "default": "appearance_reference",
+          "title": "Role",
+          "type": "string"
+        },
+        "rights_note": {
+          "default": "Development fixture; verify rights before production use.",
+          "title": "Rights Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "asset_id",
+        "path"
+      ],
+      "title": "AssetReference",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "arena_id": {
+      "title": "Arena Id",
+      "type": "string"
+    },
+    "version_id": {
+      "default": "fixture-v1",
+      "title": "Version Id",
+      "type": "string"
+    },
+    "development_fixture": {
+      "default": true,
+      "title": "Development Fixture",
+      "type": "boolean"
+    },
+    "description": {
+      "title": "Description",
+      "type": "string"
+    },
+    "architecture": {
+      "title": "Architecture",
+      "type": "string"
+    },
+    "terrain": {
+      "title": "Terrain",
+      "type": "string"
+    },
+    "lighting": {
+      "title": "Lighting",
+      "type": "string"
+    },
+    "weather": {
+      "title": "Weather",
+      "type": "string"
+    },
+    "time_of_day": {
+      "title": "Time Of Day",
+      "type": "string"
+    },
+    "color_palette": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Color Palette",
+      "type": "array"
+    },
+    "destructible_features": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Destructible Features",
+      "type": "array"
+    },
+    "reference_assets": {
+      "items": {
+        "$ref": "#/$defs/AssetReference"
+      },
+      "title": "Reference Assets",
+      "type": "array"
+    },
+    "continuity_state": {
+      "additionalProperties": true,
+      "title": "Continuity State",
+      "type": "object"
+    }
+  },
+  "required": [
+    "arena_id",
+    "description",
+    "architecture",
+    "terrain",
+    "lighting",
+    "weather",
+    "time_of_day",
+    "color_palette"
+  ],
+  "title": "ArenaVisualProfile",
+  "type": "object"
+}

@@ -1,0 +1,580 @@
+{
+  "$defs": {
+    "AudioCue": {
+      "additionalProperties": false,
+      "properties": {
+        "cue": {
+          "title": "Cue",
+          "type": "string"
+        },
+        "offset_seconds": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Offset Seconds",
+          "type": "number"
+        },
+        "authority": {
+          "const": "presentation",
+          "default": "presentation",
+          "title": "Authority",
+          "type": "string"
+        }
+      },
+      "required": [
+        "cue"
+      ],
+      "title": "AudioCue",
+      "type": "object"
+    },
+    "CharacterContinuity": {
+      "additionalProperties": false,
+      "properties": {
+        "transformation": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Transformation"
+        },
+        "costume_version": {
+          "title": "Costume Version",
+          "type": "string"
+        },
+        "visible_injuries": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Visible Injuries",
+          "type": "array"
+        },
+        "clothing_damage": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Clothing Damage",
+          "type": "array"
+        },
+        "surface_wear": {
+          "default": "clean",
+          "title": "Surface Wear",
+          "type": "string"
+        },
+        "wear_basis": {
+          "default": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+          "title": "Wear Basis",
+          "type": "string"
+        },
+        "location": {
+          "$ref": "#/$defs/Point"
+        },
+        "relative_position": {
+          "title": "Relative Position",
+          "type": "string"
+        },
+        "weapons_items": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Weapons Items"
+        },
+        "persistent_effects": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Persistent Effects",
+          "type": "array"
+        },
+        "health": {
+          "title": "Health",
+          "type": "number"
+        },
+        "health_fraction": {
+          "title": "Health Fraction",
+          "type": "number"
+        }
+      },
+      "required": [
+        "transformation",
+        "costume_version",
+        "location",
+        "relative_position",
+        "persistent_effects",
+        "health",
+        "health_fraction"
+      ],
+      "title": "CharacterContinuity",
+      "type": "object"
+    },
+    "ContinuityState": {
+      "additionalProperties": false,
+      "properties": {
+        "simulation_time": {
+          "title": "Simulation Time",
+          "type": "number"
+        },
+        "characters": {
+          "additionalProperties": {
+            "$ref": "#/$defs/CharacterContinuity"
+          },
+          "title": "Characters",
+          "type": "object"
+        },
+        "lighting": {
+          "title": "Lighting",
+          "type": "string"
+        },
+        "time_of_day": {
+          "title": "Time Of Day",
+          "type": "string"
+        },
+        "weather": {
+          "title": "Weather",
+          "type": "string"
+        },
+        "arena_state": {
+          "additionalProperties": true,
+          "title": "Arena State",
+          "type": "object"
+        },
+        "environmental_destruction": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Environmental Destruction",
+          "type": "array"
+        },
+        "presentation_notes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Presentation Notes",
+          "type": "array"
+        }
+      },
+      "required": [
+        "simulation_time",
+        "characters",
+        "lighting",
+        "time_of_day",
+        "weather",
+        "arena_state"
+      ],
+      "title": "ContinuityState",
+      "type": "object"
+    },
+    "DirectorSettings": {
+      "additionalProperties": false,
+      "properties": {
+        "duration_seconds": {
+          "default": 60,
+          "maximum": 90,
+          "minimum": 30,
+          "title": "Duration Seconds",
+          "type": "number"
+        },
+        "aspect_ratio": {
+          "default": "9:16",
+          "enum": [
+            "9:16",
+            "16:9"
+          ],
+          "title": "Aspect Ratio",
+          "type": "string"
+        },
+        "shot_count": {
+          "default": 24,
+          "maximum": 35,
+          "minimum": 15,
+          "title": "Shot Count",
+          "type": "integer"
+        },
+        "fps": {
+          "default": 30,
+          "maximum": 60,
+          "minimum": 10,
+          "title": "Fps",
+          "type": "integer"
+        },
+        "width": {
+          "default": 1080,
+          "maximum": 2160,
+          "minimum": 144,
+          "title": "Width",
+          "type": "integer"
+        },
+        "height": {
+          "default": 1920,
+          "maximum": 3840,
+          "minimum": 144,
+          "title": "Height",
+          "type": "integer"
+        },
+        "intro_seconds": {
+          "default": 2.5,
+          "maximum": 4,
+          "minimum": 0.5,
+          "title": "Intro Seconds",
+          "type": "number"
+        },
+        "outro_seconds": {
+          "default": 3,
+          "maximum": 4,
+          "minimum": 0.5,
+          "title": "Outro Seconds",
+          "type": "number"
+        },
+        "visual_style": {
+          "default": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting.",
+          "title": "Visual Style",
+          "type": "string"
+        },
+        "screen_shake": {
+          "default": 0.65,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Screen Shake",
+          "type": "number"
+        }
+      },
+      "title": "DirectorSettings",
+      "type": "object"
+    },
+    "EditorialEffects": {
+      "additionalProperties": false,
+      "properties": {
+        "impact_freeze_seconds": {
+          "default": 0,
+          "maximum": 0.5,
+          "minimum": 0,
+          "title": "Impact Freeze Seconds",
+          "type": "number"
+        },
+        "shake": {
+          "default": 0,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Shake",
+          "type": "number"
+        },
+        "punch_in": {
+          "default": 0,
+          "maximum": 0.3,
+          "minimum": 0,
+          "title": "Punch In",
+          "type": "number"
+        },
+        "flash": {
+          "default": false,
+          "title": "Flash",
+          "type": "boolean"
+        },
+        "fade_in": {
+          "default": 0,
+          "maximum": 0.5,
+          "minimum": 0,
+          "title": "Fade In",
+          "type": "number"
+        },
+        "fade_out": {
+          "default": 0,
+          "maximum": 0.5,
+          "minimum": 0,
+          "title": "Fade Out",
+          "type": "number"
+        }
+      },
+      "title": "EditorialEffects",
+      "type": "object"
+    },
+    "Point": {
+      "additionalProperties": false,
+      "properties": {
+        "x": {
+          "title": "X",
+          "type": "number"
+        },
+        "y": {
+          "title": "Y",
+          "type": "number"
+        }
+      },
+      "required": [
+        "x",
+        "y"
+      ],
+      "title": "Point",
+      "type": "object"
+    },
+    "Shot": {
+      "additionalProperties": false,
+      "properties": {
+        "shot_id": {
+          "pattern": "^shot-[0-9]{3,6}$",
+          "title": "Shot Id",
+          "type": "string"
+        },
+        "version": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Version",
+          "type": "integer"
+        },
+        "sequence_index": {
+          "title": "Sequence Index",
+          "type": "integer"
+        },
+        "source_moment_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Moment Ids",
+          "type": "array"
+        },
+        "source_event_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Event Ids",
+          "type": "array"
+        },
+        "simulation_start": {
+          "title": "Simulation Start",
+          "type": "number"
+        },
+        "simulation_end": {
+          "title": "Simulation End",
+          "type": "number"
+        },
+        "duration_seconds": {
+          "maximum": 4,
+          "minimum": 0.5,
+          "title": "Duration Seconds",
+          "type": "number"
+        },
+        "frame_count": {
+          "exclusiveMinimum": 0,
+          "title": "Frame Count",
+          "type": "integer"
+        },
+        "shot_type": {
+          "$ref": "#/$defs/ShotType"
+        },
+        "framing": {
+          "title": "Framing",
+          "type": "string"
+        },
+        "camera_angle": {
+          "title": "Camera Angle",
+          "type": "string"
+        },
+        "camera_motion": {
+          "title": "Camera Motion",
+          "type": "string"
+        },
+        "subjects": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Subjects",
+          "type": "array"
+        },
+        "subject_positions": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Point"
+          },
+          "title": "Subject Positions",
+          "type": "object"
+        },
+        "action_description": {
+          "title": "Action Description",
+          "type": "string"
+        },
+        "environment_description": {
+          "title": "Environment Description",
+          "type": "string"
+        },
+        "continuity_state": {
+          "$ref": "#/$defs/ContinuityState"
+        },
+        "keyframe_prompt": {
+          "title": "Keyframe Prompt",
+          "type": "string"
+        },
+        "motion_prompt": {
+          "title": "Motion Prompt",
+          "type": "string"
+        },
+        "negative_constraints": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Negative Constraints",
+          "type": "array"
+        },
+        "transition_in": {
+          "default": "cut",
+          "title": "Transition In",
+          "type": "string"
+        },
+        "transition_out": {
+          "default": "cut",
+          "title": "Transition Out",
+          "type": "string"
+        },
+        "audio_cues": {
+          "items": {
+            "$ref": "#/$defs/AudioCue"
+          },
+          "title": "Audio Cues",
+          "type": "array"
+        },
+        "narration_hint": {
+          "title": "Narration Hint",
+          "type": "string"
+        },
+        "editorial": {
+          "$ref": "#/$defs/EditorialEffects",
+          "default": {
+            "impact_freeze_seconds": 0.0,
+            "shake": 0.0,
+            "punch_in": 0.0,
+            "flash": false,
+            "fade_in": 0.0,
+            "fade_out": 0.0
+          }
+        },
+        "status": {
+          "$ref": "#/$defs/ShotStatus",
+          "default": "DRAFT"
+        }
+      },
+      "required": [
+        "shot_id",
+        "sequence_index",
+        "source_moment_ids",
+        "source_event_ids",
+        "simulation_start",
+        "simulation_end",
+        "duration_seconds",
+        "frame_count",
+        "shot_type",
+        "framing",
+        "camera_angle",
+        "camera_motion",
+        "subjects",
+        "subject_positions",
+        "action_description",
+        "environment_description",
+        "continuity_state",
+        "keyframe_prompt",
+        "motion_prompt",
+        "negative_constraints",
+        "narration_hint"
+      ],
+      "title": "Shot",
+      "type": "object"
+    },
+    "ShotStatus": {
+      "enum": [
+        "DRAFT",
+        "APPROVED",
+        "REJECTED",
+        "NEEDS_REGENERATION",
+        "RENDERED"
+      ],
+      "title": "ShotStatus",
+      "type": "string"
+    },
+    "ShotType": {
+      "enum": [
+        "ESTABLISHING",
+        "WIDE_ACTION",
+        "MEDIUM_ACTION",
+        "CLOSE_UP",
+        "EXTREME_CLOSE_UP",
+        "OVER_SHOULDER",
+        "POV",
+        "LOW_ANGLE",
+        "HIGH_ANGLE",
+        "AERIAL",
+        "IMPACT",
+        "REACTION",
+        "TRANSFORMATION",
+        "ENVIRONMENTAL",
+        "FINISHER",
+        "VICTORY"
+      ],
+      "title": "ShotType",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "director_version": {
+      "default": "shots-v1",
+      "title": "Director Version",
+      "type": "string"
+    },
+    "source_checksum": {
+      "title": "Source Checksum",
+      "type": "string"
+    },
+    "outcome_digest": {
+      "title": "Outcome Digest",
+      "type": "string"
+    },
+    "matchup": {
+      "title": "Matchup",
+      "type": "string"
+    },
+    "arena_id": {
+      "title": "Arena Id",
+      "type": "string"
+    },
+    "settings": {
+      "$ref": "#/$defs/DirectorSettings"
+    },
+    "shots": {
+      "items": {
+        "$ref": "#/$defs/Shot"
+      },
+      "title": "Shots",
+      "type": "array"
+    },
+    "outcome": {
+      "additionalProperties": true,
+      "title": "Outcome",
+      "type": "object"
+    }
+  },
+  "required": [
+    "source_checksum",
+    "outcome_digest",
+    "matchup",
+    "arena_id",
+    "settings",
+    "shots",
+    "outcome"
+  ],
+  "title": "ShotList",
+  "type": "object"
+}

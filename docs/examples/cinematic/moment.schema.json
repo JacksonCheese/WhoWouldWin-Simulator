@@ -1,0 +1,72 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "moment_id": {
+      "title": "Moment Id",
+      "type": "string"
+    },
+    "source_event_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Source Event Ids",
+      "type": "array"
+    },
+    "start_time": {
+      "title": "Start Time",
+      "type": "number"
+    },
+    "end_time": {
+      "title": "End Time",
+      "type": "number"
+    },
+    "importance_score": {
+      "minimum": 0,
+      "title": "Importance Score",
+      "type": "number"
+    },
+    "score_components": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "title": "Score Components",
+      "type": "object"
+    },
+    "moment_type": {
+      "title": "Moment Type",
+      "type": "string"
+    },
+    "participants": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Participants",
+      "type": "array"
+    },
+    "summary": {
+      "title": "Summary",
+      "type": "string"
+    },
+    "continuity_consequences": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Continuity Consequences",
+      "type": "array"
+    }
+  },
+  "required": [
+    "moment_id",
+    "source_event_ids",
+    "start_time",
+    "end_time",
+    "importance_score",
+    "score_components",
+    "moment_type",
+    "participants",
+    "summary",
+    "continuity_consequences"
+  ],
+  "title": "CinematicMoment",
+  "type": "object"
+}

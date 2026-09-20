@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "character_id": "v4_evaluation_b",
+  "display_name": "V4 Evaluation Humanoid B",
+  "package_version": "fixture-1",
+  "development_fixture": true,
+  "allow_external_assets": false,
+  "model_path": "model/v4_evaluation_b.blend",
+  "armature": "WWS_EvaluationRig",
+  "mesh_objects": ["WWS_EvaluationBody"],
+  "scale": 1.0,
+  "forward_axis": "-Y",
+  "up_axis": "Z",
+  "rest_pose": "A_POSE",
+  "rig_adapter": "rig_adapter.json",
+  "default_materials": [
+    {
+      "material_id": "body_gray",
+      "slots": ["body"],
+      "embedded_name": "V4_FighterB_Gray"
+    }
+  ],
+  "combat_style": ["generic_hybrid", "counter_striker"],
+  "generic_animation_compatibility": [
+    "dash", "heavy_cross", "hook", "kick", "dodge", "hit_heavy",
+    "launch", "airborne_tumble", "hard_landing", "skid", "recovery"
+  ],
+  "animation_clips": [],
+  "custom_animation_overrides": {},
+  "ability_definitions": ["abilities/abilities.json"],
+  "vfx_definitions": ["vfx/vfx.json"],
+  "attachment_points": [
+    {"attachment_id": "hand_left", "bone_role": "hand.L"},
+    {"attachment_id": "hand_right", "bone_role": "hand.R"},
+    {"attachment_id": "chest_center", "bone_role": "chest"},
+    {"attachment_id": "head_center", "bone_role": "head"},
+    {"attachment_id": "foot_left", "bone_role": "foot.L"},
+    {"attachment_id": "foot_right", "bone_role": "foot.R"}
+  ],
+  "metadata": {
+    "purpose": "CharacterPackage pipeline fixture; not a production character",
+    "source_rights": "Repository-authored development geometry"
+  }
+}

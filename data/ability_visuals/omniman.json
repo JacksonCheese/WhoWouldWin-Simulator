@@ -1,0 +1,200 @@
+[
+  {
+    "ability_visual_id": "omniman-charge-visual-v1",
+    "fighter_profile_id": "omniman",
+    "simulation_ability_id": "charge",
+    "development_fixture": true,
+    "display_name": "Viltrumite flying shoulder rush",
+    "action_description": "Omni-Man drives one high-speed shoulder-led rush into the recorded target.",
+    "windup_description": "Shoulders square, fists tighten, cape draws backward.",
+    "movement_description": "One straight acceleration, body forward and feet trailing.",
+    "impact_description": "One shoulder-led contact and recorded recoil.",
+    "energy_or_effect_description": "Air compression streaks; no glowing energy projectile.",
+    "pose_guidance": "Maintain the tagged character silhouette and one readable line of action.",
+    "environment_interaction": "Surface dust or air response only; no broken architecture unless explicitly recorded.",
+    "reference_asset_paths": [],
+    "form_requirements": [],
+    "prohibited_visual_changes": [
+      "No canonical attack names; no extra contacts, powers or damage."
+    ],
+    "prompt_constraints": [
+      "Honor the recorded hit/miss."
+    ]
+  },
+  {
+    "ability_visual_id": "omniman-heavy_strike-visual-v1",
+    "fighter_profile_id": "omniman",
+    "simulation_ability_id": "heavy_strike",
+    "development_fixture": true,
+    "display_name": "Viltrumite heavy cross",
+    "action_description": "Omni-Man lands one committed heavy cross.",
+    "windup_description": "Torso coils with rear fist drawn tight.",
+    "movement_description": "One rotational drive through shoulder and hip.",
+    "impact_description": "One contact with a tight air-compression ring.",
+    "energy_or_effect_description": "Physical force only; no laser, magic or added powers.",
+    "pose_guidance": "Maintain the tagged character silhouette and one readable line of action.",
+    "environment_interaction": "Surface dust or air response only; no broken architecture unless explicitly recorded.",
+    "reference_asset_paths": [],
+    "form_requirements": [],
+    "prohibited_visual_changes": [
+      "No canonical attack names; no extra contacts, powers or damage."
+    ],
+    "prompt_constraints": [
+      "Honor the recorded hit/miss."
+    ]
+  },
+  {
+    "ability_visual_id": "omniman-grapple-visual-v1",
+    "fighter_profile_id": "omniman",
+    "simulation_ability_id": "grapple",
+    "development_fixture": true,
+    "display_name": "Viltrumite control grip",
+    "action_description": "Omni-Man reaches for a single recorded close-control grip.",
+    "windup_description": "Open hand reaches toward the opponent shoulder.",
+    "movement_description": "One close grip attempt and short body turn.",
+    "impact_description": "Control or evasion exactly as recorded; no new slam.",
+    "energy_or_effect_description": "Physical grip only.",
+    "pose_guidance": "Maintain the tagged character silhouette and one readable line of action.",
+    "environment_interaction": "Surface dust or air response only; no broken architecture unless explicitly recorded.",
+    "reference_asset_paths": [],
+    "form_requirements": [],
+    "prohibited_visual_changes": [
+      "No canonical attack names; no extra contacts, powers or damage."
+    ],
+    "prompt_constraints": [
+      "Honor the recorded hit/miss."
+    ]
+  },
+  {
+    "ability_visual_id": "omniman-jab-visual-v1",
+    "fighter_profile_id": "omniman",
+    "simulation_ability_id": "jab",
+    "development_fixture": true,
+    "display_name": "Viltrumite straight jab",
+    "action_description": "Omni-Man throws one short straight jab.",
+    "windup_description": "Guard stays high, lead shoulder rolls forward.",
+    "movement_description": "One sharp extension and return.",
+    "impact_description": "A single compact contact.",
+    "energy_or_effect_description": "No glowing effect; brief physical speed line.",
+    "pose_guidance": "Maintain the tagged character silhouette and one readable line of action.",
+    "environment_interaction": "Surface dust or air response only; no broken architecture unless explicitly recorded.",
+    "reference_asset_paths": [],
+    "form_requirements": [],
+    "prohibited_visual_changes": [
+      "No canonical attack names; no extra contacts, powers or damage."
+    ],
+    "prompt_constraints": [
+      "Honor the recorded hit/miss."
+    ]
+  },
+  {
+    "ability_visual_id": "omniman-fly-visual-v1",
+    "fighter_profile_id": "omniman",
+    "simulation_ability_id": "fly",
+    "development_fixture": true,
+    "display_name": "Viltrumite controlled ascent",
+    "action_description": "Omni-Man rises into recorded controlled flight.",
+    "windup_description": "Feet lighten; cape trails below his torso.",
+    "movement_description": "Smooth ascent to the recorded elevation.",
+    "impact_description": "No contact or environmental damage.",
+    "energy_or_effect_description": "Subtle air wake; no rocket exhaust.",
+    "pose_guidance": "Maintain the tagged character silhouette and one readable line of action.",
+    "environment_interaction": "Surface dust or air response only; no broken architecture unless explicitly recorded.",
+    "reference_asset_paths": [],
+    "form_requirements": [],
+    "prohibited_visual_changes": [
+      "No canonical attack names; no extra contacts, powers or damage."
+    ],
+    "prompt_constraints": [
+      "Honor the recorded hit/miss."
+    ]
+  },
+  {
+    "ability_visual_id": "omniman-dash-visual-v1",
+    "fighter_profile_id": "omniman",
+    "simulation_ability_id": "dash",
+    "development_fixture": true,
+    "display_name": "Burst reposition",
+    "action_description": "Omni-Man makes one short recorded repositioning burst.",
+    "windup_description": "Weight shifts toward the chosen direction.",
+    "movement_description": "A short burst with trailing cloth.",
+    "impact_description": "No attack or added contact.",
+    "energy_or_effect_description": "Motion streaks only.",
+    "pose_guidance": "Maintain the tagged character silhouette and one readable line of action.",
+    "environment_interaction": "Surface dust or air response only; no broken architecture unless explicitly recorded.",
+    "reference_asset_paths": [],
+    "form_requirements": [],
+    "prohibited_visual_changes": [
+      "No canonical attack names; no extra contacts, powers or damage."
+    ],
+    "prompt_constraints": [
+      "Honor the recorded hit/miss."
+    ]
+  },
+  {
+    "ability_visual_id": "omniman-evade-visual-v1",
+    "fighter_profile_id": "omniman",
+    "simulation_ability_id": "evade",
+    "development_fixture": true,
+    "display_name": "Close evasion",
+    "action_description": "Omni-Man slips off the incoming attack line.",
+    "windup_description": "Eyes track the incoming threat.",
+    "movement_description": "A tight torso slip and foot adjustment.",
+    "impact_description": "The incoming attack misses when recorded as dodged.",
+    "energy_or_effect_description": "A brief motion smear, no teleportation.",
+    "pose_guidance": "Maintain the tagged character silhouette and one readable line of action.",
+    "environment_interaction": "Surface dust or air response only; no broken architecture unless explicitly recorded.",
+    "reference_asset_paths": [],
+    "form_requirements": [],
+    "prohibited_visual_changes": [
+      "No canonical attack names; no extra contacts, powers or damage."
+    ],
+    "prompt_constraints": [
+      "Honor the recorded hit/miss."
+    ]
+  },
+  {
+    "ability_visual_id": "omniman-guard-visual-v1",
+    "fighter_profile_id": "omniman",
+    "simulation_ability_id": "guard",
+    "development_fixture": true,
+    "display_name": "Braced forearm guard",
+    "action_description": "Omni-Man braces a compact forearm guard.",
+    "windup_description": "Forearms rise across the torso.",
+    "movement_description": "Body absorbs the recorded pressure without a counterattack.",
+    "impact_description": "Only the recorded blocked damage and recoil.",
+    "energy_or_effect_description": "Short pressure lines; no unrecorded energy shield.",
+    "pose_guidance": "Maintain the tagged character silhouette and one readable line of action.",
+    "environment_interaction": "Surface dust or air response only; no broken architecture unless explicitly recorded.",
+    "reference_asset_paths": [],
+    "form_requirements": [],
+    "prohibited_visual_changes": [
+      "No canonical attack names; no extra contacts, powers or damage."
+    ],
+    "prompt_constraints": [
+      "Honor the recorded hit/miss."
+    ]
+  },
+  {
+    "ability_visual_id": "omniman-jump-visual-v1",
+    "fighter_profile_id": "omniman",
+    "simulation_ability_id": "jump",
+    "development_fixture": true,
+    "display_name": "Tactical leap",
+    "action_description": "Omni-Man makes one recorded tactical leap.",
+    "windup_description": "Knees compress over planted feet.",
+    "movement_description": "One upward leg drive into the recorded arc.",
+    "impact_description": "No attack is added to the leap.",
+    "energy_or_effect_description": "Cloth and hair trail the leap.",
+    "pose_guidance": "Maintain the tagged character silhouette and one readable line of action.",
+    "environment_interaction": "Surface dust or air response only; no broken architecture unless explicitly recorded.",
+    "reference_asset_paths": [],
+    "form_requirements": [],
+    "prohibited_visual_changes": [
+      "No canonical attack names; no extra contacts, powers or damage."
+    ],
+    "prompt_constraints": [
+      "Honor the recorded hit/miss."
+    ]
+  }
+]
