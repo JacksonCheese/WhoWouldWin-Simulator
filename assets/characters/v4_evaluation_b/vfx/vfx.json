@@ -1,0 +1,9 @@
+[
+  {
+    "vfx_id": "development_impact",
+    "asset_path": null,
+    "attachment_point": "hand_right",
+    "duration_seconds": 0.12,
+    "parameters": {"intensity": 0.5, "presentation_only": true}
+  }
+]

@@ -1,0 +1,286 @@
+{
+  "$defs": {
+    "FighterState": {
+      "additionalProperties": false,
+      "properties": {
+        "health": {
+          "title": "Health",
+          "type": "number"
+        },
+        "health_fraction": {
+          "title": "Health Fraction",
+          "type": "number"
+        },
+        "energy": {
+          "title": "Energy",
+          "type": "number"
+        },
+        "stamina": {
+          "title": "Stamina",
+          "type": "number"
+        },
+        "position": {
+          "$ref": "#/$defs/Point"
+        },
+        "velocity": {
+          "$ref": "#/$defs/Point"
+        },
+        "transformation": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Transformation"
+        },
+        "flying": {
+          "default": false,
+          "title": "Flying",
+          "type": "boolean"
+        },
+        "statuses": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Statuses",
+          "type": "array"
+        }
+      },
+      "required": [
+        "health",
+        "health_fraction",
+        "energy",
+        "stamina",
+        "position",
+        "velocity"
+      ],
+      "title": "FighterState",
+      "type": "object"
+    },
+    "Point": {
+      "additionalProperties": false,
+      "properties": {
+        "x": {
+          "title": "X",
+          "type": "number"
+        },
+        "y": {
+          "title": "Y",
+          "type": "number"
+        }
+      },
+      "required": [
+        "x",
+        "y"
+      ],
+      "title": "Point",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "event_id": {
+      "title": "Event Id",
+      "type": "string"
+    },
+    "simulation_time": {
+      "minimum": 0,
+      "title": "Simulation Time",
+      "type": "number"
+    },
+    "actor_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Actor Id"
+    },
+    "target_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Target Ids",
+      "type": "array"
+    },
+    "event_type": {
+      "title": "Event Type",
+      "type": "string"
+    },
+    "ability_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Ability Id"
+    },
+    "success": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Success"
+    },
+    "damage": {
+      "default": 0,
+      "minimum": 0,
+      "title": "Damage",
+      "type": "number"
+    },
+    "health_after_damage": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Health After Damage"
+    },
+    "impact_score": {
+      "default": 0,
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Impact Score",
+      "type": "number"
+    },
+    "location": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Point"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "positions": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Point"
+      },
+      "title": "Positions",
+      "type": "object"
+    },
+    "velocities": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Point"
+      },
+      "title": "Velocities",
+      "type": "object"
+    },
+    "actor_state_before": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/FighterState"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "actor_state_after": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/FighterState"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "target_state_before": {
+      "additionalProperties": {
+        "$ref": "#/$defs/FighterState"
+      },
+      "title": "Target State Before",
+      "type": "object"
+    },
+    "target_state_after": {
+      "additionalProperties": {
+        "$ref": "#/$defs/FighterState"
+      },
+      "title": "Target State After",
+      "type": "object"
+    },
+    "environment_effect": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Environment Effect"
+    },
+    "narrative_tags": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Narrative Tags",
+      "type": "array"
+    },
+    "source_event_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Source Event Ids",
+      "type": "array"
+    },
+    "source_index": {
+      "title": "Source Index",
+      "type": "integer"
+    },
+    "source_tick": {
+      "title": "Source Tick",
+      "type": "integer"
+    },
+    "source_values": {
+      "additionalProperties": true,
+      "title": "Source Values",
+      "type": "object"
+    },
+    "derivations": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Derivations",
+      "type": "object"
+    }
+  },
+  "required": [
+    "event_id",
+    "simulation_time",
+    "event_type",
+    "source_event_ids",
+    "source_index",
+    "source_tick"
+  ],
+  "title": "CinematicBattleEvent",
+  "type": "object"
+}

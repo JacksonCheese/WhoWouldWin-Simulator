@@ -1,0 +1,31 @@
+{
+  "character_id": "aang",
+  "version_id": "development-visual-v1",
+  "development_fixture": true,
+  "appearance_description": "Youthful air-martial-artist development fixture.",
+  "body_description": "Compact agile build.",
+  "face_description": "Youthful expressive face.",
+  "hair_description": "Shaved head.",
+  "costume_description": "Saffron and warm orange layered martial clothing.",
+  "color_palette": [
+    "#E2BB68",
+    "#86D4DF"
+  ],
+  "distinctive_features": [
+    "Flowing fabric",
+    "Open-handed defensive poses"
+  ],
+  "reference_image_paths": [],
+  "transformation_visuals": {
+    "avatar": "Distinct luminous aura and brighter material highlights while this recorded form is active."
+  },
+  "prohibited_visual_changes": [
+    "Do not change identity, hair or costume palette between shots.",
+    "Do not invent weapons, anatomical wounds or persistent destruction.",
+    "Do not portray a missed attack as a hit."
+  ],
+  "prompt_aliases": [
+    "aang",
+    "Aang"
+  ]
+}

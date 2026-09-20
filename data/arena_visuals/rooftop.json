@@ -1,0 +1,24 @@
+{
+  "arena_id": "rooftop",
+  "version_id": "development-arena-v1",
+  "development_fixture": true,
+  "description": "An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena.",
+  "architecture": "Layered masonry towers and distant water tanks.",
+  "terrain": "Flat weathered concrete combat plane.",
+  "lighting": "Cool moonlight with restrained warm window highlights.",
+  "weather": "Dry air after rain; subtle floor reflections.",
+  "time_of_day": "Blue hour",
+  "color_palette": [
+    "#101C2D",
+    "#304A67",
+    "#D5AB70"
+  ],
+  "destructible_features": [
+    "Loose dust can react to recorded impacts; structural damage is not simulated."
+  ],
+  "reference_assets": [],
+  "continuity_state": {
+    "rooftop": "intact",
+    "source": "visual fixture; engine arena contains no terrain entities"
+  }
+}

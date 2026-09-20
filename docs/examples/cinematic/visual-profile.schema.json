@@ -1,0 +1,126 @@
+{
+  "$defs": {
+    "AssetReference": {
+      "additionalProperties": false,
+      "properties": {
+        "asset_id": {
+          "title": "Asset Id",
+          "type": "string"
+        },
+        "path": {
+          "title": "Path",
+          "type": "string"
+        },
+        "role": {
+          "default": "appearance_reference",
+          "title": "Role",
+          "type": "string"
+        },
+        "rights_note": {
+          "default": "Development fixture; verify rights before production use.",
+          "title": "Rights Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "asset_id",
+        "path"
+      ],
+      "title": "AssetReference",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "character_id": {
+      "title": "Character Id",
+      "type": "string"
+    },
+    "version_id": {
+      "title": "Version Id",
+      "type": "string"
+    },
+    "development_fixture": {
+      "default": true,
+      "title": "Development Fixture",
+      "type": "boolean"
+    },
+    "appearance_description": {
+      "title": "Appearance Description",
+      "type": "string"
+    },
+    "body_description": {
+      "title": "Body Description",
+      "type": "string"
+    },
+    "face_description": {
+      "title": "Face Description",
+      "type": "string"
+    },
+    "hair_description": {
+      "title": "Hair Description",
+      "type": "string"
+    },
+    "costume_description": {
+      "title": "Costume Description",
+      "type": "string"
+    },
+    "color_palette": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Color Palette",
+      "type": "array"
+    },
+    "distinctive_features": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Distinctive Features",
+      "type": "array"
+    },
+    "reference_image_paths": {
+      "items": {
+        "$ref": "#/$defs/AssetReference"
+      },
+      "title": "Reference Image Paths",
+      "type": "array"
+    },
+    "transformation_visuals": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Transformation Visuals",
+      "type": "object"
+    },
+    "prohibited_visual_changes": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Prohibited Visual Changes",
+      "type": "array"
+    },
+    "prompt_aliases": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Prompt Aliases",
+      "type": "array"
+    }
+  },
+  "required": [
+    "character_id",
+    "version_id",
+    "appearance_description",
+    "body_description",
+    "face_description",
+    "hair_description",
+    "costume_description",
+    "color_palette",
+    "prohibited_visual_changes",
+    "prompt_aliases"
+  ],
+  "title": "VisualProfile",
+  "type": "object"
+}

@@ -1,0 +1,133 @@
+{
+  "characterId": "naruto",
+  "proxyStyle": "ninja",
+  "artPrefix": "Art/ninja",
+  "accent": "#46E8EE",
+  "secondary": "#FFAE54",
+  "scale": 1,
+  "requiredStates": [
+    "Idle",
+    "CombatIdle",
+    "Run",
+    "Sprint",
+    "Dash",
+    "Jump",
+    "Fall",
+    "FlightIdle",
+    "FlightMove",
+    "LightAttack",
+    "HeavyAttack",
+    "SpecialAttack",
+    "RangedAttack",
+    "Block",
+    "Dodge",
+    "HitLight",
+    "HitHeavy",
+    "Knockback",
+    "Knockdown",
+    "Recovery",
+    "Transformation",
+    "Defeat"
+  ],
+  "abilities": [
+    {
+      "abilityId": "melee_combo",
+      "state": "LightAttack",
+      "primitive": "Lunge",
+      "vfx": "melee",
+      "sound": "punch",
+      "anticipation": 0.15,
+      "weight": 0.28888888888888886
+    },
+    {
+      "abilityId": "energy_orb",
+      "state": "RangedAttack",
+      "primitive": "ProjectileCast",
+      "vfx": "energy",
+      "sound": "projectile",
+      "anticipation": 0.25,
+      "weight": 0.37222222222222223
+    },
+    {
+      "abilityId": "charged_vortex",
+      "state": "SpecialAttack",
+      "primitive": "ProjectileCast",
+      "vfx": "vortex",
+      "sound": "charge",
+      "anticipation": 1.15,
+      "weight": 0.9722222222222222
+    },
+    {
+      "abilityId": "decoy",
+      "state": "SpecialAttack",
+      "primitive": "CloneFeint",
+      "vfx": "smoke",
+      "sound": "charge",
+      "anticipation": 0.12,
+      "weight": 0.0
+    },
+    {
+      "abilityId": "chakra_form",
+      "state": "Transformation",
+      "primitive": "Transformation",
+      "vfx": "aura",
+      "sound": "transform",
+      "anticipation": 0.45,
+      "weight": 0.0
+    },
+    {
+      "abilityId": "recover",
+      "state": "Recovery",
+      "primitive": "Recovery",
+      "vfx": "aura",
+      "sound": "charge",
+      "anticipation": 0.4,
+      "weight": 0.0
+    },
+    {
+      "abilityId": "blink",
+      "state": "Dash",
+      "primitive": "Teleport",
+      "vfx": "smoke",
+      "sound": "dash",
+      "anticipation": 0.08,
+      "weight": 0.0
+    },
+    {
+      "abilityId": "evade",
+      "state": "Dodge",
+      "primitive": "SuccessfulDodge",
+      "vfx": "afterimage",
+      "sound": "dash",
+      "anticipation": 0.0,
+      "weight": 0.0
+    },
+    {
+      "abilityId": "guard",
+      "state": "Block",
+      "primitive": "Guard",
+      "vfx": "block",
+      "sound": "block",
+      "anticipation": 0.0,
+      "weight": 0.0
+    },
+    {
+      "abilityId": "jump",
+      "state": "Jump",
+      "primitive": "JumpAttack",
+      "vfx": "dust",
+      "sound": "dash",
+      "anticipation": 0.0,
+      "weight": 0.0
+    },
+    {
+      "abilityId": "dash",
+      "state": "Dash",
+      "primitive": "DashPast",
+      "vfx": "speed",
+      "sound": "dash",
+      "anticipation": 0.05,
+      "weight": 0.0
+    }
+  ]
+}

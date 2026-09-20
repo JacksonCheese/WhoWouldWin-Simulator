@@ -1,0 +1,16 @@
+[
+  {
+    "ability_id": "development_heavy_strike",
+    "animation": "heavy_cross",
+    "startup_vfx": [],
+    "active_vfx": [],
+    "impact_vfx": ["development_impact"],
+    "projectile_object": null,
+    "attachment_points": ["hand_right", "chest_center"],
+    "camera_preference": ["impact_camera", "low_angle"],
+    "environmental_presentation": ["optional_debris_if_source_event_supports_impact"],
+    "sound_hooks": ["heavy_whoosh", "body_impact"],
+    "authority": "presentation",
+    "simulator_decides_outcome": true
+  }
+]

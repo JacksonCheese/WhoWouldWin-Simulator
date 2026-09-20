@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "character_id": "base_male_athletic",
+  "display_name": "WWS Athletic Male Base",
+  "package_version": "1.0.0",
+  "development_fixture": true,
+  "model_path": "model/base_male_athletic.blend",
+  "armature": "WWS_BaseMale_ProductionRig",
+  "mesh_objects": [
+    "WWS_BaseMale_Body"
+  ],
+  "scale": 1.0,
+  "forward_axis": "-Y",
+  "up_axis": "Z",
+  "rest_pose": "A_POSE",
+  "rig_adapter": "rig_adapter.json",
+  "combat_style": [
+    "athletic_male",
+    "generic_hybrid",
+    "combat_animation_base"
+  ],
+  "generic_animation_compatibility": [
+    "stance",
+    "dash",
+    "heavy_cross",
+    "hook",
+    "kick",
+    "dodge",
+    "hit_heavy",
+    "launch",
+    "airborne_tumble",
+    "hard_landing",
+    "skid",
+    "recovery"
+  ],
+  "custom_animation_overrides": {},
+  "attachment_points": [
+    {
+      "attachment_id": "hand_left",
+      "bone_role": "hand.L"
+    },
+    {
+      "attachment_id": "hand_right",
+      "bone_role": "hand.R"
+    },
+    {
+      "attachment_id": "chest_center",
+      "bone_role": "chest"
+    },
+    {
+      "attachment_id": "head_center",
+      "bone_role": "head"
+    },
+    {
+      "attachment_id": "foot_left",
+      "bone_role": "foot.L"
+    },
+    {
+      "attachment_id": "foot_right",
+      "bone_role": "foot.R"
+    }
+  ],
+  "metadata": {
+    "purpose": "Reusable male humanoid foundation for character packages",
+    "source_rights": "Repository-authored development geometry",
+    "limitations": "Medium-shot body and hand silhouettes; no facial or finger acting rig",
+    "hand_pose_presets": "OPEN_PALM,CLOSED_FIST,RELAXED,CUPPED"
+  }
+}

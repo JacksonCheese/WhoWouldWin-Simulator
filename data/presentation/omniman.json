@@ -1,0 +1,115 @@
+{
+  "characterId": "omniman",
+  "proxyStyle": "titan",
+  "artPrefix": "Art/titan",
+  "accent": "#F05D54",
+  "secondary": "#FFC56E",
+  "scale": 1.12,
+  "requiredStates": [
+    "Idle",
+    "CombatIdle",
+    "Run",
+    "Sprint",
+    "Dash",
+    "Jump",
+    "Fall",
+    "FlightIdle",
+    "FlightMove",
+    "LightAttack",
+    "HeavyAttack",
+    "SpecialAttack",
+    "RangedAttack",
+    "Block",
+    "Dodge",
+    "HitLight",
+    "HitHeavy",
+    "Knockback",
+    "Knockdown",
+    "Recovery",
+    "Transformation",
+    "Defeat"
+  ],
+  "abilities": [
+    {
+      "abilityId": "heavy_strike",
+      "state": "HeavyAttack",
+      "primitive": "Lunge",
+      "vfx": "heavy",
+      "sound": "heavy",
+      "anticipation": 0.5,
+      "weight": 0.6944444444444444
+    },
+    {
+      "abilityId": "jab",
+      "state": "LightAttack",
+      "primitive": "Lunge",
+      "vfx": "melee",
+      "sound": "punch",
+      "anticipation": 0.15,
+      "weight": 0.3388888888888889
+    },
+    {
+      "abilityId": "charge",
+      "state": "Dash",
+      "primitive": "DashPast",
+      "vfx": "sonic",
+      "sound": "dash",
+      "anticipation": 0.4,
+      "weight": 0.5833333333333334
+    },
+    {
+      "abilityId": "grapple",
+      "state": "HeavyAttack",
+      "primitive": "Lunge",
+      "vfx": "heavy",
+      "sound": "heavy",
+      "anticipation": 0.28,
+      "weight": 0.5277777777777778
+    },
+    {
+      "abilityId": "fly",
+      "state": "FlightMove",
+      "primitive": "Flight",
+      "vfx": "speed",
+      "sound": "dash",
+      "anticipation": 0.15,
+      "weight": 0.0
+    },
+    {
+      "abilityId": "evade",
+      "state": "Dodge",
+      "primitive": "SuccessfulDodge",
+      "vfx": "afterimage",
+      "sound": "dash",
+      "anticipation": 0.0,
+      "weight": 0.0
+    },
+    {
+      "abilityId": "guard",
+      "state": "Block",
+      "primitive": "Guard",
+      "vfx": "block",
+      "sound": "block",
+      "anticipation": 0.0,
+      "weight": 0.0
+    },
+    {
+      "abilityId": "jump",
+      "state": "Jump",
+      "primitive": "JumpAttack",
+      "vfx": "dust",
+      "sound": "dash",
+      "anticipation": 0.0,
+      "weight": 0.0
+    },
+    {
+      "abilityId": "dash",
+      "state": "Dash",
+      "primitive": "DashPast",
+      "vfx": "speed",
+      "sound": "dash",
+      "anticipation": 0.05,
+      "weight": 0.0
+    }
+  ]
+}

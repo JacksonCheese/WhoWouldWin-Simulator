@@ -1,0 +1,29 @@
+{
+  "character_id": "omniman",
+  "version_id": "development-visual-v1",
+  "development_fixture": true,
+  "appearance_description": "Powerful mature flying-hero development fixture.",
+  "body_description": "Broad muscular build.",
+  "face_description": "Square jaw, mustache and intense eyes.",
+  "hair_description": "Swept-back dark hair with silver temples.",
+  "costume_description": "Ivory fitted textured suit, scarlet gloves, boots and flowing cape.",
+  "color_palette": [
+    "#F47869",
+    "#E4DDD0"
+  ],
+  "distinctive_features": [
+    "Mustache",
+    "Crimson cape"
+  ],
+  "reference_image_paths": [],
+  "transformation_visuals": {},
+  "prohibited_visual_changes": [
+    "Do not change identity, hair or costume palette between shots.",
+    "Do not invent weapons, anatomical wounds or persistent destruction.",
+    "Do not portray a missed attack as a hit."
+  ],
+  "prompt_aliases": [
+    "omniman",
+    "Omni-Man"
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "characterId": "naruto",
+  "texture": "naruto.png",
+  "cellWidth": 256,
+  "cellHeight": 256,
+  "pixelsPerUnit": 72,
+  "animations": [
+    {
+      "state": "Idle",
+      "row": 0,
+      "start": 0,
+      "count": 8,
+      "fps": 12,
+      "loop": true
+    },
+    {
+      "state": "CombatIdle",
+      "row": 1,
+      "start": 0,
+      "count": 8,
+      "fps": 12,
+      "loop": true
+    },
+    {
+      "state": "Run",
+      "row": 2,
+      "start": 0,
+      "count": 8,
+      "fps": 12,
+      "loop": true
+    },
+    {
+      "state": "Sprint",
+      "row": 3,
+      "start": 0,
+      "count": 8,
+      "fps": 12,
+      "loop": true
+    },
+    {
+      "state": "Dash",
+      "row": 4,
+      "start": 0,
+      "count": 8,
+      "fps": 12,
+      "loop": false
+    },
+    {
+      "state": "Jump",
+      "row": 5,
+      "start": 0,
+      "count": 8,
+      "fps": 12,
+      "loop": false
+    },
+    {
+      "state": "Fall",
+      "row": 6,
+      "start": 0,
+      "count": 8,
+      "fps": 12,
+      "loop": false
+    },
+    {
+      "state": "FlightIdle",
+      "row": 7,
+      "start": 0,
+      "count": 8,
+      "fps": 12,
+      "loop": true
+    },
+    {
+      "state": "FlightMove",
+      "row": 8,
+      "start": 0,
+      "count": 8,
+      "fps": 12,
+      "loop": true
+    },
+    {
+      "state": "LightAttack",
+      "row": 9,
+      "start": 0,
+      "count": 8,
+      "fps": 12,
+      "loop": false
+    },
+    {
+      "state": "HeavyAttack",
+      "row": 10,
+      "start": 0,
+      "count": 8,
+      "fps": 12,
+      "loop": false
+    },
+    {
+      "state": "SpecialAttack",
+      "row": 11,
+      "start": 0,
+      "count": 8,
+      "fps": 12,
+      "loop": false
+    },
+    {
+      "state": "RangedAttack",
+      "row": 12,
+      "start": 0,
+      "count": 8,
+      "fps": 12,
+      "loop": false
+    },
+    {
+      "state": "Block",
+      "row": 13,
+      "start": 0,
+      "count": 8,
+      "fps": 12,
+      "loop": false
+    },
+    {
+      "state": "Dodge",
+      "row": 14,
+      "start": 0,
+      "count": 8,
+      "fps": 12,
+      "loop": false
+    },
+    {
+      "state": "HitLight",
+      "row": 15,
+      "start": 0,
+      "count": 8,
+      "fps": 12,
+      "loop": false
+    },
+    {
+      "state": "HitHeavy",
+      "row": 16,
+      "start": 0,
+      "count": 8,
+      "fps": 12,
+      "loop": false
+    },
+    {
+      "state": "Knockback",
+      "row": 17,
+      "start": 0,
+      "count": 8,
+      "fps": 12,
+      "loop": false
+    },
+    {
+      "state": "Knockdown",
+      "row": 18,
+      "start": 0,
+      "count": 8,
+      "fps": 12,
+      "loop": false
+    },
+    {
+      "state": "Recovery",
+      "row": 19,
+      "start": 0,
+      "count": 8,
+      "fps": 12,
+      "loop": false
+    },
+    {
+      "state": "Transformation",
+      "row": 20,
+      "start": 0,
+      "count": 8,
+      "fps": 12,
+      "loop": false
+    },
+    {
+      "state": "Defeat",
+      "row": 21,
+      "start": 0,
+      "count": 8,
+      "fps": 12,
+      "loop": false
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5133668f0efd34ba48a0f4760a340078, type: 3}
+  m_Name: omniman
+  m_EditorClassIdentifier: WhoWouldWin.Visual::WhoWouldWin.Visual.CharacterVisualProfile
+  characterId: omniman
+  artPrefix: Art/titan
+  artMode: 0
+  prefab: {fileID: 4067908944068898150, guid: 239225a8dc1e441b3a48c3254d380afb, type: 3}
+  scale: 1.12
+  accent: {r: 0.9411765, g: 0.3647059, b: 0.32941177, a: 1}
+  secondary: {r: 1, g: 0.77254903, b: 0.43137255, a: 1}
+  abilities:
+  - abilityId: heavy_strike
+    state: HeavyAttack
+    primitive: Lunge
+    vfx: heavy
+    sound: heavy
+    anticipation: 0.5
+    weight: 0.6944444
+  - abilityId: jab
+    state: LightAttack
+    primitive: Lunge
+    vfx: melee
+    sound: punch
+    anticipation: 0.15
+    weight: 0.33888888
+  - abilityId: charge
+    state: Dash
+    primitive: DashPast
+    vfx: sonic
+    sound: dash
+    anticipation: 0.4
+    weight: 0.5833333
+  - abilityId: grapple
+    state: HeavyAttack
+    primitive: Lunge
+    vfx: heavy
+    sound: heavy
+    anticipation: 0.28
+    weight: 0.5277778
+  - abilityId: fly
+    state: FlightMove
+    primitive: Flight
+    vfx: speed
+    sound: dash
+    anticipation: 0.15
+    weight: 0
+  - abilityId: evade
+    state: Dodge
+    primitive: SuccessfulDodge
+    vfx: afterimage
+    sound: dash
+    anticipation: 0
+    weight: 0
+  - abilityId: guard
+    state: Block
+    primitive: Guard
+    vfx: block
+    sound: block
+    anticipation: 0
+    weight: 0
+  - abilityId: jump
+    state: Jump
+    primitive: JumpAttack
+    vfx: dust
+    sound: dash
+    anticipation: 0
+    weight: 0
+  - abilityId: dash
+    state: Dash
+    primitive: DashPast
+    vfx: speed
+    sound: dash
+    anticipation: 0.05
+    weight: 0
+  animations:
+  - state: Idle
+    animatorState: Idle
+    clip: {fileID: 0}
+    loop: 0
+  - state: CombatIdle
+    animatorState: CombatIdle
+    clip: {fileID: 0}
+    loop: 0
+  - state: Run
+    animatorState: Run
+    clip: {fileID: 0}
+    loop: 0
+  - state: Sprint
+    animatorState: Sprint
+    clip: {fileID: 0}
+    loop: 0
+  - state: Dash
+    animatorState: Dash
+    clip: {fileID: 0}
+    loop: 0
+  - state: Jump
+    animatorState: Jump
+    clip: {fileID: 0}
+    loop: 0
+  - state: Fall
+    animatorState: Fall
+    clip: {fileID: 0}
+    loop: 0
+  - state: FlightIdle
+    animatorState: FlightIdle
+    clip: {fileID: 0}
+    loop: 0
+  - state: FlightMove
+    animatorState: FlightMove
+    clip: {fileID: 0}
+    loop: 0
+  - state: LightAttack
+    animatorState: LightAttack
+    clip: {fileID: 0}
+    loop: 0
+  - state: HeavyAttack
+    animatorState: HeavyAttack
+    clip: {fileID: 0}
+    loop: 0
+  - state: SpecialAttack
+    animatorState: SpecialAttack
+    clip: {fileID: 0}
+    loop: 0
+  - state: RangedAttack
+    animatorState: RangedAttack
+    clip: {fileID: 0}
+    loop: 0
+  - state: Block
+    animatorState: Block
+    clip: {fileID: 0}
+    loop: 0
+  - state: Dodge
+    animatorState: Dodge
+    clip: {fileID: 0}
+    loop: 0
+  - state: HitLight
+    animatorState: HitLight
+    clip: {fileID: 0}
+    loop: 0
+  - state: HitHeavy
+    animatorState: HitHeavy
+    clip: {fileID: 0}
+    loop: 0
+  - state: Knockback
+    animatorState: Knockback
+    clip: {fileID: 0}
+    loop: 0
+  - state: Knockdown
+    animatorState: Knockdown
+    clip: {fileID: 0}
+    loop: 0
+  - state: Recovery
+    animatorState: Recovery
+    clip: {fileID: 0}
+    loop: 0
+  - state: Transformation
+    animatorState: Transformation
+    clip: {fileID: 0}
+    loop: 0
+  - state: Defeat
+    animatorState: Defeat
+    clip: {fileID: 0}
+    loop: 0
+  sounds:
+  - key: punch
+    clip: {fileID: 8300000, guid: 61b646854a7c9433ba10f41511b0d526, type: 3}
+  - key: heavy
+    clip: {fileID: 8300000, guid: 304a44a08f2f34e7dbbd2a6181ea0f3d, type: 3}
+  - key: dash
+    clip: {fileID: 8300000, guid: f24d920fca9f24b11995f3affb5e1b08, type: 3}
+  - key: projectile
+    clip: {fileID: 8300000, guid: c00400f6adc48415084ef4245a35e17e, type: 3}
+  - key: explosion
+    clip: {fileID: 8300000, guid: c623114d59ded47058526b544ef1d8b5, type: 3}
+  - key: charge
+    clip: {fileID: 8300000, guid: 0ce5a1cecc267451a996ca4435634b2f, type: 3}
+  - key: block
+    clip: {fileID: 8300000, guid: 41e62011bb9bb40fea433e2e0795b339, type: 3}
+  - key: transform
+    clip: {fileID: 8300000, guid: f99f45aeb51ee421f992bd4b4c0762d4, type: 3}
+  - key: ko
+    clip: {fileID: 8300000, guid: 5b983f57dfba741b09adc7c855cfdf71, type: 3}
+  layers:
+  - part: cape
+    sprite: {fileID: 5517177261307525069, guid: 8bfb940f1626d440d8bdf7da2c73743f, type: 3}
+    rotation: 0
+    flipX: 1
+  - part: foot
+    sprite: {fileID: -7368793434426776914, guid: 8bfb940f1626d440d8bdf7da2c73743f, type: 3}
+    rotation: 0
+    flipX: 0
+  - part: forearm
+    sprite: {fileID: 2037547725694803911, guid: 8bfb940f1626d440d8bdf7da2c73743f, type: 3}
+    rotation: 0
+    flipX: 0
+  - part: hand
+    sprite: {fileID: -559323719547511051, guid: 8bfb940f1626d440d8bdf7da2c73743f, type: 3}
+    rotation: -90
+    flipX: 0
+  - part: head
+    sprite: {fileID: -1846784345090356148, guid: 8bfb940f1626d440d8bdf7da2c73743f, type: 3}
+    rotation: 0
+    flipX: 0
+  - part: head_hurt
+    sprite: {fileID: -6723345620416265600, guid: 8bfb940f1626d440d8bdf7da2c73743f, type: 3}
+    rotation: 0
+    flipX: 0
+  - part: hips
+    sprite: {fileID: -6518083113156321408, guid: 8bfb940f1626d440d8bdf7da2c73743f, type: 3}
+    rotation: 0
+    flipX: 0
+  - part: neck
+    sprite: {fileID: 3406847979158735130, guid: 8bfb940f1626d440d8bdf7da2c73743f, type: 3}
+    rotation: 0
+    flipX: 0
+  - part: shin
+    sprite: {fileID: 2455378222330060768, guid: 8bfb940f1626d440d8bdf7da2c73743f, type: 3}
+    rotation: 0
+    flipX: 0
+  - part: thigh
+    sprite: {fileID: -6011608575781450178, guid: 8bfb940f1626d440d8bdf7da2c73743f, type: 3}
+    rotation: 0
+    flipX: 0
+  - part: torso
+    sprite: {fileID: -2142246038737991177, guid: 8bfb940f1626d440d8bdf7da2c73743f, type: 3}
+    rotation: 0
+    flipX: 0
+  - part: upperarm
+    sprite: {fileID: 697472102726050255, guid: 8bfb940f1626d440d8bdf7da2c73743f, type: 3}
+    rotation: 0
+    flipX: 0

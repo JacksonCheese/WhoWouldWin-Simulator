@@ -1,0 +1,730 @@
+{
+  "$defs": {
+    "AI": {
+      "additionalProperties": false,
+      "properties": {
+        "randomness": {
+          "default": 0.2,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Randomness",
+          "type": "number"
+        },
+        "defensive_bias": {
+          "default": 1,
+          "exclusiveMinimum": 0,
+          "maximum": 5,
+          "title": "Defensive Bias",
+          "type": "number"
+        },
+        "special_bias": {
+          "default": 1,
+          "exclusiveMinimum": 0,
+          "maximum": 5,
+          "title": "Special Bias",
+          "type": "number"
+        },
+        "repeat_penalty": {
+          "default": 0.2,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Repeat Penalty",
+          "type": "number"
+        }
+      },
+      "title": "AI",
+      "type": "object"
+    },
+    "Ability": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "melee",
+            "charged_melee",
+            "projectile",
+            "beam",
+            "area",
+            "dodge",
+            "block",
+            "dash",
+            "jump",
+            "flight",
+            "grapple",
+            "teleport",
+            "buff",
+            "transform",
+            "regenerate"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "range": {
+          "default": 3,
+          "minimum": 0,
+          "title": "Range",
+          "type": "number"
+        },
+        "minimum_range": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Minimum Range",
+          "type": "number"
+        },
+        "startup": {
+          "default": 0.15,
+          "maximum": 20,
+          "minimum": 0,
+          "title": "Startup",
+          "type": "number"
+        },
+        "active": {
+          "default": 0.15,
+          "exclusiveMinimum": 0,
+          "maximum": 30,
+          "title": "Active",
+          "type": "number"
+        },
+        "recovery": {
+          "default": 0.3,
+          "maximum": 20,
+          "minimum": 0,
+          "title": "Recovery",
+          "type": "number"
+        },
+        "cooldown": {
+          "default": 1,
+          "maximum": 300,
+          "minimum": 0.05,
+          "title": "Cooldown",
+          "type": "number"
+        },
+        "stamina_cost": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Stamina Cost",
+          "type": "number"
+        },
+        "energy_cost": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Energy Cost",
+          "type": "number"
+        },
+        "damage": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Damage",
+          "type": "number"
+        },
+        "damage_type": {
+          "default": "physical",
+          "title": "Damage Type",
+          "type": "string"
+        },
+        "projectile_speed": {
+          "default": 40,
+          "exclusiveMinimum": 0,
+          "title": "Projectile Speed",
+          "type": "number"
+        },
+        "area_of_effect": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Area Of Effect",
+          "type": "number"
+        },
+        "hit_modifier": {
+          "default": 0,
+          "maximum": 1,
+          "minimum": -1,
+          "title": "Hit Modifier",
+          "type": "number"
+        },
+        "critical_chance": {
+          "default": 0.05,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Critical Chance",
+          "type": "number"
+        },
+        "knockback": {
+          "default": 0,
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Knockback",
+          "type": "number"
+        },
+        "stun": {
+          "default": 0,
+          "maximum": 5,
+          "minimum": 0,
+          "title": "Stun",
+          "type": "number"
+        },
+        "status_effects": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/StatusSpec"
+          },
+          "title": "Status Effects",
+          "type": "array"
+        },
+        "mobility_distance": {
+          "default": 0,
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Mobility Distance",
+          "type": "number"
+        },
+        "targeting": {
+          "default": "enemy",
+          "enum": [
+            "enemy",
+            "self",
+            "ground"
+          ],
+          "title": "Targeting",
+          "type": "string"
+        },
+        "required_form": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Required Form"
+        },
+        "transformation": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Transformation"
+        },
+        "condition": {
+          "$ref": "#/$defs/Condition",
+          "default": {
+            "max_health_fraction": 1.0,
+            "min_health_fraction": 0.0,
+            "target_status": null
+          }
+        },
+        "utility": {
+          "default": 1,
+          "exclusiveMinimum": 0,
+          "maximum": 10,
+          "title": "Utility",
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "type"
+      ],
+      "title": "Ability",
+      "type": "object"
+    },
+    "Combat": {
+      "additionalProperties": false,
+      "properties": {
+        "battle_iq": {
+          "default": 0.7,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Battle Iq",
+          "type": "number"
+        },
+        "aggression": {
+          "default": 0.65,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Aggression",
+          "type": "number"
+        },
+        "risk_tolerance": {
+          "default": 0.5,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Risk Tolerance",
+          "type": "number"
+        },
+        "preferred_range": {
+          "default": 5,
+          "minimum": 0,
+          "title": "Preferred Range",
+          "type": "number"
+        },
+        "accuracy": {
+          "default": 0.85,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Accuracy",
+          "type": "number"
+        },
+        "evasion": {
+          "default": 0.2,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Evasion",
+          "type": "number"
+        },
+        "blocking": {
+          "default": 0.7,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Blocking",
+          "type": "number"
+        },
+        "grappling": {
+          "default": 0.5,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Grappling",
+          "type": "number"
+        }
+      },
+      "title": "Combat",
+      "type": "object"
+    },
+    "Condition": {
+      "additionalProperties": false,
+      "properties": {
+        "max_health_fraction": {
+          "default": 1,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Max Health Fraction",
+          "type": "number"
+        },
+        "min_health_fraction": {
+          "default": 0,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Min Health Fraction",
+          "type": "number"
+        },
+        "target_status": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Target Status"
+        }
+      },
+      "title": "Condition",
+      "type": "object"
+    },
+    "Estimate": {
+      "additionalProperties": false,
+      "properties": {
+        "low": {
+          "exclusiveMinimum": 0,
+          "title": "Low",
+          "type": "number"
+        },
+        "expected": {
+          "exclusiveMinimum": 0,
+          "title": "Expected",
+          "type": "number"
+        },
+        "high": {
+          "exclusiveMinimum": 0,
+          "title": "High",
+          "type": "number"
+        }
+      },
+      "required": [
+        "low",
+        "expected",
+        "high"
+      ],
+      "title": "Estimate",
+      "type": "object"
+    },
+    "Identity": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_-]*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "universe": {
+          "title": "Universe",
+          "type": "string"
+        },
+        "version": {
+          "title": "Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "universe",
+        "version"
+      ],
+      "title": "Identity",
+      "type": "object"
+    },
+    "Mobility": {
+      "additionalProperties": false,
+      "properties": {
+        "grounded": {
+          "default": true,
+          "title": "Grounded",
+          "type": "boolean"
+        },
+        "flight": {
+          "default": false,
+          "title": "Flight",
+          "type": "boolean"
+        },
+        "jump": {
+          "default": true,
+          "title": "Jump",
+          "type": "boolean"
+        },
+        "dash": {
+          "default": true,
+          "title": "Dash",
+          "type": "boolean"
+        },
+        "teleport": {
+          "default": false,
+          "title": "Teleport",
+          "type": "boolean"
+        }
+      },
+      "title": "Mobility",
+      "type": "object"
+    },
+    "Physical": {
+      "additionalProperties": false,
+      "properties": {
+        "strength": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "$ref": "#/$defs/Estimate"
+            }
+          ],
+          "default": 100,
+          "title": "Strength"
+        },
+        "striking_power": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "$ref": "#/$defs/Estimate"
+            }
+          ],
+          "default": 100,
+          "title": "Striking Power"
+        },
+        "durability": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "$ref": "#/$defs/Estimate"
+            }
+          ],
+          "default": 100,
+          "title": "Durability"
+        },
+        "movement_speed": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "$ref": "#/$defs/Estimate"
+            }
+          ],
+          "default": 12,
+          "title": "Movement Speed"
+        },
+        "combat_speed": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "$ref": "#/$defs/Estimate"
+            }
+          ],
+          "default": 1,
+          "title": "Combat Speed"
+        },
+        "reaction_speed": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "$ref": "#/$defs/Estimate"
+            }
+          ],
+          "default": 1,
+          "title": "Reaction Speed"
+        },
+        "stamina": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "$ref": "#/$defs/Estimate"
+            }
+          ],
+          "default": 100,
+          "title": "Stamina"
+        },
+        "mass": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "$ref": "#/$defs/Estimate"
+            }
+          ],
+          "default": 80,
+          "title": "Mass"
+        },
+        "reach": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "$ref": "#/$defs/Estimate"
+            }
+          ],
+          "default": 1.5,
+          "title": "Reach"
+        }
+      },
+      "title": "Physical",
+      "type": "object"
+    },
+    "Resources": {
+      "additionalProperties": false,
+      "properties": {
+        "health": {
+          "default": 800,
+          "exclusiveMinimum": 0,
+          "title": "Health",
+          "type": "number"
+        },
+        "stamina": {
+          "default": 100,
+          "exclusiveMinimum": 0,
+          "title": "Stamina",
+          "type": "number"
+        },
+        "energy": {
+          "default": 100,
+          "exclusiveMinimum": 0,
+          "title": "Energy",
+          "type": "number"
+        },
+        "regeneration": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Regeneration",
+          "type": "number"
+        },
+        "stamina_regen": {
+          "default": 12,
+          "minimum": 0,
+          "title": "Stamina Regen",
+          "type": "number"
+        },
+        "energy_regen": {
+          "default": 4,
+          "minimum": 0,
+          "title": "Energy Regen",
+          "type": "number"
+        }
+      },
+      "title": "Resources",
+      "type": "object"
+    },
+    "StatusSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "enum": [
+            "stun",
+            "slow",
+            "burn",
+            "regen",
+            "decoy",
+            "power",
+            "shield",
+            "incapacitated"
+          ],
+          "title": "Id",
+          "type": "string"
+        },
+        "duration": {
+          "exclusiveMinimum": 0,
+          "maximum": 60,
+          "title": "Duration",
+          "type": "number"
+        },
+        "magnitude": {
+          "default": 1,
+          "maximum": 500,
+          "minimum": 0,
+          "title": "Magnitude",
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "duration"
+      ],
+      "title": "StatusSpec",
+      "type": "object"
+    },
+    "Transformation": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "duration": {
+          "exclusiveMinimum": 0,
+          "maximum": 120,
+          "title": "Duration",
+          "type": "number"
+        },
+        "modifiers": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Modifiers",
+          "type": "object"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "duration",
+        "modifiers"
+      ],
+      "title": "Transformation",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "identity": {
+      "$ref": "#/$defs/Identity"
+    },
+    "scaling_note": {
+      "minLength": 20,
+      "title": "Scaling Note",
+      "type": "string"
+    },
+    "physical": {
+      "$ref": "#/$defs/Physical"
+    },
+    "resources": {
+      "$ref": "#/$defs/Resources"
+    },
+    "combat": {
+      "$ref": "#/$defs/Combat"
+    },
+    "mobility": {
+      "$ref": "#/$defs/Mobility"
+    },
+    "resistances": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "default": {},
+      "title": "Resistances",
+      "type": "object"
+    },
+    "abilities": {
+      "items": {
+        "$ref": "#/$defs/Ability"
+      },
+      "minItems": 1,
+      "title": "Abilities",
+      "type": "array"
+    },
+    "transformations": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/Transformation"
+      },
+      "title": "Transformations",
+      "type": "array"
+    },
+    "ai": {
+      "$ref": "#/$defs/AI",
+      "default": {
+        "randomness": 0.2,
+        "defensive_bias": 1.0,
+        "special_bias": 1.0,
+        "repeat_penalty": 0.2
+      }
+    }
+  },
+  "required": [
+    "identity",
+    "scaling_note",
+    "physical",
+    "resources",
+    "combat",
+    "mobility",
+    "abilities"
+  ],
+  "title": "Character",
+  "type": "object"
+}

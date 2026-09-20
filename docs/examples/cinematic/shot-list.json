@@ -1,0 +1,2957 @@
+{
+  "schema_version": 1,
+  "director_version": "shots-v1",
+  "source_checksum": "ff4f81ae01878a8d7869b1320179db778fadc4e8cbc6b0fb5a49c38156402cb5",
+  "outcome_digest": "fb3a7975683c9fc6dfafb0ce8ba71e241866a749be826caff70c2058794b3265",
+  "matchup": "Naruto vs Omni-Man",
+  "arena_id": "rooftop",
+  "settings": {
+    "duration_seconds": 60.0,
+    "aspect_ratio": "9:16",
+    "shot_count": 24,
+    "fps": 30,
+    "width": 1080,
+    "height": 1920,
+    "intro_seconds": 2.5,
+    "outro_seconds": 3.0,
+    "visual_style": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting.",
+    "screen_shake": 0.65
+  },
+  "shots": [
+    {
+      "shot_id": "shot-001",
+      "version": 1,
+      "sequence_index": 0,
+      "source_moment_ids": [
+        "moment-0000"
+      ],
+      "source_event_ids": [
+        "event-000000"
+      ],
+      "simulation_start": 0.0,
+      "simulation_end": 0.0,
+      "duration_seconds": 2.5,
+      "frame_count": 75,
+      "shot_type": "ESTABLISHING",
+      "framing": "Separated foreground and background faceoff",
+      "camera_angle": "low three-quarter",
+      "camera_motion": "slow inward track",
+      "subjects": [
+        "naruto",
+        "omniman"
+      ],
+      "subject_positions": {
+        "naruto": {
+          "x": 0.3,
+          "y": 0.59
+        },
+        "omniman": {
+          "x": 0.7,
+          "y": 0.42999999999999994
+        }
+      },
+      "action_description": "Naruto vs Omni-Man: the recorded fight begins.",
+      "environment_description": "An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena.",
+      "continuity_state": {
+        "simulation_time": 0.0,
+        "characters": {
+          "naruto": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "clean",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 30.0,
+              "y": 1.0
+            },
+            "relative_position": "left",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 820.0,
+            "health_fraction": 1.0
+          },
+          "omniman": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "clean",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 90.0,
+              "y": 1.0
+            },
+            "relative_position": "right",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 1000.0,
+            "health_fraction": 1.0
+          }
+        },
+        "lighting": "Cool moonlight with restrained warm window highlights.",
+        "time_of_day": "Blue hour",
+        "weather": "Dry air after rain; subtle floor reflections.",
+        "arena_state": {
+          "rooftop": "intact",
+          "source": "visual fixture; engine arena contains no terrain entities"
+        },
+        "environmental_destruction": [],
+        "presentation_notes": [
+          "Wear is a non-anatomical presentation convention, not a new combat fact.",
+          "No persistent terrain damage or inventory is exposed by this engine."
+        ]
+      },
+      "keyframe_prompt": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting. Separated foreground and background faceoff; camera angle: low three-quarter. Naruto vs Omni-Man: the recorded fight begins. Arena: An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena. Character bibles: naruto: Agile youthful ninja development fixture. Lean athletic build. Expressive eyes and a determined youthful face. Spiky dark hair; fixture appearance, not a verified canonical design. Indigo tactical vest with amber panels, wrapped forearms, dark trousers and boots. omniman: Powerful mature flying-hero development fixture. Broad muscular build. Square jaw, mustache and intense eyes. Swept-back dark hair with silver temples. Ivory fitted textured suit, scarlet gloves, boots and flowing cape. Continuity: naruto: costume development-visual-v1; clean; base form; left of opponent; persistent effects none recorded; recorded health 820.00. omniman: costume development-visual-v1; clean; base form; right of opponent; persistent effects none recorded; recorded health 1000.00.",
+      "motion_prompt": "slow inward track. Naruto vs Omni-Man: the recorded fight begins. Preserve all source outcomes and identities. Use camera/staging motion only; no new damaging action. Duration 2.500s, 9:16.",
+      "negative_constraints": [
+        "Do not add damage, hits, powers, weapons or victories absent from the source events.",
+        "Do not change identity, costume version or persistent form between shots.",
+        "Do not invent anatomical wounds, blood, torn sleeves or destroyed buildings.",
+        "A recorded miss or dodge must remain visibly unsuccessful for the attacker.",
+        "No UI or written words in future generated art; captions are added by the editor.",
+        "Generated visuals are interpretation, not additional evidence for the matchup outcome.",
+        "Do not change identity, hair or costume palette between shots.",
+        "Do not invent weapons, anatomical wounds or persistent destruction.",
+        "Do not portray a missed attack as a hit."
+      ],
+      "transition_in": "fade",
+      "transition_out": "cut",
+      "audio_cues": [],
+      "narration_hint": "Naruto vs Omni-Man: the recorded fight begins.",
+      "editorial": {
+        "impact_freeze_seconds": 0.0,
+        "shake": 0.0,
+        "punch_in": 0.04,
+        "flash": false,
+        "fade_in": 0.25,
+        "fade_out": 0.0
+      },
+      "status": "RENDERED"
+    },
+    {
+      "shot_id": "shot-002",
+      "version": 1,
+      "sequence_index": 1,
+      "source_moment_ids": [
+        "moment-0005"
+      ],
+      "source_event_ids": [
+        "event-000024",
+        "event-000030",
+        "event-000031",
+        "event-000032",
+        "event-000033",
+        "event-000035"
+      ],
+      "simulation_start": 1.45,
+      "simulation_end": 1.7,
+      "duration_seconds": 3.0,
+      "frame_count": 90,
+      "shot_type": "OVER_SHOULDER",
+      "framing": "Foreground shoulder silhouette with opponent beyond",
+      "camera_angle": "over shoulder",
+      "camera_motion": "sweeping orbit",
+      "subjects": [
+        "naruto",
+        "omniman"
+      ],
+      "subject_positions": {
+        "naruto": {
+          "x": 0.48,
+          "y": 0.55
+        },
+        "omniman": {
+          "x": 0.8,
+          "y": 0.35
+        }
+      },
+      "action_description": "Naruto hits Omni-Man with charged vortex: 199.7 recorded damage.",
+      "environment_description": "An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena.",
+      "continuity_state": {
+        "simulation_time": 1.7,
+        "characters": {
+          "naruto": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "clean",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 47.62011072233405,
+              "y": 1.0
+            },
+            "relative_position": "left",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 820.0,
+            "health_fraction": 1.0
+          },
+          "omniman": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "light surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 57.172657260193766,
+              "y": 2.456841262137393
+            },
+            "relative_position": "right",
+            "weapons_items": null,
+            "persistent_effects": [
+              "stun"
+            ],
+            "health": 800.2835390402265,
+            "health_fraction": 0.8002835390402265
+          }
+        },
+        "lighting": "Cool moonlight with restrained warm window highlights.",
+        "time_of_day": "Blue hour",
+        "weather": "Dry air after rain; subtle floor reflections.",
+        "arena_state": {
+          "rooftop": "intact",
+          "source": "visual fixture; engine arena contains no terrain entities"
+        },
+        "environmental_destruction": [],
+        "presentation_notes": [
+          "Wear is a non-anatomical presentation convention, not a new combat fact.",
+          "No persistent terrain damage or inventory is exposed by this engine."
+        ]
+      },
+      "keyframe_prompt": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting. Foreground shoulder silhouette with opponent beyond; camera angle: over shoulder. Naruto hits Omni-Man with charged vortex: 199.7 recorded damage. Arena: An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena. Character bibles: naruto: Agile youthful ninja development fixture. Lean athletic build. Expressive eyes and a determined youthful face. Spiky dark hair; fixture appearance, not a verified canonical design. Indigo tactical vest with amber panels, wrapped forearms, dark trousers and boots. omniman: Powerful mature flying-hero development fixture. Broad muscular build. Square jaw, mustache and intense eyes. Swept-back dark hair with silver temples. Ivory fitted textured suit, scarlet gloves, boots and flowing cape. Continuity: naruto: costume development-visual-v1; clean; base form; left of opponent; persistent effects none recorded; recorded health 820.00. omniman: costume development-visual-v1; light surface scuffs; base form; right of opponent; persistent effects stun; recorded health 800.28.",
+      "motion_prompt": "sweeping orbit. Naruto hits Omni-Man with charged vortex: 199.7 recorded damage. Preserve all source outcomes and identities. Use camera/staging motion only; no new damaging action. Duration 3.000s, 9:16.",
+      "negative_constraints": [
+        "Do not add damage, hits, powers, weapons or victories absent from the source events.",
+        "Do not change identity, costume version or persistent form between shots.",
+        "Do not invent anatomical wounds, blood, torn sleeves or destroyed buildings.",
+        "A recorded miss or dodge must remain visibly unsuccessful for the attacker.",
+        "No UI or written words in future generated art; captions are added by the editor.",
+        "Generated visuals are interpretation, not additional evidence for the matchup outcome.",
+        "Do not change identity, hair or costume palette between shots.",
+        "Do not invent weapons, anatomical wounds or persistent destruction.",
+        "Do not portray a missed attack as a hit."
+      ],
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "audio_cues": [],
+      "narration_hint": "Naruto hits Omni-Man with charged vortex: 199.7 recorded damage.",
+      "editorial": {
+        "impact_freeze_seconds": 0.0,
+        "shake": 0.0,
+        "punch_in": 0.04,
+        "flash": false,
+        "fade_in": 0.0,
+        "fade_out": 0.0
+      },
+      "status": "RENDERED"
+    },
+    {
+      "shot_id": "shot-003",
+      "version": 1,
+      "sequence_index": 2,
+      "source_moment_ids": [
+        "moment-0006"
+      ],
+      "source_event_ids": [
+        "event-000039",
+        "event-000040",
+        "event-000043",
+        "event-000044",
+        "event-000045"
+      ],
+      "simulation_start": 2.25,
+      "simulation_end": 2.5,
+      "duration_seconds": 2.3,
+      "frame_count": 69,
+      "shot_type": "CLOSE_UP",
+      "framing": "One face and upper body; expressive reaction",
+      "camera_angle": "eye level",
+      "camera_motion": "controlled punch-in zoom",
+      "subjects": [
+        "naruto"
+      ],
+      "subject_positions": {
+        "naruto": {
+          "x": 0.48,
+          "y": 0.55
+        }
+      },
+      "action_description": "Naruto hits Omni-Man with energy orb: 50.2 recorded damage.",
+      "environment_description": "An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena.",
+      "continuity_state": {
+        "simulation_time": 2.5,
+        "characters": {
+          "naruto": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "clean",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 44.67008051075309,
+              "y": 1.0
+            },
+            "relative_position": "left",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 820.0,
+            "health_fraction": 1.0
+          },
+          "omniman": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "light surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 46.7207750770535,
+              "y": 2.4060856982370167
+            },
+            "relative_position": "right",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 750.1257360707805,
+            "health_fraction": 0.7501257360707805
+          }
+        },
+        "lighting": "Cool moonlight with restrained warm window highlights.",
+        "time_of_day": "Blue hour",
+        "weather": "Dry air after rain; subtle floor reflections.",
+        "arena_state": {
+          "rooftop": "intact",
+          "source": "visual fixture; engine arena contains no terrain entities"
+        },
+        "environmental_destruction": [],
+        "presentation_notes": [
+          "Wear is a non-anatomical presentation convention, not a new combat fact.",
+          "No persistent terrain damage or inventory is exposed by this engine."
+        ]
+      },
+      "keyframe_prompt": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting. One face and upper body; expressive reaction; camera angle: eye level. Naruto hits Omni-Man with energy orb: 50.2 recorded damage. Arena: An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena. Character bibles: naruto: Agile youthful ninja development fixture. Lean athletic build. Expressive eyes and a determined youthful face. Spiky dark hair; fixture appearance, not a verified canonical design. Indigo tactical vest with amber panels, wrapped forearms, dark trousers and boots. Continuity: naruto: costume development-visual-v1; clean; base form; left of opponent; persistent effects none recorded; recorded health 820.00. omniman: costume development-visual-v1; light surface scuffs; base form; right of opponent; persistent effects none recorded; recorded health 750.13.",
+      "motion_prompt": "controlled punch-in zoom. Naruto hits Omni-Man with energy orb: 50.2 recorded damage. Preserve all source outcomes and identities. Use camera/staging motion only; no new damaging action. Duration 2.300s, 9:16.",
+      "negative_constraints": [
+        "Do not add damage, hits, powers, weapons or victories absent from the source events.",
+        "Do not change identity, costume version or persistent form between shots.",
+        "Do not invent anatomical wounds, blood, torn sleeves or destroyed buildings.",
+        "A recorded miss or dodge must remain visibly unsuccessful for the attacker.",
+        "No UI or written words in future generated art; captions are added by the editor.",
+        "Generated visuals are interpretation, not additional evidence for the matchup outcome.",
+        "Do not change identity, hair or costume palette between shots.",
+        "Do not invent weapons, anatomical wounds or persistent destruction.",
+        "Do not portray a missed attack as a hit."
+      ],
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "audio_cues": [
+        {
+          "cue": "whoosh",
+          "offset_seconds": 0.1,
+          "authority": "presentation"
+        }
+      ],
+      "narration_hint": "Naruto hits Omni-Man with energy orb: 50.2 recorded damage.",
+      "editorial": {
+        "impact_freeze_seconds": 0.0,
+        "shake": 0.0,
+        "punch_in": 0.15,
+        "flash": false,
+        "fade_in": 0.0,
+        "fade_out": 0.0
+      },
+      "status": "RENDERED"
+    },
+    {
+      "shot_id": "shot-004",
+      "version": 1,
+      "sequence_index": 3,
+      "source_moment_ids": [
+        "moment-0007"
+      ],
+      "source_event_ids": [
+        "event-000048",
+        "event-000054",
+        "event-000055"
+      ],
+      "simulation_start": 2.7,
+      "simulation_end": 3.0,
+      "duration_seconds": 2.1666666666666665,
+      "frame_count": 65,
+      "shot_type": "REACTION",
+      "framing": "Defender visibly avoids or absorbs the recorded attack",
+      "camera_angle": "three-quarter close",
+      "camera_motion": "whip pan to defender",
+      "subjects": [
+        "naruto"
+      ],
+      "subject_positions": {
+        "naruto": {
+          "x": 0.48,
+          "y": 0.55
+        }
+      },
+      "action_description": "Naruto avoids Omni-Man's grapple; this attack causes no added cinematic damage.",
+      "environment_description": "An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena.",
+      "continuity_state": {
+        "simulation_time": 3.0,
+        "characters": {
+          "naruto": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "clean",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 39.88765294559843,
+              "y": 1.0
+            },
+            "relative_position": "left",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 820.0,
+            "health_fraction": 1.0
+          },
+          "omniman": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "light surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 42.15570445381699,
+              "y": 2.481510677781338
+            },
+            "relative_position": "right",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 750.1257360707805,
+            "health_fraction": 0.7501257360707805
+          }
+        },
+        "lighting": "Cool moonlight with restrained warm window highlights.",
+        "time_of_day": "Blue hour",
+        "weather": "Dry air after rain; subtle floor reflections.",
+        "arena_state": {
+          "rooftop": "intact",
+          "source": "visual fixture; engine arena contains no terrain entities"
+        },
+        "environmental_destruction": [],
+        "presentation_notes": [
+          "Wear is a non-anatomical presentation convention, not a new combat fact.",
+          "No persistent terrain damage or inventory is exposed by this engine."
+        ]
+      },
+      "keyframe_prompt": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting. Defender visibly avoids or absorbs the recorded attack; camera angle: three-quarter close. Naruto avoids Omni-Man's grapple; this attack causes no added cinematic damage. Arena: An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena. Character bibles: naruto: Agile youthful ninja development fixture. Lean athletic build. Expressive eyes and a determined youthful face. Spiky dark hair; fixture appearance, not a verified canonical design. Indigo tactical vest with amber panels, wrapped forearms, dark trousers and boots. Continuity: naruto: costume development-visual-v1; clean; base form; left of opponent; persistent effects none recorded; recorded health 820.00. omniman: costume development-visual-v1; light surface scuffs; base form; right of opponent; persistent effects none recorded; recorded health 750.13.",
+      "motion_prompt": "whip pan to defender. Naruto avoids Omni-Man's grapple; this attack causes no added cinematic damage. Preserve all source outcomes and identities. Use camera/staging motion only; no new damaging action. Duration 2.167s, 9:16.",
+      "negative_constraints": [
+        "Do not add damage, hits, powers, weapons or victories absent from the source events.",
+        "Do not change identity, costume version or persistent form between shots.",
+        "Do not invent anatomical wounds, blood, torn sleeves or destroyed buildings.",
+        "A recorded miss or dodge must remain visibly unsuccessful for the attacker.",
+        "No UI or written words in future generated art; captions are added by the editor.",
+        "Generated visuals are interpretation, not additional evidence for the matchup outcome.",
+        "Do not change identity, hair or costume palette between shots.",
+        "Do not invent weapons, anatomical wounds or persistent destruction.",
+        "Do not portray a missed attack as a hit."
+      ],
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "audio_cues": [
+        {
+          "cue": "whoosh",
+          "offset_seconds": 0.1,
+          "authority": "presentation"
+        }
+      ],
+      "narration_hint": "Naruto avoids Omni-Man's grapple; this attack causes no added cinematic damage.",
+      "editorial": {
+        "impact_freeze_seconds": 0.0,
+        "shake": 0.0,
+        "punch_in": 0.04,
+        "flash": false,
+        "fade_in": 0.0,
+        "fade_out": 0.0
+      },
+      "status": "RENDERED"
+    },
+    {
+      "shot_id": "shot-005",
+      "version": 1,
+      "sequence_index": 4,
+      "source_moment_ids": [
+        "moment-0011"
+      ],
+      "source_event_ids": [
+        "event-000070",
+        "event-000071",
+        "event-000074",
+        "event-000075",
+        "event-000076"
+      ],
+      "simulation_start": 4.2,
+      "simulation_end": 4.45,
+      "duration_seconds": 2.2333333333333334,
+      "frame_count": 67,
+      "shot_type": "AERIAL",
+      "framing": "Diagonal overhead spatial composition",
+      "camera_angle": "high overhead",
+      "camera_motion": "high-speed follow camera",
+      "subjects": [
+        "naruto",
+        "omniman"
+      ],
+      "subject_positions": {
+        "naruto": {
+          "x": 0.48,
+          "y": 0.55
+        },
+        "omniman": {
+          "x": 0.8,
+          "y": 0.35
+        }
+      },
+      "action_description": "Naruto hits Omni-Man with energy orb: 52.4 recorded damage.",
+      "environment_description": "An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena.",
+      "continuity_state": {
+        "simulation_time": 4.45,
+        "characters": {
+          "naruto": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "clean",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 30.928059150711935,
+              "y": 1.0
+            },
+            "relative_position": "left",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 820.0,
+            "health_fraction": 1.0
+          },
+          "omniman": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "light surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 33.5142896079338,
+              "y": 2.5028712788245224
+            },
+            "relative_position": "right",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 654.9115847528258,
+            "health_fraction": 0.6549115847528257
+          }
+        },
+        "lighting": "Cool moonlight with restrained warm window highlights.",
+        "time_of_day": "Blue hour",
+        "weather": "Dry air after rain; subtle floor reflections.",
+        "arena_state": {
+          "rooftop": "intact",
+          "source": "visual fixture; engine arena contains no terrain entities"
+        },
+        "environmental_destruction": [],
+        "presentation_notes": [
+          "Wear is a non-anatomical presentation convention, not a new combat fact.",
+          "No persistent terrain damage or inventory is exposed by this engine."
+        ]
+      },
+      "keyframe_prompt": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting. Diagonal overhead spatial composition; camera angle: high overhead. Naruto hits Omni-Man with energy orb: 52.4 recorded damage. Arena: An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena. Character bibles: naruto: Agile youthful ninja development fixture. Lean athletic build. Expressive eyes and a determined youthful face. Spiky dark hair; fixture appearance, not a verified canonical design. Indigo tactical vest with amber panels, wrapped forearms, dark trousers and boots. omniman: Powerful mature flying-hero development fixture. Broad muscular build. Square jaw, mustache and intense eyes. Swept-back dark hair with silver temples. Ivory fitted textured suit, scarlet gloves, boots and flowing cape. Continuity: naruto: costume development-visual-v1; clean; base form; left of opponent; persistent effects none recorded; recorded health 820.00. omniman: costume development-visual-v1; light surface scuffs; base form; right of opponent; persistent effects none recorded; recorded health 654.91.",
+      "motion_prompt": "high-speed follow camera. Naruto hits Omni-Man with energy orb: 52.4 recorded damage. Preserve all source outcomes and identities. Use camera/staging motion only; no new damaging action. Duration 2.233s, 9:16.",
+      "negative_constraints": [
+        "Do not add damage, hits, powers, weapons or victories absent from the source events.",
+        "Do not change identity, costume version or persistent form between shots.",
+        "Do not invent anatomical wounds, blood, torn sleeves or destroyed buildings.",
+        "A recorded miss or dodge must remain visibly unsuccessful for the attacker.",
+        "No UI or written words in future generated art; captions are added by the editor.",
+        "Generated visuals are interpretation, not additional evidence for the matchup outcome.",
+        "Do not change identity, hair or costume palette between shots.",
+        "Do not invent weapons, anatomical wounds or persistent destruction.",
+        "Do not portray a missed attack as a hit."
+      ],
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "audio_cues": [
+        {
+          "cue": "whoosh",
+          "offset_seconds": 0.1,
+          "authority": "presentation"
+        }
+      ],
+      "narration_hint": "Naruto hits Omni-Man with energy orb: 52.4 recorded damage.",
+      "editorial": {
+        "impact_freeze_seconds": 0.0,
+        "shake": 0.0,
+        "punch_in": 0.04,
+        "flash": false,
+        "fade_in": 0.0,
+        "fade_out": 0.0
+      },
+      "status": "RENDERED"
+    },
+    {
+      "shot_id": "shot-006",
+      "version": 1,
+      "sequence_index": 5,
+      "source_moment_ids": [
+        "moment-0012"
+      ],
+      "source_event_ids": [
+        "event-000079",
+        "event-000080",
+        "event-000081",
+        "event-000082",
+        "event-000083"
+      ],
+      "simulation_start": 4.55,
+      "simulation_end": 4.7,
+      "duration_seconds": 2.1666666666666665,
+      "frame_count": 65,
+      "shot_type": "POV",
+      "framing": "Opponent advancing toward the viewpoint",
+      "camera_angle": "fighter POV",
+      "camera_motion": "whip pan into action",
+      "subjects": [
+        "omniman",
+        "naruto"
+      ],
+      "subject_positions": {
+        "omniman": {
+          "x": 0.48,
+          "y": 0.55
+        },
+        "naruto": {
+          "x": 0.8,
+          "y": 0.35
+        }
+      },
+      "action_description": "Omni-Man hits Naruto with jab: 81.2 recorded damage.",
+      "environment_description": "An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena.",
+      "continuity_state": {
+        "simulation_time": 4.7,
+        "characters": {
+          "naruto": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "clean",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 28.56941319275977,
+              "y": 1.0
+            },
+            "relative_position": "left",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 738.7634733240974,
+            "health_fraction": 0.900931065029387
+          },
+          "omniman": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "light surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 32.3742896079338,
+              "y": 2.5012740016681096
+            },
+            "relative_position": "right",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 654.9115847528258,
+            "health_fraction": 0.6549115847528257
+          }
+        },
+        "lighting": "Cool moonlight with restrained warm window highlights.",
+        "time_of_day": "Blue hour",
+        "weather": "Dry air after rain; subtle floor reflections.",
+        "arena_state": {
+          "rooftop": "intact",
+          "source": "visual fixture; engine arena contains no terrain entities"
+        },
+        "environmental_destruction": [],
+        "presentation_notes": [
+          "Wear is a non-anatomical presentation convention, not a new combat fact.",
+          "No persistent terrain damage or inventory is exposed by this engine."
+        ]
+      },
+      "keyframe_prompt": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting. Opponent advancing toward the viewpoint; camera angle: fighter POV. Omni-Man hits Naruto with jab: 81.2 recorded damage. Arena: An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena. Character bibles: omniman: Powerful mature flying-hero development fixture. Broad muscular build. Square jaw, mustache and intense eyes. Swept-back dark hair with silver temples. Ivory fitted textured suit, scarlet gloves, boots and flowing cape. naruto: Agile youthful ninja development fixture. Lean athletic build. Expressive eyes and a determined youthful face. Spiky dark hair; fixture appearance, not a verified canonical design. Indigo tactical vest with amber panels, wrapped forearms, dark trousers and boots. Continuity: naruto: costume development-visual-v1; clean; base form; left of opponent; persistent effects none recorded; recorded health 738.76. omniman: costume development-visual-v1; light surface scuffs; base form; right of opponent; persistent effects none recorded; recorded health 654.91.",
+      "motion_prompt": "whip pan into action. Omni-Man hits Naruto with jab: 81.2 recorded damage. Preserve all source outcomes and identities. Use camera/staging motion only; no new damaging action. Duration 2.167s, 9:16.",
+      "negative_constraints": [
+        "Do not add damage, hits, powers, weapons or victories absent from the source events.",
+        "Do not change identity, costume version or persistent form between shots.",
+        "Do not invent anatomical wounds, blood, torn sleeves or destroyed buildings.",
+        "A recorded miss or dodge must remain visibly unsuccessful for the attacker.",
+        "No UI or written words in future generated art; captions are added by the editor.",
+        "Generated visuals are interpretation, not additional evidence for the matchup outcome.",
+        "Do not change identity, hair or costume palette between shots.",
+        "Do not invent weapons, anatomical wounds or persistent destruction.",
+        "Do not portray a missed attack as a hit."
+      ],
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "audio_cues": [
+        {
+          "cue": "whoosh",
+          "offset_seconds": 0.1,
+          "authority": "presentation"
+        }
+      ],
+      "narration_hint": "Omni-Man hits Naruto with jab: 81.2 recorded damage.",
+      "editorial": {
+        "impact_freeze_seconds": 0.0,
+        "shake": 0.0,
+        "punch_in": 0.04,
+        "flash": false,
+        "fade_in": 0.0,
+        "fade_out": 0.0
+      },
+      "status": "RENDERED"
+    },
+    {
+      "shot_id": "shot-007",
+      "version": 1,
+      "sequence_index": 6,
+      "source_moment_ids": [
+        "moment-0015"
+      ],
+      "source_event_ids": [
+        "event-000102",
+        "event-000107",
+        "event-000110",
+        "event-000111",
+        "event-000112"
+      ],
+      "simulation_start": 5.8,
+      "simulation_end": 6.1,
+      "duration_seconds": 2.2,
+      "frame_count": 66,
+      "shot_type": "IMPACT",
+      "framing": "Contact detail with radial action lines",
+      "camera_angle": "tight oblique",
+      "camera_motion": "handheld impact",
+      "subjects": [
+        "naruto",
+        "omniman"
+      ],
+      "subject_positions": {
+        "naruto": {
+          "x": 0.48,
+          "y": 0.55
+        },
+        "omniman": {
+          "x": 0.8,
+          "y": 0.35
+        }
+      },
+      "action_description": "Naruto hits Omni-Man with energy orb: 57.1 recorded damage.",
+      "environment_description": "An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena.",
+      "continuity_state": {
+        "simulation_time": 6.1,
+        "characters": {
+          "naruto": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "clean",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 17.78648937298524,
+              "y": 5.7299999999999995
+            },
+            "relative_position": "left",
+            "weapons_items": null,
+            "persistent_effects": [
+              "decoy"
+            ],
+            "health": 740.8634733240987,
+            "health_fraction": 0.9034920406391447
+          },
+          "omniman": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "visible surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 22.115303660552353,
+              "y": 5.621550340308496
+            },
+            "relative_position": "right",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 597.791986941567,
+            "health_fraction": 0.597791986941567
+          }
+        },
+        "lighting": "Cool moonlight with restrained warm window highlights.",
+        "time_of_day": "Blue hour",
+        "weather": "Dry air after rain; subtle floor reflections.",
+        "arena_state": {
+          "rooftop": "intact",
+          "source": "visual fixture; engine arena contains no terrain entities"
+        },
+        "environmental_destruction": [],
+        "presentation_notes": [
+          "Wear is a non-anatomical presentation convention, not a new combat fact.",
+          "No persistent terrain damage or inventory is exposed by this engine."
+        ]
+      },
+      "keyframe_prompt": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting. Contact detail with radial action lines; camera angle: tight oblique. Naruto hits Omni-Man with energy orb: 57.1 recorded damage. Arena: An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena. Character bibles: naruto: Agile youthful ninja development fixture. Lean athletic build. Expressive eyes and a determined youthful face. Spiky dark hair; fixture appearance, not a verified canonical design. Indigo tactical vest with amber panels, wrapped forearms, dark trousers and boots. omniman: Powerful mature flying-hero development fixture. Broad muscular build. Square jaw, mustache and intense eyes. Swept-back dark hair with silver temples. Ivory fitted textured suit, scarlet gloves, boots and flowing cape. Continuity: naruto: costume development-visual-v1; clean; base form; left of opponent; persistent effects decoy; recorded health 740.86. omniman: costume development-visual-v1; visible surface scuffs; base form; right of opponent; persistent effects none recorded; recorded health 597.79.",
+      "motion_prompt": "handheld impact. Naruto hits Omni-Man with energy orb: 57.1 recorded damage. Preserve all source outcomes and identities. Use camera/staging motion only; no new damaging action. Duration 2.200s, 9:16.",
+      "negative_constraints": [
+        "Do not add damage, hits, powers, weapons or victories absent from the source events.",
+        "Do not change identity, costume version or persistent form between shots.",
+        "Do not invent anatomical wounds, blood, torn sleeves or destroyed buildings.",
+        "A recorded miss or dodge must remain visibly unsuccessful for the attacker.",
+        "No UI or written words in future generated art; captions are added by the editor.",
+        "Generated visuals are interpretation, not additional evidence for the matchup outcome.",
+        "Do not change identity, hair or costume palette between shots.",
+        "Do not invent weapons, anatomical wounds or persistent destruction.",
+        "Do not portray a missed attack as a hit."
+      ],
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "audio_cues": [
+        {
+          "cue": "impact",
+          "offset_seconds": 0.12,
+          "authority": "presentation"
+        }
+      ],
+      "narration_hint": "Naruto hits Omni-Man with energy orb: 57.1 recorded damage.",
+      "editorial": {
+        "impact_freeze_seconds": 0.08,
+        "shake": 0.65,
+        "punch_in": 0.15,
+        "flash": true,
+        "fade_in": 0.0,
+        "fade_out": 0.0
+      },
+      "status": "RENDERED"
+    },
+    {
+      "shot_id": "shot-008",
+      "version": 1,
+      "sequence_index": 7,
+      "source_moment_ids": [
+        "moment-0017"
+      ],
+      "source_event_ids": [
+        "event-000115",
+        "event-000119",
+        "event-000120",
+        "event-000121",
+        "event-000122",
+        "event-000123"
+      ],
+      "simulation_start": 6.2,
+      "simulation_end": 6.6,
+      "duration_seconds": 2.5,
+      "frame_count": 75,
+      "shot_type": "EXTREME_CLOSE_UP",
+      "framing": "Eyes and brow fill the frame",
+      "camera_angle": "tight eye level",
+      "camera_motion": "static dramatic composition",
+      "subjects": [
+        "omniman"
+      ],
+      "subject_positions": {
+        "omniman": {
+          "x": 0.48,
+          "y": 0.55
+        }
+      },
+      "action_description": "Omni-Man hits Naruto with charge: 139.3 recorded damage.",
+      "environment_description": "An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena.",
+      "continuity_state": {
+        "simulation_time": 6.6,
+        "characters": {
+          "naruto": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "light surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 13.493316864130161,
+              "y": 2.679999999999997
+            },
+            "relative_position": "left",
+            "weapons_items": null,
+            "persistent_effects": [
+              "decoy"
+            ],
+            "health": 602.269450809113,
+            "health_fraction": 0.7344749400111134
+          },
+          "omniman": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "visible surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 14.677273787959795,
+              "y": 4.881873293928572
+            },
+            "relative_position": "right",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 597.791986941567,
+            "health_fraction": 0.597791986941567
+          }
+        },
+        "lighting": "Cool moonlight with restrained warm window highlights.",
+        "time_of_day": "Blue hour",
+        "weather": "Dry air after rain; subtle floor reflections.",
+        "arena_state": {
+          "rooftop": "intact",
+          "source": "visual fixture; engine arena contains no terrain entities"
+        },
+        "environmental_destruction": [],
+        "presentation_notes": [
+          "Wear is a non-anatomical presentation convention, not a new combat fact.",
+          "No persistent terrain damage or inventory is exposed by this engine."
+        ]
+      },
+      "keyframe_prompt": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting. Eyes and brow fill the frame; camera angle: tight eye level. Omni-Man hits Naruto with charge: 139.3 recorded damage. Arena: An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena. Character bibles: omniman: Powerful mature flying-hero development fixture. Broad muscular build. Square jaw, mustache and intense eyes. Swept-back dark hair with silver temples. Ivory fitted textured suit, scarlet gloves, boots and flowing cape. Continuity: naruto: costume development-visual-v1; light surface scuffs; base form; left of opponent; persistent effects decoy; recorded health 602.27. omniman: costume development-visual-v1; visible surface scuffs; base form; right of opponent; persistent effects none recorded; recorded health 597.79.",
+      "motion_prompt": "static dramatic composition. Omni-Man hits Naruto with charge: 139.3 recorded damage. Preserve all source outcomes and identities. Use camera/staging motion only; no new damaging action. Duration 2.500s, 9:16.",
+      "negative_constraints": [
+        "Do not add damage, hits, powers, weapons or victories absent from the source events.",
+        "Do not change identity, costume version or persistent form between shots.",
+        "Do not invent anatomical wounds, blood, torn sleeves or destroyed buildings.",
+        "A recorded miss or dodge must remain visibly unsuccessful for the attacker.",
+        "No UI or written words in future generated art; captions are added by the editor.",
+        "Generated visuals are interpretation, not additional evidence for the matchup outcome.",
+        "Do not change identity, hair or costume palette between shots.",
+        "Do not invent weapons, anatomical wounds or persistent destruction.",
+        "Do not portray a missed attack as a hit."
+      ],
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "audio_cues": [],
+      "narration_hint": "Omni-Man hits Naruto with charge: 139.3 recorded damage.",
+      "editorial": {
+        "impact_freeze_seconds": 0.0,
+        "shake": 0.0,
+        "punch_in": 0.04,
+        "flash": false,
+        "fade_in": 0.0,
+        "fade_out": 0.0
+      },
+      "status": "RENDERED"
+    },
+    {
+      "shot_id": "shot-009",
+      "version": 1,
+      "sequence_index": 8,
+      "source_moment_ids": [
+        "moment-0019"
+      ],
+      "source_event_ids": [
+        "event-000142",
+        "event-000143",
+        "event-000144",
+        "event-000145",
+        "event-000146"
+      ],
+      "simulation_start": 8.55,
+      "simulation_end": 8.55,
+      "duration_seconds": 2.566666666666667,
+      "frame_count": 77,
+      "shot_type": "REACTION",
+      "framing": "Defender visibly avoids or absorbs the recorded attack",
+      "camera_angle": "three-quarter close",
+      "camera_motion": "whip pan to defender",
+      "subjects": [
+        "naruto"
+      ],
+      "subject_positions": {
+        "naruto": {
+          "x": 0.48,
+          "y": 0.55
+        }
+      },
+      "action_description": "Naruto blocks Omni-Man's heavy strike. Recorded damage in this exchange: 64.5.",
+      "environment_description": "An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena.",
+      "continuity_state": {
+        "simulation_time": 8.55,
+        "characters": {
+          "naruto": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "light surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "relative_position": "left",
+            "weapons_items": null,
+            "persistent_effects": [
+              "decoy"
+            ],
+            "health": 540.7298251171399,
+            "health_fraction": 0.659426615996512
+          },
+          "omniman": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "visible surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 4.992002413556215,
+              "y": 2.5050617713148324
+            },
+            "relative_position": "right",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 597.791986941567,
+            "health_fraction": 0.597791986941567
+          }
+        },
+        "lighting": "Cool moonlight with restrained warm window highlights.",
+        "time_of_day": "Blue hour",
+        "weather": "Dry air after rain; subtle floor reflections.",
+        "arena_state": {
+          "rooftop": "intact",
+          "source": "visual fixture; engine arena contains no terrain entities"
+        },
+        "environmental_destruction": [],
+        "presentation_notes": [
+          "Wear is a non-anatomical presentation convention, not a new combat fact.",
+          "No persistent terrain damage or inventory is exposed by this engine."
+        ]
+      },
+      "keyframe_prompt": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting. Defender visibly avoids or absorbs the recorded attack; camera angle: three-quarter close. Naruto blocks Omni-Man's heavy strike. Recorded damage in this exchange: 64.5. Arena: An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena. Character bibles: naruto: Agile youthful ninja development fixture. Lean athletic build. Expressive eyes and a determined youthful face. Spiky dark hair; fixture appearance, not a verified canonical design. Indigo tactical vest with amber panels, wrapped forearms, dark trousers and boots. Continuity: naruto: costume development-visual-v1; light surface scuffs; base form; left of opponent; persistent effects decoy; recorded health 540.73. omniman: costume development-visual-v1; visible surface scuffs; base form; right of opponent; persistent effects none recorded; recorded health 597.79.",
+      "motion_prompt": "whip pan to defender. Naruto blocks Omni-Man's heavy strike. Recorded damage in this exchange: 64.5. Preserve all source outcomes and identities. Use camera/staging motion only; no new damaging action. Duration 2.567s, 9:16.",
+      "negative_constraints": [
+        "Do not add damage, hits, powers, weapons or victories absent from the source events.",
+        "Do not change identity, costume version or persistent form between shots.",
+        "Do not invent anatomical wounds, blood, torn sleeves or destroyed buildings.",
+        "A recorded miss or dodge must remain visibly unsuccessful for the attacker.",
+        "No UI or written words in future generated art; captions are added by the editor.",
+        "Generated visuals are interpretation, not additional evidence for the matchup outcome.",
+        "Do not change identity, hair or costume palette between shots.",
+        "Do not invent weapons, anatomical wounds or persistent destruction.",
+        "Do not portray a missed attack as a hit."
+      ],
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "audio_cues": [
+        {
+          "cue": "whoosh",
+          "offset_seconds": 0.1,
+          "authority": "presentation"
+        }
+      ],
+      "narration_hint": "Naruto blocks Omni-Man's heavy strike. Recorded damage in this exchange: 64.5.",
+      "editorial": {
+        "impact_freeze_seconds": 0.0,
+        "shake": 0.0,
+        "punch_in": 0.04,
+        "flash": false,
+        "fade_in": 0.0,
+        "fade_out": 0.0
+      },
+      "status": "RENDERED"
+    },
+    {
+      "shot_id": "shot-010",
+      "version": 1,
+      "sequence_index": 9,
+      "source_moment_ids": [
+        "moment-0021"
+      ],
+      "source_event_ids": [
+        "event-000167"
+      ],
+      "simulation_start": 10.25,
+      "simulation_end": 10.25,
+      "duration_seconds": 2.566666666666667,
+      "frame_count": 77,
+      "shot_type": "TRANSFORMATION",
+      "framing": "Form change surrounding the focal fighter",
+      "camera_angle": "low angle",
+      "camera_motion": "sweeping orbit",
+      "subjects": [
+        "naruto"
+      ],
+      "subject_positions": {
+        "naruto": {
+          "x": 0.48,
+          "y": 0.55
+        }
+      },
+      "action_description": "Naruto activates the recorded transformation.",
+      "environment_description": "An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena.",
+      "continuity_state": {
+        "simulation_time": 10.25,
+        "characters": {
+          "naruto": {
+            "transformation": "chakra",
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "light surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "relative_position": "left",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 543.2798251171414,
+            "health_fraction": 0.6625363720940749
+          },
+          "omniman": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "visible surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 2.9999999804816375,
+              "y": 1.0
+            },
+            "relative_position": "right",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 597.791986941567,
+            "health_fraction": 0.597791986941567
+          }
+        },
+        "lighting": "Cool moonlight with restrained warm window highlights.",
+        "time_of_day": "Blue hour",
+        "weather": "Dry air after rain; subtle floor reflections.",
+        "arena_state": {
+          "rooftop": "intact",
+          "source": "visual fixture; engine arena contains no terrain entities"
+        },
+        "environmental_destruction": [],
+        "presentation_notes": [
+          "Wear is a non-anatomical presentation convention, not a new combat fact.",
+          "No persistent terrain damage or inventory is exposed by this engine."
+        ]
+      },
+      "keyframe_prompt": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting. Form change surrounding the focal fighter; camera angle: low angle. Naruto activates the recorded transformation. Arena: An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena. Character bibles: naruto: Agile youthful ninja development fixture. Lean athletic build. Expressive eyes and a determined youthful face. Spiky dark hair; fixture appearance, not a verified canonical design. Indigo tactical vest with amber panels, wrapped forearms, dark trousers and boots. Continuity: naruto: costume development-visual-v1; light surface scuffs; Distinct luminous aura and brighter material highlights while this recorded form is active.; left of opponent; persistent effects none recorded; recorded health 543.28. omniman: costume development-visual-v1; visible surface scuffs; base form; right of opponent; persistent effects none recorded; recorded health 597.79.",
+      "motion_prompt": "sweeping orbit. Naruto activates the recorded transformation. Preserve all source outcomes and identities. Use camera/staging motion only; no new damaging action. Duration 2.567s, 9:16.",
+      "negative_constraints": [
+        "Do not add damage, hits, powers, weapons or victories absent from the source events.",
+        "Do not change identity, costume version or persistent form between shots.",
+        "Do not invent anatomical wounds, blood, torn sleeves or destroyed buildings.",
+        "A recorded miss or dodge must remain visibly unsuccessful for the attacker.",
+        "No UI or written words in future generated art; captions are added by the editor.",
+        "Generated visuals are interpretation, not additional evidence for the matchup outcome.",
+        "Do not change identity, hair or costume palette between shots.",
+        "Do not invent weapons, anatomical wounds or persistent destruction.",
+        "Do not portray a missed attack as a hit."
+      ],
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "audio_cues": [
+        {
+          "cue": "transformation",
+          "offset_seconds": 0.15,
+          "authority": "presentation"
+        }
+      ],
+      "narration_hint": "Naruto activates the recorded transformation.",
+      "editorial": {
+        "impact_freeze_seconds": 0.0,
+        "shake": 0.0,
+        "punch_in": 0.04,
+        "flash": false,
+        "fade_in": 0.0,
+        "fade_out": 0.0
+      },
+      "status": "RENDERED"
+    },
+    {
+      "shot_id": "shot-011",
+      "version": 1,
+      "sequence_index": 10,
+      "source_moment_ids": [
+        "moment-0022"
+      ],
+      "source_event_ids": [
+        "event-000174",
+        "event-000175",
+        "event-000178",
+        "event-000179",
+        "event-000180"
+      ],
+      "simulation_start": 10.7,
+      "simulation_end": 10.9,
+      "duration_seconds": 2.1666666666666665,
+      "frame_count": 65,
+      "shot_type": "REACTION",
+      "framing": "Isolated hit or defense reaction detail",
+      "camera_angle": "three-quarter close",
+      "camera_motion": "handheld impact",
+      "subjects": [
+        "naruto"
+      ],
+      "subject_positions": {
+        "naruto": {
+          "x": 0.48,
+          "y": 0.55
+        }
+      },
+      "action_description": "Naruto hits Omni-Man with energy orb: 62.0 recorded damage.",
+      "environment_description": "An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena.",
+      "continuity_state": {
+        "simulation_time": 10.9,
+        "characters": {
+          "naruto": {
+            "transformation": "chakra",
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "light surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "relative_position": "left",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 544.254825117142,
+            "health_fraction": 0.6637253964843195
+          },
+          "omniman": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "visible surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 2.9999999999976175,
+              "y": 1.0
+            },
+            "relative_position": "right",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 535.8291144677517,
+            "health_fraction": 0.5358291144677516
+          }
+        },
+        "lighting": "Cool moonlight with restrained warm window highlights.",
+        "time_of_day": "Blue hour",
+        "weather": "Dry air after rain; subtle floor reflections.",
+        "arena_state": {
+          "rooftop": "intact",
+          "source": "visual fixture; engine arena contains no terrain entities"
+        },
+        "environmental_destruction": [],
+        "presentation_notes": [
+          "Wear is a non-anatomical presentation convention, not a new combat fact.",
+          "No persistent terrain damage or inventory is exposed by this engine."
+        ]
+      },
+      "keyframe_prompt": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting. Isolated hit or defense reaction detail; camera angle: three-quarter close. Naruto hits Omni-Man with energy orb: 62.0 recorded damage. Arena: An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena. Character bibles: naruto: Agile youthful ninja development fixture. Lean athletic build. Expressive eyes and a determined youthful face. Spiky dark hair; fixture appearance, not a verified canonical design. Indigo tactical vest with amber panels, wrapped forearms, dark trousers and boots. Continuity: naruto: costume development-visual-v1; light surface scuffs; Distinct luminous aura and brighter material highlights while this recorded form is active.; left of opponent; persistent effects none recorded; recorded health 544.25. omniman: costume development-visual-v1; visible surface scuffs; base form; right of opponent; persistent effects none recorded; recorded health 535.83.",
+      "motion_prompt": "handheld impact. Naruto hits Omni-Man with energy orb: 62.0 recorded damage. Preserve all source outcomes and identities. Use camera/staging motion only; no new damaging action. Duration 2.167s, 9:16.",
+      "negative_constraints": [
+        "Do not add damage, hits, powers, weapons or victories absent from the source events.",
+        "Do not change identity, costume version or persistent form between shots.",
+        "Do not invent anatomical wounds, blood, torn sleeves or destroyed buildings.",
+        "A recorded miss or dodge must remain visibly unsuccessful for the attacker.",
+        "No UI or written words in future generated art; captions are added by the editor.",
+        "Generated visuals are interpretation, not additional evidence for the matchup outcome.",
+        "Do not change identity, hair or costume palette between shots.",
+        "Do not invent weapons, anatomical wounds or persistent destruction.",
+        "Do not portray a missed attack as a hit."
+      ],
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "audio_cues": [],
+      "narration_hint": "Naruto hits Omni-Man with energy orb: 62.0 recorded damage.",
+      "editorial": {
+        "impact_freeze_seconds": 0.0,
+        "shake": 0.0,
+        "punch_in": 0.04,
+        "flash": false,
+        "fade_in": 0.0,
+        "fade_out": 0.0
+      },
+      "status": "RENDERED"
+    },
+    {
+      "shot_id": "shot-012",
+      "version": 1,
+      "sequence_index": 11,
+      "source_moment_ids": [
+        "moment-0023"
+      ],
+      "source_event_ids": [
+        "event-000181",
+        "event-000182",
+        "event-000183",
+        "event-000184",
+        "event-000185"
+      ],
+      "simulation_start": 11.15,
+      "simulation_end": 11.15,
+      "duration_seconds": 2.5,
+      "frame_count": 75,
+      "shot_type": "OVER_SHOULDER",
+      "framing": "Foreground shoulder silhouette with opponent beyond",
+      "camera_angle": "over shoulder",
+      "camera_motion": "sweeping orbit",
+      "subjects": [
+        "omniman",
+        "naruto"
+      ],
+      "subject_positions": {
+        "omniman": {
+          "x": 0.48,
+          "y": 0.55
+        },
+        "naruto": {
+          "x": 0.8,
+          "y": 0.35
+        }
+      },
+      "action_description": "Omni-Man hits Naruto with heavy strike: 141.1 recorded damage.",
+      "environment_description": "An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena.",
+      "continuity_state": {
+        "simulation_time": 11.15,
+        "characters": {
+          "naruto": {
+            "transformation": "chakra",
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "visible surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "relative_position": "left",
+            "weapons_items": null,
+            "persistent_effects": [
+              "stun"
+            ],
+            "health": 403.4892141029546,
+            "health_fraction": 0.4920600171987251
+          },
+          "omniman": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "visible surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 2.9999999999999254,
+              "y": 1.0
+            },
+            "relative_position": "right",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 535.8291144677517,
+            "health_fraction": 0.5358291144677516
+          }
+        },
+        "lighting": "Cool moonlight with restrained warm window highlights.",
+        "time_of_day": "Blue hour",
+        "weather": "Dry air after rain; subtle floor reflections.",
+        "arena_state": {
+          "rooftop": "intact",
+          "source": "visual fixture; engine arena contains no terrain entities"
+        },
+        "environmental_destruction": [],
+        "presentation_notes": [
+          "Wear is a non-anatomical presentation convention, not a new combat fact.",
+          "No persistent terrain damage or inventory is exposed by this engine."
+        ]
+      },
+      "keyframe_prompt": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting. Foreground shoulder silhouette with opponent beyond; camera angle: over shoulder. Omni-Man hits Naruto with heavy strike: 141.1 recorded damage. Arena: An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena. Character bibles: omniman: Powerful mature flying-hero development fixture. Broad muscular build. Square jaw, mustache and intense eyes. Swept-back dark hair with silver temples. Ivory fitted textured suit, scarlet gloves, boots and flowing cape. naruto: Agile youthful ninja development fixture. Lean athletic build. Expressive eyes and a determined youthful face. Spiky dark hair; fixture appearance, not a verified canonical design. Indigo tactical vest with amber panels, wrapped forearms, dark trousers and boots. Continuity: naruto: costume development-visual-v1; visible surface scuffs; Distinct luminous aura and brighter material highlights while this recorded form is active.; left of opponent; persistent effects stun; recorded health 403.49. omniman: costume development-visual-v1; visible surface scuffs; base form; right of opponent; persistent effects none recorded; recorded health 535.83.",
+      "motion_prompt": "sweeping orbit. Omni-Man hits Naruto with heavy strike: 141.1 recorded damage. Preserve all source outcomes and identities. Use camera/staging motion only; no new damaging action. Duration 2.500s, 9:16.",
+      "negative_constraints": [
+        "Do not add damage, hits, powers, weapons or victories absent from the source events.",
+        "Do not change identity, costume version or persistent form between shots.",
+        "Do not invent anatomical wounds, blood, torn sleeves or destroyed buildings.",
+        "A recorded miss or dodge must remain visibly unsuccessful for the attacker.",
+        "No UI or written words in future generated art; captions are added by the editor.",
+        "Generated visuals are interpretation, not additional evidence for the matchup outcome.",
+        "Do not change identity, hair or costume palette between shots.",
+        "Do not invent weapons, anatomical wounds or persistent destruction.",
+        "Do not portray a missed attack as a hit."
+      ],
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "audio_cues": [],
+      "narration_hint": "Omni-Man hits Naruto with heavy strike: 141.1 recorded damage.",
+      "editorial": {
+        "impact_freeze_seconds": 0.0,
+        "shake": 0.0,
+        "punch_in": 0.04,
+        "flash": false,
+        "fade_in": 0.0,
+        "fade_out": 0.0
+      },
+      "status": "RENDERED"
+    },
+    {
+      "shot_id": "shot-013",
+      "version": 1,
+      "sequence_index": 12,
+      "source_moment_ids": [
+        "moment-0027"
+      ],
+      "source_event_ids": [
+        "event-000217",
+        "event-000220",
+        "event-000221",
+        "event-000222",
+        "event-000223",
+        "event-000225"
+      ],
+      "simulation_start": 13.45,
+      "simulation_end": 13.45,
+      "duration_seconds": 2.566666666666667,
+      "frame_count": 77,
+      "shot_type": "IMPACT",
+      "framing": "Contact detail with radial action lines",
+      "camera_angle": "tight oblique",
+      "camera_motion": "handheld impact",
+      "subjects": [
+        "naruto",
+        "omniman"
+      ],
+      "subject_positions": {
+        "naruto": {
+          "x": 0.48,
+          "y": 0.55
+        },
+        "omniman": {
+          "x": 0.8,
+          "y": 0.35
+        }
+      },
+      "action_description": "Naruto hits Omni-Man with charged vortex: 148.7 recorded damage.",
+      "environment_description": "An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena.",
+      "continuity_state": {
+        "simulation_time": 13.45,
+        "characters": {
+          "naruto": {
+            "transformation": "chakra",
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "visible surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "relative_position": "left",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 337.5539085033436,
+            "health_fraction": 0.41165110793090687
+          },
+          "omniman": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "visible surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 3.0,
+              "y": 1.0
+            },
+            "relative_position": "right",
+            "weapons_items": null,
+            "persistent_effects": [
+              "stun"
+            ],
+            "health": 347.23268859015064,
+            "health_fraction": 0.34723268859015066
+          }
+        },
+        "lighting": "Cool moonlight with restrained warm window highlights.",
+        "time_of_day": "Blue hour",
+        "weather": "Dry air after rain; subtle floor reflections.",
+        "arena_state": {
+          "rooftop": "intact",
+          "source": "visual fixture; engine arena contains no terrain entities"
+        },
+        "environmental_destruction": [],
+        "presentation_notes": [
+          "Wear is a non-anatomical presentation convention, not a new combat fact.",
+          "No persistent terrain damage or inventory is exposed by this engine."
+        ]
+      },
+      "keyframe_prompt": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting. Contact detail with radial action lines; camera angle: tight oblique. Naruto hits Omni-Man with charged vortex: 148.7 recorded damage. Arena: An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena. Character bibles: naruto: Agile youthful ninja development fixture. Lean athletic build. Expressive eyes and a determined youthful face. Spiky dark hair; fixture appearance, not a verified canonical design. Indigo tactical vest with amber panels, wrapped forearms, dark trousers and boots. omniman: Powerful mature flying-hero development fixture. Broad muscular build. Square jaw, mustache and intense eyes. Swept-back dark hair with silver temples. Ivory fitted textured suit, scarlet gloves, boots and flowing cape. Continuity: naruto: costume development-visual-v1; visible surface scuffs; Distinct luminous aura and brighter material highlights while this recorded form is active.; left of opponent; persistent effects none recorded; recorded health 337.55. omniman: costume development-visual-v1; visible surface scuffs; base form; right of opponent; persistent effects stun; recorded health 347.23.",
+      "motion_prompt": "handheld impact. Naruto hits Omni-Man with charged vortex: 148.7 recorded damage. Preserve all source outcomes and identities. Use camera/staging motion only; no new damaging action. Duration 2.567s, 9:16.",
+      "negative_constraints": [
+        "Do not add damage, hits, powers, weapons or victories absent from the source events.",
+        "Do not change identity, costume version or persistent form between shots.",
+        "Do not invent anatomical wounds, blood, torn sleeves or destroyed buildings.",
+        "A recorded miss or dodge must remain visibly unsuccessful for the attacker.",
+        "No UI or written words in future generated art; captions are added by the editor.",
+        "Generated visuals are interpretation, not additional evidence for the matchup outcome.",
+        "Do not change identity, hair or costume palette between shots.",
+        "Do not invent weapons, anatomical wounds or persistent destruction.",
+        "Do not portray a missed attack as a hit."
+      ],
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "audio_cues": [
+        {
+          "cue": "impact",
+          "offset_seconds": 0.12,
+          "authority": "presentation"
+        }
+      ],
+      "narration_hint": "Naruto hits Omni-Man with charged vortex: 148.7 recorded damage.",
+      "editorial": {
+        "impact_freeze_seconds": 0.08,
+        "shake": 0.65,
+        "punch_in": 0.15,
+        "flash": true,
+        "fade_in": 0.0,
+        "fade_out": 0.0
+      },
+      "status": "RENDERED"
+    },
+    {
+      "shot_id": "shot-014",
+      "version": 1,
+      "sequence_index": 13,
+      "source_moment_ids": [
+        "moment-0028"
+      ],
+      "source_event_ids": [
+        "event-000235",
+        "event-000236",
+        "event-000237",
+        "event-000238",
+        "event-000239"
+      ],
+      "simulation_start": 14.6,
+      "simulation_end": 14.6,
+      "duration_seconds": 2.966666666666667,
+      "frame_count": 89,
+      "shot_type": "LOW_ANGLE",
+      "framing": "Dominant torso and hand reaching toward lens",
+      "camera_angle": "low angle",
+      "camera_motion": "aggressive crash zoom",
+      "subjects": [
+        "omniman"
+      ],
+      "subject_positions": {
+        "omniman": {
+          "x": 0.48,
+          "y": 0.55
+        }
+      },
+      "action_description": "Omni-Man hits Naruto with charge: 212.7 recorded damage.",
+      "environment_description": "An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena.",
+      "continuity_state": {
+        "simulation_time": 14.6,
+        "characters": {
+          "naruto": {
+            "transformation": "chakra",
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "heavy surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "relative_position": "left",
+            "weapons_items": null,
+            "persistent_effects": [
+              "regen"
+            ],
+            "health": 127.84447344426462,
+            "health_fraction": 0.15590789444422515
+          },
+          "omniman": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "visible surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 3.5,
+              "y": 1.0
+            },
+            "relative_position": "right",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 347.23268859015064,
+            "health_fraction": 0.34723268859015066
+          }
+        },
+        "lighting": "Cool moonlight with restrained warm window highlights.",
+        "time_of_day": "Blue hour",
+        "weather": "Dry air after rain; subtle floor reflections.",
+        "arena_state": {
+          "rooftop": "intact",
+          "source": "visual fixture; engine arena contains no terrain entities"
+        },
+        "environmental_destruction": [],
+        "presentation_notes": [
+          "Wear is a non-anatomical presentation convention, not a new combat fact.",
+          "No persistent terrain damage or inventory is exposed by this engine."
+        ]
+      },
+      "keyframe_prompt": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting. Dominant torso and hand reaching toward lens; camera angle: low angle. Omni-Man hits Naruto with charge: 212.7 recorded damage. Arena: An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena. Character bibles: omniman: Powerful mature flying-hero development fixture. Broad muscular build. Square jaw, mustache and intense eyes. Swept-back dark hair with silver temples. Ivory fitted textured suit, scarlet gloves, boots and flowing cape. Continuity: naruto: costume development-visual-v1; heavy surface scuffs; Distinct luminous aura and brighter material highlights while this recorded form is active.; left of opponent; persistent effects regen; recorded health 127.84. omniman: costume development-visual-v1; visible surface scuffs; base form; right of opponent; persistent effects none recorded; recorded health 347.23.",
+      "motion_prompt": "aggressive crash zoom. Omni-Man hits Naruto with charge: 212.7 recorded damage. Preserve all source outcomes and identities. Use camera/staging motion only; no new damaging action. Duration 2.967s, 9:16.",
+      "negative_constraints": [
+        "Do not add damage, hits, powers, weapons or victories absent from the source events.",
+        "Do not change identity, costume version or persistent form between shots.",
+        "Do not invent anatomical wounds, blood, torn sleeves or destroyed buildings.",
+        "A recorded miss or dodge must remain visibly unsuccessful for the attacker.",
+        "No UI or written words in future generated art; captions are added by the editor.",
+        "Generated visuals are interpretation, not additional evidence for the matchup outcome.",
+        "Do not change identity, hair or costume palette between shots.",
+        "Do not invent weapons, anatomical wounds or persistent destruction.",
+        "Do not portray a missed attack as a hit."
+      ],
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "audio_cues": [
+        {
+          "cue": "whoosh",
+          "offset_seconds": 0.1,
+          "authority": "presentation"
+        }
+      ],
+      "narration_hint": "Omni-Man hits Naruto with charge: 212.7 recorded damage.",
+      "editorial": {
+        "impact_freeze_seconds": 0.0,
+        "shake": 0.0,
+        "punch_in": 0.15,
+        "flash": false,
+        "fade_in": 0.0,
+        "fade_out": 0.0
+      },
+      "status": "RENDERED"
+    },
+    {
+      "shot_id": "shot-015",
+      "version": 1,
+      "sequence_index": 14,
+      "source_moment_ids": [
+        "moment-0029"
+      ],
+      "source_event_ids": [
+        "event-000242",
+        "event-000243",
+        "event-000244",
+        "event-000245",
+        "event-000246"
+      ],
+      "simulation_start": 14.9,
+      "simulation_end": 15.05,
+      "duration_seconds": 2.2,
+      "frame_count": 66,
+      "shot_type": "AERIAL",
+      "framing": "Diagonal overhead spatial composition",
+      "camera_angle": "high overhead",
+      "camera_motion": "high-speed follow camera",
+      "subjects": [
+        "naruto",
+        "omniman"
+      ],
+      "subject_positions": {
+        "naruto": {
+          "x": 0.48,
+          "y": 0.55
+        },
+        "omniman": {
+          "x": 0.8,
+          "y": 0.35
+        }
+      },
+      "action_description": "Naruto hits Omni-Man with melee combo: 40.3 recorded damage.",
+      "environment_description": "An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena.",
+      "continuity_state": {
+        "simulation_time": 15.05,
+        "characters": {
+          "naruto": {
+            "transformation": "chakra",
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "heavy surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "relative_position": "left",
+            "weapons_items": null,
+            "persistent_effects": [
+              "regen"
+            ],
+            "health": 134.36947344426457,
+            "health_fraction": 0.16386521151739583
+          },
+          "omniman": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "visible surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 3.5,
+              "y": 1.0
+            },
+            "relative_position": "right",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 306.96967537468896,
+            "health_fraction": 0.30696967537468894
+          }
+        },
+        "lighting": "Cool moonlight with restrained warm window highlights.",
+        "time_of_day": "Blue hour",
+        "weather": "Dry air after rain; subtle floor reflections.",
+        "arena_state": {
+          "rooftop": "intact",
+          "source": "visual fixture; engine arena contains no terrain entities"
+        },
+        "environmental_destruction": [],
+        "presentation_notes": [
+          "Wear is a non-anatomical presentation convention, not a new combat fact.",
+          "No persistent terrain damage or inventory is exposed by this engine."
+        ]
+      },
+      "keyframe_prompt": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting. Diagonal overhead spatial composition; camera angle: high overhead. Naruto hits Omni-Man with melee combo: 40.3 recorded damage. Arena: An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena. Character bibles: naruto: Agile youthful ninja development fixture. Lean athletic build. Expressive eyes and a determined youthful face. Spiky dark hair; fixture appearance, not a verified canonical design. Indigo tactical vest with amber panels, wrapped forearms, dark trousers and boots. omniman: Powerful mature flying-hero development fixture. Broad muscular build. Square jaw, mustache and intense eyes. Swept-back dark hair with silver temples. Ivory fitted textured suit, scarlet gloves, boots and flowing cape. Continuity: naruto: costume development-visual-v1; heavy surface scuffs; Distinct luminous aura and brighter material highlights while this recorded form is active.; left of opponent; persistent effects regen; recorded health 134.37. omniman: costume development-visual-v1; visible surface scuffs; base form; right of opponent; persistent effects none recorded; recorded health 306.97.",
+      "motion_prompt": "high-speed follow camera. Naruto hits Omni-Man with melee combo: 40.3 recorded damage. Preserve all source outcomes and identities. Use camera/staging motion only; no new damaging action. Duration 2.200s, 9:16.",
+      "negative_constraints": [
+        "Do not add damage, hits, powers, weapons or victories absent from the source events.",
+        "Do not change identity, costume version or persistent form between shots.",
+        "Do not invent anatomical wounds, blood, torn sleeves or destroyed buildings.",
+        "A recorded miss or dodge must remain visibly unsuccessful for the attacker.",
+        "No UI or written words in future generated art; captions are added by the editor.",
+        "Generated visuals are interpretation, not additional evidence for the matchup outcome.",
+        "Do not change identity, hair or costume palette between shots.",
+        "Do not invent weapons, anatomical wounds or persistent destruction.",
+        "Do not portray a missed attack as a hit."
+      ],
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "audio_cues": [
+        {
+          "cue": "whoosh",
+          "offset_seconds": 0.1,
+          "authority": "presentation"
+        }
+      ],
+      "narration_hint": "Naruto hits Omni-Man with melee combo: 40.3 recorded damage.",
+      "editorial": {
+        "impact_freeze_seconds": 0.0,
+        "shake": 0.0,
+        "punch_in": 0.04,
+        "flash": false,
+        "fade_in": 0.0,
+        "fade_out": 0.0
+      },
+      "status": "RENDERED"
+    },
+    {
+      "shot_id": "shot-016",
+      "version": 1,
+      "sequence_index": 15,
+      "source_moment_ids": [
+        "moment-0030"
+      ],
+      "source_event_ids": [
+        "event-000259",
+        "event-000263",
+        "event-000266",
+        "event-000267",
+        "event-000268"
+      ],
+      "simulation_start": 16.35,
+      "simulation_end": 16.55,
+      "duration_seconds": 2.5,
+      "frame_count": 75,
+      "shot_type": "IMPACT",
+      "framing": "Contact detail with radial action lines",
+      "camera_angle": "tight oblique",
+      "camera_motion": "handheld impact",
+      "subjects": [
+        "naruto",
+        "omniman"
+      ],
+      "subject_positions": {
+        "naruto": {
+          "x": 0.48,
+          "y": 0.55
+        },
+        "omniman": {
+          "x": 0.8,
+          "y": 0.35
+        }
+      },
+      "action_description": "Naruto hits Omni-Man with energy orb: 62.7 recorded damage.",
+      "environment_description": "An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena.",
+      "continuity_state": {
+        "simulation_time": 16.55,
+        "characters": {
+          "naruto": {
+            "transformation": "chakra",
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "heavy surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "relative_position": "left",
+            "weapons_items": null,
+            "persistent_effects": [
+              "regen"
+            ],
+            "health": 156.1194734442644,
+            "health_fraction": 0.19038960176129804
+          },
+          "omniman": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "heavy surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 3.5,
+              "y": 1.0
+            },
+            "relative_position": "right",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 244.23974022534912,
+            "health_fraction": 0.2442397402253491
+          }
+        },
+        "lighting": "Cool moonlight with restrained warm window highlights.",
+        "time_of_day": "Blue hour",
+        "weather": "Dry air after rain; subtle floor reflections.",
+        "arena_state": {
+          "rooftop": "intact",
+          "source": "visual fixture; engine arena contains no terrain entities"
+        },
+        "environmental_destruction": [],
+        "presentation_notes": [
+          "Wear is a non-anatomical presentation convention, not a new combat fact.",
+          "No persistent terrain damage or inventory is exposed by this engine."
+        ]
+      },
+      "keyframe_prompt": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting. Contact detail with radial action lines; camera angle: tight oblique. Naruto hits Omni-Man with energy orb: 62.7 recorded damage. Arena: An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena. Character bibles: naruto: Agile youthful ninja development fixture. Lean athletic build. Expressive eyes and a determined youthful face. Spiky dark hair; fixture appearance, not a verified canonical design. Indigo tactical vest with amber panels, wrapped forearms, dark trousers and boots. omniman: Powerful mature flying-hero development fixture. Broad muscular build. Square jaw, mustache and intense eyes. Swept-back dark hair with silver temples. Ivory fitted textured suit, scarlet gloves, boots and flowing cape. Continuity: naruto: costume development-visual-v1; heavy surface scuffs; Distinct luminous aura and brighter material highlights while this recorded form is active.; left of opponent; persistent effects regen; recorded health 156.12. omniman: costume development-visual-v1; heavy surface scuffs; base form; right of opponent; persistent effects none recorded; recorded health 244.24.",
+      "motion_prompt": "handheld impact. Naruto hits Omni-Man with energy orb: 62.7 recorded damage. Preserve all source outcomes and identities. Use camera/staging motion only; no new damaging action. Duration 2.500s, 9:16.",
+      "negative_constraints": [
+        "Do not add damage, hits, powers, weapons or victories absent from the source events.",
+        "Do not change identity, costume version or persistent form between shots.",
+        "Do not invent anatomical wounds, blood, torn sleeves or destroyed buildings.",
+        "A recorded miss or dodge must remain visibly unsuccessful for the attacker.",
+        "No UI or written words in future generated art; captions are added by the editor.",
+        "Generated visuals are interpretation, not additional evidence for the matchup outcome.",
+        "Do not change identity, hair or costume palette between shots.",
+        "Do not invent weapons, anatomical wounds or persistent destruction.",
+        "Do not portray a missed attack as a hit."
+      ],
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "audio_cues": [
+        {
+          "cue": "impact",
+          "offset_seconds": 0.12,
+          "authority": "presentation"
+        }
+      ],
+      "narration_hint": "Naruto hits Omni-Man with energy orb: 62.7 recorded damage.",
+      "editorial": {
+        "impact_freeze_seconds": 0.08,
+        "shake": 0.65,
+        "punch_in": 0.15,
+        "flash": true,
+        "fade_in": 0.0,
+        "fade_out": 0.0
+      },
+      "status": "RENDERED"
+    },
+    {
+      "shot_id": "shot-017",
+      "version": 1,
+      "sequence_index": 16,
+      "source_moment_ids": [
+        "moment-0031"
+      ],
+      "source_event_ids": [
+        "event-000262",
+        "event-000269",
+        "event-000270",
+        "event-000271",
+        "event-000272",
+        "event-000273"
+      ],
+      "simulation_start": 16.4,
+      "simulation_end": 16.7,
+      "duration_seconds": 2.3333333333333335,
+      "frame_count": 70,
+      "shot_type": "MEDIUM_ACTION",
+      "framing": "Three-quarter action silhouette with depth",
+      "camera_angle": "three-quarter",
+      "camera_motion": "tracking shot",
+      "subjects": [
+        "omniman",
+        "naruto"
+      ],
+      "subject_positions": {
+        "omniman": {
+          "x": 0.48,
+          "y": 0.55
+        },
+        "naruto": {
+          "x": 0.8,
+          "y": 0.35
+        }
+      },
+      "action_description": "Omni-Man hits Naruto with grapple: 116.8 recorded damage.",
+      "environment_description": "An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena.",
+      "continuity_state": {
+        "simulation_time": 16.7,
+        "characters": {
+          "naruto": {
+            "transformation": "chakra",
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "heavy surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "relative_position": "left",
+            "weapons_items": null,
+            "persistent_effects": [
+              "regen",
+              "stun"
+            ],
+            "health": 41.53573333186078,
+            "health_fraction": 0.05065333333153754
+          },
+          "omniman": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "heavy surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 3.5,
+              "y": 1.0
+            },
+            "relative_position": "right",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 244.23974022534912,
+            "health_fraction": 0.2442397402253491
+          }
+        },
+        "lighting": "Cool moonlight with restrained warm window highlights.",
+        "time_of_day": "Blue hour",
+        "weather": "Dry air after rain; subtle floor reflections.",
+        "arena_state": {
+          "rooftop": "intact",
+          "source": "visual fixture; engine arena contains no terrain entities"
+        },
+        "environmental_destruction": [],
+        "presentation_notes": [
+          "Wear is a non-anatomical presentation convention, not a new combat fact.",
+          "No persistent terrain damage or inventory is exposed by this engine."
+        ]
+      },
+      "keyframe_prompt": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting. Three-quarter action silhouette with depth; camera angle: three-quarter. Omni-Man hits Naruto with grapple: 116.8 recorded damage. Arena: An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena. Character bibles: omniman: Powerful mature flying-hero development fixture. Broad muscular build. Square jaw, mustache and intense eyes. Swept-back dark hair with silver temples. Ivory fitted textured suit, scarlet gloves, boots and flowing cape. naruto: Agile youthful ninja development fixture. Lean athletic build. Expressive eyes and a determined youthful face. Spiky dark hair; fixture appearance, not a verified canonical design. Indigo tactical vest with amber panels, wrapped forearms, dark trousers and boots. Continuity: naruto: costume development-visual-v1; heavy surface scuffs; Distinct luminous aura and brighter material highlights while this recorded form is active.; left of opponent; persistent effects regen, stun; recorded health 41.54. omniman: costume development-visual-v1; heavy surface scuffs; base form; right of opponent; persistent effects none recorded; recorded health 244.24.",
+      "motion_prompt": "tracking shot. Omni-Man hits Naruto with grapple: 116.8 recorded damage. Preserve all source outcomes and identities. Use camera/staging motion only; no new damaging action. Duration 2.333s, 9:16.",
+      "negative_constraints": [
+        "Do not add damage, hits, powers, weapons or victories absent from the source events.",
+        "Do not change identity, costume version or persistent form between shots.",
+        "Do not invent anatomical wounds, blood, torn sleeves or destroyed buildings.",
+        "A recorded miss or dodge must remain visibly unsuccessful for the attacker.",
+        "No UI or written words in future generated art; captions are added by the editor.",
+        "Generated visuals are interpretation, not additional evidence for the matchup outcome.",
+        "Do not change identity, hair or costume palette between shots.",
+        "Do not invent weapons, anatomical wounds or persistent destruction.",
+        "Do not portray a missed attack as a hit."
+      ],
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "audio_cues": [],
+      "narration_hint": "Omni-Man hits Naruto with grapple: 116.8 recorded damage.",
+      "editorial": {
+        "impact_freeze_seconds": 0.0,
+        "shake": 0.0,
+        "punch_in": 0.04,
+        "flash": false,
+        "fade_in": 0.0,
+        "fade_out": 0.0
+      },
+      "status": "RENDERED"
+    },
+    {
+      "shot_id": "shot-018",
+      "version": 1,
+      "sequence_index": 17,
+      "source_moment_ids": [
+        "moment-0033"
+      ],
+      "source_event_ids": [
+        "event-000287",
+        "event-000288",
+        "event-000291",
+        "event-000292",
+        "event-000293"
+      ],
+      "simulation_start": 18.0,
+      "simulation_end": 18.2,
+      "duration_seconds": 2.6666666666666665,
+      "frame_count": 80,
+      "shot_type": "EXTREME_CLOSE_UP",
+      "framing": "Eyes and brow fill the frame",
+      "camera_angle": "tight eye level",
+      "camera_motion": "static dramatic composition",
+      "subjects": [
+        "naruto"
+      ],
+      "subject_positions": {
+        "naruto": {
+          "x": 0.48,
+          "y": 0.55
+        }
+      },
+      "action_description": "Naruto hits Omni-Man with energy orb: 65.1 recorded damage.",
+      "environment_description": "An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena.",
+      "continuity_state": {
+        "simulation_time": 18.2,
+        "characters": {
+          "naruto": {
+            "transformation": "chakra",
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "heavy surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "relative_position": "left",
+            "weapons_items": null,
+            "persistent_effects": [
+              "regen"
+            ],
+            "health": 63.285733331860826,
+            "health_fraction": 0.07717772357544003
+          },
+          "omniman": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "heavy surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 3.5,
+              "y": 1.0
+            },
+            "relative_position": "right",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 179.1554895926749,
+            "health_fraction": 0.1791554895926749
+          }
+        },
+        "lighting": "Cool moonlight with restrained warm window highlights.",
+        "time_of_day": "Blue hour",
+        "weather": "Dry air after rain; subtle floor reflections.",
+        "arena_state": {
+          "rooftop": "intact",
+          "source": "visual fixture; engine arena contains no terrain entities"
+        },
+        "environmental_destruction": [],
+        "presentation_notes": [
+          "Wear is a non-anatomical presentation convention, not a new combat fact.",
+          "No persistent terrain damage or inventory is exposed by this engine."
+        ]
+      },
+      "keyframe_prompt": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting. Eyes and brow fill the frame; camera angle: tight eye level. Naruto hits Omni-Man with energy orb: 65.1 recorded damage. Arena: An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena. Character bibles: naruto: Agile youthful ninja development fixture. Lean athletic build. Expressive eyes and a determined youthful face. Spiky dark hair; fixture appearance, not a verified canonical design. Indigo tactical vest with amber panels, wrapped forearms, dark trousers and boots. Continuity: naruto: costume development-visual-v1; heavy surface scuffs; Distinct luminous aura and brighter material highlights while this recorded form is active.; left of opponent; persistent effects regen; recorded health 63.29. omniman: costume development-visual-v1; heavy surface scuffs; base form; right of opponent; persistent effects none recorded; recorded health 179.16.",
+      "motion_prompt": "static dramatic composition. Naruto hits Omni-Man with energy orb: 65.1 recorded damage. Preserve all source outcomes and identities. Use camera/staging motion only; no new damaging action. Duration 2.667s, 9:16.",
+      "negative_constraints": [
+        "Do not add damage, hits, powers, weapons or victories absent from the source events.",
+        "Do not change identity, costume version or persistent form between shots.",
+        "Do not invent anatomical wounds, blood, torn sleeves or destroyed buildings.",
+        "A recorded miss or dodge must remain visibly unsuccessful for the attacker.",
+        "No UI or written words in future generated art; captions are added by the editor.",
+        "Generated visuals are interpretation, not additional evidence for the matchup outcome.",
+        "Do not change identity, hair or costume palette between shots.",
+        "Do not invent weapons, anatomical wounds or persistent destruction.",
+        "Do not portray a missed attack as a hit."
+      ],
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "audio_cues": [],
+      "narration_hint": "Naruto hits Omni-Man with energy orb: 65.1 recorded damage.",
+      "editorial": {
+        "impact_freeze_seconds": 0.0,
+        "shake": 0.0,
+        "punch_in": 0.04,
+        "flash": false,
+        "fade_in": 0.0,
+        "fade_out": 0.0
+      },
+      "status": "RENDERED"
+    },
+    {
+      "shot_id": "shot-019",
+      "version": 1,
+      "sequence_index": 18,
+      "source_moment_ids": [
+        "moment-0036"
+      ],
+      "source_event_ids": [
+        "event-000323",
+        "event-000327",
+        "event-000328",
+        "event-000329",
+        "event-000330"
+      ],
+      "simulation_start": 20.05,
+      "simulation_end": 20.2,
+      "duration_seconds": 2.3333333333333335,
+      "frame_count": 70,
+      "shot_type": "IMPACT",
+      "framing": "Contact detail with radial action lines",
+      "camera_angle": "tight oblique",
+      "camera_motion": "handheld impact",
+      "subjects": [
+        "naruto",
+        "omniman"
+      ],
+      "subject_positions": {
+        "naruto": {
+          "x": 0.48,
+          "y": 0.55
+        },
+        "omniman": {
+          "x": 0.8,
+          "y": 0.35
+        }
+      },
+      "action_description": "Naruto hits Omni-Man with melee combo: 41.5 recorded damage.",
+      "environment_description": "An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena.",
+      "continuity_state": {
+        "simulation_time": 20.2,
+        "characters": {
+          "naruto": {
+            "transformation": "chakra",
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "heavy surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "relative_position": "left",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 83.18573333186107,
+            "health_fraction": 0.10144601625836716
+          },
+          "omniman": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "heavy surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 3.2550090705524526,
+              "y": 2.456766971078326
+            },
+            "relative_position": "right",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 137.68002771872574,
+            "health_fraction": 0.13768002771872573
+          }
+        },
+        "lighting": "Cool moonlight with restrained warm window highlights.",
+        "time_of_day": "Blue hour",
+        "weather": "Dry air after rain; subtle floor reflections.",
+        "arena_state": {
+          "rooftop": "intact",
+          "source": "visual fixture; engine arena contains no terrain entities"
+        },
+        "environmental_destruction": [],
+        "presentation_notes": [
+          "Wear is a non-anatomical presentation convention, not a new combat fact.",
+          "No persistent terrain damage or inventory is exposed by this engine."
+        ]
+      },
+      "keyframe_prompt": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting. Contact detail with radial action lines; camera angle: tight oblique. Naruto hits Omni-Man with melee combo: 41.5 recorded damage. Arena: An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena. Character bibles: naruto: Agile youthful ninja development fixture. Lean athletic build. Expressive eyes and a determined youthful face. Spiky dark hair; fixture appearance, not a verified canonical design. Indigo tactical vest with amber panels, wrapped forearms, dark trousers and boots. omniman: Powerful mature flying-hero development fixture. Broad muscular build. Square jaw, mustache and intense eyes. Swept-back dark hair with silver temples. Ivory fitted textured suit, scarlet gloves, boots and flowing cape. Continuity: naruto: costume development-visual-v1; heavy surface scuffs; Distinct luminous aura and brighter material highlights while this recorded form is active.; left of opponent; persistent effects none recorded; recorded health 83.19. omniman: costume development-visual-v1; heavy surface scuffs; base form; right of opponent; persistent effects none recorded; recorded health 137.68.",
+      "motion_prompt": "handheld impact. Naruto hits Omni-Man with melee combo: 41.5 recorded damage. Preserve all source outcomes and identities. Use camera/staging motion only; no new damaging action. Duration 2.333s, 9:16.",
+      "negative_constraints": [
+        "Do not add damage, hits, powers, weapons or victories absent from the source events.",
+        "Do not change identity, costume version or persistent form between shots.",
+        "Do not invent anatomical wounds, blood, torn sleeves or destroyed buildings.",
+        "A recorded miss or dodge must remain visibly unsuccessful for the attacker.",
+        "No UI or written words in future generated art; captions are added by the editor.",
+        "Generated visuals are interpretation, not additional evidence for the matchup outcome.",
+        "Do not change identity, hair or costume palette between shots.",
+        "Do not invent weapons, anatomical wounds or persistent destruction.",
+        "Do not portray a missed attack as a hit."
+      ],
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "audio_cues": [
+        {
+          "cue": "impact",
+          "offset_seconds": 0.12,
+          "authority": "presentation"
+        }
+      ],
+      "narration_hint": "Naruto hits Omni-Man with melee combo: 41.5 recorded damage.",
+      "editorial": {
+        "impact_freeze_seconds": 0.08,
+        "shake": 0.65,
+        "punch_in": 0.15,
+        "flash": true,
+        "fade_in": 0.0,
+        "fade_out": 0.0
+      },
+      "status": "RENDERED"
+    },
+    {
+      "shot_id": "shot-020",
+      "version": 1,
+      "sequence_index": 19,
+      "source_moment_ids": [
+        "moment-0037"
+      ],
+      "source_event_ids": [
+        "event-000326",
+        "event-000331",
+        "event-000332",
+        "event-000333",
+        "event-000334"
+      ],
+      "simulation_start": 20.2,
+      "simulation_end": 20.35,
+      "duration_seconds": 2.566666666666667,
+      "frame_count": 77,
+      "shot_type": "WIDE_ACTION",
+      "framing": "Diagonal composition, fighters at different depths",
+      "camera_angle": "oblique",
+      "camera_motion": "fast lateral follow",
+      "subjects": [
+        "omniman",
+        "naruto"
+      ],
+      "subject_positions": {
+        "omniman": {
+          "x": 0.3,
+          "y": 0.59
+        },
+        "naruto": {
+          "x": 0.7,
+          "y": 0.42999999999999994
+        }
+      },
+      "action_description": "Omni-Man hits Naruto with jab: 67.0 recorded damage.",
+      "environment_description": "An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena.",
+      "continuity_state": {
+        "simulation_time": 20.35,
+        "characters": {
+          "naruto": {
+            "transformation": "chakra",
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "heavy surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "relative_position": "left",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 16.43926051878279,
+            "health_fraction": 0.020047878681442425
+          },
+          "omniman": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "heavy surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 3.2550090705524526,
+              "y": 2.473449516113477
+            },
+            "relative_position": "right",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 137.68002771872574,
+            "health_fraction": 0.13768002771872573
+          }
+        },
+        "lighting": "Cool moonlight with restrained warm window highlights.",
+        "time_of_day": "Blue hour",
+        "weather": "Dry air after rain; subtle floor reflections.",
+        "arena_state": {
+          "rooftop": "intact",
+          "source": "visual fixture; engine arena contains no terrain entities"
+        },
+        "environmental_destruction": [],
+        "presentation_notes": [
+          "Wear is a non-anatomical presentation convention, not a new combat fact.",
+          "No persistent terrain damage or inventory is exposed by this engine."
+        ]
+      },
+      "keyframe_prompt": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting. Diagonal composition, fighters at different depths; camera angle: oblique. Omni-Man hits Naruto with jab: 67.0 recorded damage. Arena: An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena. Character bibles: omniman: Powerful mature flying-hero development fixture. Broad muscular build. Square jaw, mustache and intense eyes. Swept-back dark hair with silver temples. Ivory fitted textured suit, scarlet gloves, boots and flowing cape. naruto: Agile youthful ninja development fixture. Lean athletic build. Expressive eyes and a determined youthful face. Spiky dark hair; fixture appearance, not a verified canonical design. Indigo tactical vest with amber panels, wrapped forearms, dark trousers and boots. Continuity: naruto: costume development-visual-v1; heavy surface scuffs; Distinct luminous aura and brighter material highlights while this recorded form is active.; left of opponent; persistent effects none recorded; recorded health 16.44. omniman: costume development-visual-v1; heavy surface scuffs; base form; right of opponent; persistent effects none recorded; recorded health 137.68.",
+      "motion_prompt": "fast lateral follow. Omni-Man hits Naruto with jab: 67.0 recorded damage. Preserve all source outcomes and identities. Use camera/staging motion only; no new damaging action. Duration 2.567s, 9:16.",
+      "negative_constraints": [
+        "Do not add damage, hits, powers, weapons or victories absent from the source events.",
+        "Do not change identity, costume version or persistent form between shots.",
+        "Do not invent anatomical wounds, blood, torn sleeves or destroyed buildings.",
+        "A recorded miss or dodge must remain visibly unsuccessful for the attacker.",
+        "No UI or written words in future generated art; captions are added by the editor.",
+        "Generated visuals are interpretation, not additional evidence for the matchup outcome.",
+        "Do not change identity, hair or costume palette between shots.",
+        "Do not invent weapons, anatomical wounds or persistent destruction.",
+        "Do not portray a missed attack as a hit."
+      ],
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "audio_cues": [
+        {
+          "cue": "whoosh",
+          "offset_seconds": 0.1,
+          "authority": "presentation"
+        }
+      ],
+      "narration_hint": "Omni-Man hits Naruto with jab: 67.0 recorded damage.",
+      "editorial": {
+        "impact_freeze_seconds": 0.0,
+        "shake": 0.0,
+        "punch_in": 0.04,
+        "flash": false,
+        "fade_in": 0.0,
+        "fade_out": 0.0
+      },
+      "status": "RENDERED"
+    },
+    {
+      "shot_id": "shot-021",
+      "version": 1,
+      "sequence_index": 20,
+      "source_moment_ids": [
+        "moment-0038"
+      ],
+      "source_event_ids": [
+        "event-000337",
+        "event-000341",
+        "event-000344",
+        "event-000345",
+        "event-000346"
+      ],
+      "simulation_start": 20.6,
+      "simulation_end": 20.8,
+      "duration_seconds": 2.6666666666666665,
+      "frame_count": 80,
+      "shot_type": "REACTION",
+      "framing": "Isolated hit or defense reaction detail",
+      "camera_angle": "three-quarter close",
+      "camera_motion": "handheld impact",
+      "subjects": [
+        "naruto"
+      ],
+      "subject_positions": {
+        "naruto": {
+          "x": 0.48,
+          "y": 0.55
+        }
+      },
+      "action_description": "Naruto hits Omni-Man with energy orb: 68.6 recorded damage.",
+      "environment_description": "An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena.",
+      "continuity_state": {
+        "simulation_time": 20.8,
+        "characters": {
+          "naruto": {
+            "transformation": "chakra",
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "heavy surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "relative_position": "left",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 17.114260518782782,
+            "health_fraction": 0.020871049413149732
+          },
+          "omniman": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "heavy surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 3.2550090705524526,
+              "y": 2.493850457999862
+            },
+            "relative_position": "right",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 69.12552140615318,
+            "health_fraction": 0.06912552140615319
+          }
+        },
+        "lighting": "Cool moonlight with restrained warm window highlights.",
+        "time_of_day": "Blue hour",
+        "weather": "Dry air after rain; subtle floor reflections.",
+        "arena_state": {
+          "rooftop": "intact",
+          "source": "visual fixture; engine arena contains no terrain entities"
+        },
+        "environmental_destruction": [],
+        "presentation_notes": [
+          "Wear is a non-anatomical presentation convention, not a new combat fact.",
+          "No persistent terrain damage or inventory is exposed by this engine."
+        ]
+      },
+      "keyframe_prompt": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting. Isolated hit or defense reaction detail; camera angle: three-quarter close. Naruto hits Omni-Man with energy orb: 68.6 recorded damage. Arena: An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena. Character bibles: naruto: Agile youthful ninja development fixture. Lean athletic build. Expressive eyes and a determined youthful face. Spiky dark hair; fixture appearance, not a verified canonical design. Indigo tactical vest with amber panels, wrapped forearms, dark trousers and boots. Continuity: naruto: costume development-visual-v1; heavy surface scuffs; Distinct luminous aura and brighter material highlights while this recorded form is active.; left of opponent; persistent effects none recorded; recorded health 17.11. omniman: costume development-visual-v1; heavy surface scuffs; base form; right of opponent; persistent effects none recorded; recorded health 69.13.",
+      "motion_prompt": "handheld impact. Naruto hits Omni-Man with energy orb: 68.6 recorded damage. Preserve all source outcomes and identities. Use camera/staging motion only; no new damaging action. Duration 2.667s, 9:16.",
+      "negative_constraints": [
+        "Do not add damage, hits, powers, weapons or victories absent from the source events.",
+        "Do not change identity, costume version or persistent form between shots.",
+        "Do not invent anatomical wounds, blood, torn sleeves or destroyed buildings.",
+        "A recorded miss or dodge must remain visibly unsuccessful for the attacker.",
+        "No UI or written words in future generated art; captions are added by the editor.",
+        "Generated visuals are interpretation, not additional evidence for the matchup outcome.",
+        "Do not change identity, hair or costume palette between shots.",
+        "Do not invent weapons, anatomical wounds or persistent destruction.",
+        "Do not portray a missed attack as a hit."
+      ],
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "audio_cues": [],
+      "narration_hint": "Naruto hits Omni-Man with energy orb: 68.6 recorded damage.",
+      "editorial": {
+        "impact_freeze_seconds": 0.0,
+        "shake": 0.0,
+        "punch_in": 0.04,
+        "flash": false,
+        "fade_in": 0.0,
+        "fade_out": 0.0
+      },
+      "status": "RENDERED"
+    },
+    {
+      "shot_id": "shot-022",
+      "version": 1,
+      "sequence_index": 21,
+      "source_moment_ids": [
+        "moment-0039"
+      ],
+      "source_event_ids": [
+        "event-000359",
+        "event-000360",
+        "event-000361",
+        "event-000362",
+        "event-000363"
+      ],
+      "simulation_start": 21.8,
+      "simulation_end": 21.95,
+      "duration_seconds": 2.3,
+      "frame_count": 69,
+      "shot_type": "IMPACT",
+      "framing": "Contact detail with radial action lines",
+      "camera_angle": "tight oblique",
+      "camera_motion": "handheld impact",
+      "subjects": [
+        "naruto",
+        "omniman"
+      ],
+      "subject_positions": {
+        "naruto": {
+          "x": 0.48,
+          "y": 0.55
+        },
+        "omniman": {
+          "x": 0.8,
+          "y": 0.35
+        }
+      },
+      "action_description": "Naruto hits Omni-Man with melee combo: 43.1 recorded damage.",
+      "environment_description": "An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena.",
+      "continuity_state": {
+        "simulation_time": 21.95,
+        "characters": {
+          "naruto": {
+            "transformation": "chakra",
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "heavy surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "relative_position": "left",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 18.839260518782766,
+            "health_fraction": 0.02297470794973508
+          },
+          "omniman": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "heavy surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 3.2550090705524526,
+              "y": 2.534623140510982
+            },
+            "relative_position": "right",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 26.034868027988466,
+            "health_fraction": 0.026034868027988465
+          }
+        },
+        "lighting": "Cool moonlight with restrained warm window highlights.",
+        "time_of_day": "Blue hour",
+        "weather": "Dry air after rain; subtle floor reflections.",
+        "arena_state": {
+          "rooftop": "intact",
+          "source": "visual fixture; engine arena contains no terrain entities"
+        },
+        "environmental_destruction": [],
+        "presentation_notes": [
+          "Wear is a non-anatomical presentation convention, not a new combat fact.",
+          "No persistent terrain damage or inventory is exposed by this engine."
+        ]
+      },
+      "keyframe_prompt": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting. Contact detail with radial action lines; camera angle: tight oblique. Naruto hits Omni-Man with melee combo: 43.1 recorded damage. Arena: An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena. Character bibles: naruto: Agile youthful ninja development fixture. Lean athletic build. Expressive eyes and a determined youthful face. Spiky dark hair; fixture appearance, not a verified canonical design. Indigo tactical vest with amber panels, wrapped forearms, dark trousers and boots. omniman: Powerful mature flying-hero development fixture. Broad muscular build. Square jaw, mustache and intense eyes. Swept-back dark hair with silver temples. Ivory fitted textured suit, scarlet gloves, boots and flowing cape. Continuity: naruto: costume development-visual-v1; heavy surface scuffs; Distinct luminous aura and brighter material highlights while this recorded form is active.; left of opponent; persistent effects none recorded; recorded health 18.84. omniman: costume development-visual-v1; heavy surface scuffs; base form; right of opponent; persistent effects none recorded; recorded health 26.03.",
+      "motion_prompt": "handheld impact. Naruto hits Omni-Man with melee combo: 43.1 recorded damage. Preserve all source outcomes and identities. Use camera/staging motion only; no new damaging action. Duration 2.300s, 9:16.",
+      "negative_constraints": [
+        "Do not add damage, hits, powers, weapons or victories absent from the source events.",
+        "Do not change identity, costume version or persistent form between shots.",
+        "Do not invent anatomical wounds, blood, torn sleeves or destroyed buildings.",
+        "A recorded miss or dodge must remain visibly unsuccessful for the attacker.",
+        "No UI or written words in future generated art; captions are added by the editor.",
+        "Generated visuals are interpretation, not additional evidence for the matchup outcome.",
+        "Do not change identity, hair or costume palette between shots.",
+        "Do not invent weapons, anatomical wounds or persistent destruction.",
+        "Do not portray a missed attack as a hit."
+      ],
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "audio_cues": [
+        {
+          "cue": "impact",
+          "offset_seconds": 0.12,
+          "authority": "presentation"
+        }
+      ],
+      "narration_hint": "Naruto hits Omni-Man with melee combo: 43.1 recorded damage.",
+      "editorial": {
+        "impact_freeze_seconds": 0.08,
+        "shake": 0.65,
+        "punch_in": 0.15,
+        "flash": true,
+        "fade_in": 0.0,
+        "fade_out": 0.0
+      },
+      "status": "RENDERED"
+    },
+    {
+      "shot_id": "shot-023",
+      "version": 1,
+      "sequence_index": 22,
+      "source_moment_ids": [
+        "moment-0040"
+      ],
+      "source_event_ids": [
+        "event-000368",
+        "event-000372",
+        "event-000375",
+        "event-000376"
+      ],
+      "simulation_start": 22.35,
+      "simulation_end": 22.55,
+      "duration_seconds": 3.033333333333333,
+      "frame_count": 91,
+      "shot_type": "FINISHER",
+      "framing": "Decisive contact and defeated fighter reaction",
+      "camera_angle": "dynamic oblique",
+      "camera_motion": "slow-motion impact",
+      "subjects": [
+        "naruto",
+        "omniman"
+      ],
+      "subject_positions": {
+        "naruto": {
+          "x": 0.48,
+          "y": 0.55
+        },
+        "omniman": {
+          "x": 0.8,
+          "y": 0.35
+        }
+      },
+      "action_description": "Naruto lands energy orb, reducing Omni-Man to zero health.",
+      "environment_description": "An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena.",
+      "continuity_state": {
+        "simulation_time": 22.55,
+        "characters": {
+          "naruto": {
+            "transformation": "chakra",
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "heavy surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "relative_position": "left",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 19.739260518782757,
+            "health_fraction": 0.024072268925344826
+          },
+          "omniman": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "heavy surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 3.2550090705524526,
+              "y": 2.5049248563438544
+            },
+            "relative_position": "right",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 0.0,
+            "health_fraction": 0.0
+          }
+        },
+        "lighting": "Cool moonlight with restrained warm window highlights.",
+        "time_of_day": "Blue hour",
+        "weather": "Dry air after rain; subtle floor reflections.",
+        "arena_state": {
+          "rooftop": "intact",
+          "source": "visual fixture; engine arena contains no terrain entities"
+        },
+        "environmental_destruction": [],
+        "presentation_notes": [
+          "Wear is a non-anatomical presentation convention, not a new combat fact.",
+          "No persistent terrain damage or inventory is exposed by this engine."
+        ]
+      },
+      "keyframe_prompt": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting. Decisive contact and defeated fighter reaction; camera angle: dynamic oblique. Naruto lands energy orb, reducing Omni-Man to zero health. Arena: An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena. Character bibles: naruto: Agile youthful ninja development fixture. Lean athletic build. Expressive eyes and a determined youthful face. Spiky dark hair; fixture appearance, not a verified canonical design. Indigo tactical vest with amber panels, wrapped forearms, dark trousers and boots. omniman: Powerful mature flying-hero development fixture. Broad muscular build. Square jaw, mustache and intense eyes. Swept-back dark hair with silver temples. Ivory fitted textured suit, scarlet gloves, boots and flowing cape. Continuity: naruto: costume development-visual-v1; heavy surface scuffs; Distinct luminous aura and brighter material highlights while this recorded form is active.; left of opponent; persistent effects none recorded; recorded health 19.74. omniman: costume development-visual-v1; heavy surface scuffs; base form; right of opponent; persistent effects none recorded; recorded health 0.00.",
+      "motion_prompt": "slow-motion impact. Naruto lands energy orb, reducing Omni-Man to zero health. Preserve all source outcomes and identities. Use camera/staging motion only; no new damaging action. Duration 3.033s, 9:16.",
+      "negative_constraints": [
+        "Do not add damage, hits, powers, weapons or victories absent from the source events.",
+        "Do not change identity, costume version or persistent form between shots.",
+        "Do not invent anatomical wounds, blood, torn sleeves or destroyed buildings.",
+        "A recorded miss or dodge must remain visibly unsuccessful for the attacker.",
+        "No UI or written words in future generated art; captions are added by the editor.",
+        "Generated visuals are interpretation, not additional evidence for the matchup outcome.",
+        "Do not change identity, hair or costume palette between shots.",
+        "Do not invent weapons, anatomical wounds or persistent destruction.",
+        "Do not portray a missed attack as a hit."
+      ],
+      "transition_in": "cut",
+      "transition_out": "cut",
+      "audio_cues": [
+        {
+          "cue": "final_impact",
+          "offset_seconds": 0.12,
+          "authority": "presentation"
+        }
+      ],
+      "narration_hint": "Naruto lands energy orb, reducing Omni-Man to zero health.",
+      "editorial": {
+        "impact_freeze_seconds": 0.16,
+        "shake": 0.65,
+        "punch_in": 0.15,
+        "flash": true,
+        "fade_in": 0.0,
+        "fade_out": 0.0
+      },
+      "status": "RENDERED"
+    },
+    {
+      "shot_id": "shot-024",
+      "version": 1,
+      "sequence_index": 23,
+      "source_moment_ids": [
+        "moment-0041"
+      ],
+      "source_event_ids": [
+        "event-000378"
+      ],
+      "simulation_start": 22.55,
+      "simulation_end": 22.55,
+      "duration_seconds": 3.0,
+      "frame_count": 90,
+      "shot_type": "VICTORY",
+      "framing": "Final outcome portrait",
+      "camera_angle": "low angle",
+      "camera_motion": "slow pull-back",
+      "subjects": [
+        "naruto"
+      ],
+      "subject_positions": {
+        "naruto": {
+          "x": 0.48,
+          "y": 0.55
+        }
+      },
+      "action_description": "Naruto wins by ko at 22.55 simulation seconds.",
+      "environment_description": "An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena.",
+      "continuity_state": {
+        "simulation_time": 22.55,
+        "characters": {
+          "naruto": {
+            "transformation": "chakra",
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "heavy surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "relative_position": "left",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 19.739260518782757,
+            "health_fraction": 0.024072268925344826
+          },
+          "omniman": {
+            "transformation": null,
+            "costume_version": "development-visual-v1",
+            "visible_injuries": [],
+            "clothing_damage": [],
+            "surface_wear": "heavy surface scuffs",
+            "wear_basis": "Presentational scuff level derived from lowest recorded health fraction; no anatomical injury inferred.",
+            "location": {
+              "x": 3.2550090705524526,
+              "y": 2.5049248563438544
+            },
+            "relative_position": "right",
+            "weapons_items": null,
+            "persistent_effects": [],
+            "health": 0.0,
+            "health_fraction": 0.0
+          }
+        },
+        "lighting": "Cool moonlight with restrained warm window highlights.",
+        "time_of_day": "Blue hour",
+        "weather": "Dry air after rain; subtle floor reflections.",
+        "arena_state": {
+          "rooftop": "intact",
+          "source": "visual fixture; engine arena contains no terrain entities"
+        },
+        "environmental_destruction": [],
+        "presentation_notes": [
+          "Wear is a non-anatomical presentation convention, not a new combat fact.",
+          "No persistent terrain damage or inventory is exposed by this engine."
+        ]
+      },
+      "keyframe_prompt": "Refined hybrid comic/anime art; realistic fabric, stone and skin textures; stylized expressive faces; controlled cinematic lighting. Final outcome portrait; camera angle: low angle. Naruto wins by ko at 22.55 simulation seconds. Arena: An empty cinematic city rooftop; presentation setting for the simulator's open arcade arena. Character bibles: naruto: Agile youthful ninja development fixture. Lean athletic build. Expressive eyes and a determined youthful face. Spiky dark hair; fixture appearance, not a verified canonical design. Indigo tactical vest with amber panels, wrapped forearms, dark trousers and boots. Continuity: naruto: costume development-visual-v1; heavy surface scuffs; Distinct luminous aura and brighter material highlights while this recorded form is active.; left of opponent; persistent effects none recorded; recorded health 19.74. omniman: costume development-visual-v1; heavy surface scuffs; base form; right of opponent; persistent effects none recorded; recorded health 0.00.",
+      "motion_prompt": "slow pull-back. Naruto wins by ko at 22.55 simulation seconds. Preserve all source outcomes and identities. Use camera/staging motion only; no new damaging action. Duration 3.000s, 9:16.",
+      "negative_constraints": [
+        "Do not add damage, hits, powers, weapons or victories absent from the source events.",
+        "Do not change identity, costume version or persistent form between shots.",
+        "Do not invent anatomical wounds, blood, torn sleeves or destroyed buildings.",
+        "A recorded miss or dodge must remain visibly unsuccessful for the attacker.",
+        "No UI or written words in future generated art; captions are added by the editor.",
+        "Generated visuals are interpretation, not additional evidence for the matchup outcome.",
+        "Do not change identity, hair or costume palette between shots.",
+        "Do not invent weapons, anatomical wounds or persistent destruction.",
+        "Do not portray a missed attack as a hit."
+      ],
+      "transition_in": "cut",
+      "transition_out": "fade",
+      "audio_cues": [],
+      "narration_hint": "Naruto wins by ko at 22.55 simulation seconds.",
+      "editorial": {
+        "impact_freeze_seconds": 0.0,
+        "shake": 0.0,
+        "punch_in": 0.04,
+        "flash": false,
+        "fade_in": 0.0,
+        "fade_out": 0.3
+      },
+      "status": "RENDERED"
+    }
+  ],
+  "outcome": {
+    "seed": 69,
+    "winner": 0,
+    "condition": "ko",
+    "duration": 22.55,
+    "ticks": 451,
+    "finisher": "energy_orb",
+    "events": {
+      "FightStarted": 1,
+      "ActionChosen": 59,
+      "AbilityCooldownStarted": 59,
+      "AbilityStarted": 21,
+      "Dash": 6,
+      "AbilityResolved": 21,
+      "AttackStarted": 38,
+      "FlightStarted": 2,
+      "DefenseActivated": 12,
+      "AttackReleased": 35,
+      "ProjectileSpawned": 11,
+      "ProjectileExpired": 11,
+      "Explosion": 3,
+      "AttackHit": 23,
+      "DamageApplied": 23,
+      "Knockback": 22,
+      "ActionInterrupted": 2,
+      "StatusApplied": 6,
+      "StatusExpired": 6,
+      "AttackDodged": 4,
+      "AttackMissed": 8,
+      "Jump": 1,
+      "AttackBlocked": 1,
+      "FlightEnded": 1,
+      "TransformationActivated": 1,
+      "FighterKO": 1,
+      "FightEnded": 1
+    },
+    "fighters": [
+      {
+        "id": "naruto",
+        "name": "Naruto",
+        "health": 19.739260518782757,
+        "health_fraction": 0.024072268925344826,
+        "damage_dealt": 999.9999999999998,
+        "damage_received": 892.0357394812224,
+        "uses": {
+          "dash": 1,
+          "charged_vortex": 3,
+          "energy_orb": 8,
+          "evade": 5,
+          "melee_combo": 6,
+          "decoy": 1,
+          "jump": 1,
+          "guard": 3,
+          "chakra_form": 1,
+          "recover": 1
+        },
+        "hits": {
+          "charged_vortex": 2,
+          "energy_orb": 8,
+          "melee_combo": 5
+        },
+        "damage_by_ability": {
+          "charged_vortex": 348.4316827263941,
+          "energy_orb": 444.0205824784219,
+          "melee_combo": 207.547734795184
+        }
+      },
+      {
+        "id": "omniman",
+        "name": "Omni-Man",
+        "health": 0,
+        "health_fraction": 0.0,
+        "damage_dealt": 892.0357394812224,
+        "damage_received": 999.9999999999998,
+        "uses": {
+          "dash": 2,
+          "fly": 2,
+          "guard": 3,
+          "charge": 4,
+          "grapple": 5,
+          "heavy_strike": 6,
+          "jab": 6,
+          "evade": 1
+        },
+        "hits": {
+          "jab": 3,
+          "charge": 2,
+          "heavy_strike": 2,
+          "grapple": 1
+        },
+        "damage_by_ability": {
+          "jab": 217.59330508859134,
+          "charge": 352.0784575740648,
+          "heavy_strike": 205.6052367061625,
+          "grapple": 116.7587401124036
+        }
+      }
+    ]
+  }
+}

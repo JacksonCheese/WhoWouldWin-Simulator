@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "adapter_id": "v4_evaluation_a.v1",
+  "standard_to_target": {
+    "root": "MotionRoot",
+    "pelvis": "Hips",
+    "spine": "SpineLower",
+    "chest": "SpineUpper",
+    "neck": "Neck",
+    "head": "Head",
+    "clavicle.L": "Shoulder_L",
+    "clavicle.R": "Shoulder_R",
+    "upper_arm.L": "UpperArm_L",
+    "upper_arm.R": "UpperArm_R",
+    "forearm.L": "LowerArm_L",
+    "forearm.R": "LowerArm_R",
+    "hand.L": "Hand_L",
+    "hand.R": "Hand_R",
+    "thigh.L": "UpperLeg_L",
+    "thigh.R": "UpperLeg_R",
+    "shin.L": "LowerLeg_L",
+    "shin.R": "LowerLeg_R",
+    "foot.L": "Foot_L",
+    "foot.R": "Foot_R"
+  },
+  "optional_bones": {},
+  "finger_chains": {},
+  "corrective_shape_keys": [],
+  "source_rest_pose": "A_POSE",
+  "target_rest_pose": "A_POSE",
+  "rotation_offsets_degrees": {},
+  "root_object": "WWS_EvaluationRig"
+}

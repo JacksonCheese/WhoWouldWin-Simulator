@@ -1,0 +1,169 @@
+{
+  "identity": {
+    "id": "homelander",
+    "name": "Homelander",
+    "universe": "The Boys",
+    "version": "Development demo / no canonical scaling"
+  },
+  "scaling_note": "Development placeholder scaling. Replace with researched feat-based values before publishing matchup claims.",
+  "physical": {
+    "strength": {
+      "low": 127.5,
+      "expected": 150,
+      "high": 172.5
+    },
+    "striking_power": {
+      "low": 119.0,
+      "expected": 140,
+      "high": 161.0
+    },
+    "durability": {
+      "low": 127.5,
+      "expected": 150,
+      "high": 172.5
+    },
+    "movement_speed": {
+      "low": 12.75,
+      "expected": 15,
+      "high": 17.25
+    },
+    "combat_speed": 0.95,
+    "reaction_speed": 0.95,
+    "stamina": 100,
+    "mass": 100,
+    "reach": 1.5
+  },
+  "resources": {
+    "health": 930,
+    "stamina": 100,
+    "energy": 115,
+    "stamina_regen": 13,
+    "energy_regen": 5,
+    "regeneration": 0
+  },
+  "combat": {
+    "battle_iq": 0.48,
+    "aggression": 0.95,
+    "risk_tolerance": 0.85,
+    "preferred_range": 14,
+    "accuracy": 0.86,
+    "evasion": 0.1,
+    "blocking": 0.75,
+    "grappling": 0.5
+  },
+  "mobility": {
+    "grounded": true,
+    "flight": true,
+    "jump": true,
+    "dash": true,
+    "teleport": false
+  },
+  "resistances": {
+    "physical": 0.08,
+    "heat": 0.25
+  },
+  "abilities": [
+    {
+      "id": "punch",
+      "name": "Brutal Punch",
+      "type": "melee",
+      "range": 3.6,
+      "damage": 81,
+      "cooldown": 1,
+      "startup": 0.22,
+      "stamina_cost": 10,
+      "knockback": 10
+    },
+    {
+      "id": "heat_beam",
+      "name": "Heat Vision",
+      "type": "beam",
+      "range": 65,
+      "damage": 94,
+      "damage_type": "heat",
+      "cooldown": 2,
+      "startup": 0.45,
+      "active": 0.35,
+      "recovery": 0.3,
+      "energy_cost": 18,
+      "hit_modifier": 0.03,
+      "status_effects": [
+        {
+          "id": "burn",
+          "duration": 2,
+          "magnitude": 4
+        }
+      ]
+    },
+    {
+      "id": "charged_punch",
+      "name": "Charged Haymaker",
+      "type": "charged_melee",
+      "range": 4,
+      "damage": 145,
+      "cooldown": 4,
+      "startup": 0.85,
+      "stamina_cost": 22,
+      "knockback": 20
+    },
+    {
+      "id": "fly",
+      "name": "Combat Flight",
+      "type": "flight",
+      "targeting": "self",
+      "active": 9,
+      "startup": 0.2,
+      "recovery": 0.1,
+      "cooldown": 13,
+      "energy_cost": 10
+    },
+    {
+      "id": "evade",
+      "name": "Evasive Step",
+      "type": "dodge",
+      "startup": 0,
+      "active": 0.45,
+      "recovery": 0.12,
+      "cooldown": 1.9,
+      "stamina_cost": 12,
+      "mobility_distance": 5
+    },
+    {
+      "id": "guard",
+      "name": "Focused Guard",
+      "type": "block",
+      "startup": 0,
+      "active": 0.75,
+      "recovery": 0.08,
+      "cooldown": 1.5,
+      "stamina_cost": 7
+    },
+    {
+      "id": "jump",
+      "name": "Combat Leap",
+      "type": "jump",
+      "startup": 0,
+      "active": 0.1,
+      "recovery": 0.12,
+      "cooldown": 2.8,
+      "stamina_cost": 6,
+      "mobility_distance": 17
+    },
+    {
+      "id": "dash",
+      "name": "Quick Dash",
+      "type": "dash",
+      "startup": 0.05,
+      "active": 0.22,
+      "recovery": 0.12,
+      "cooldown": 2.5,
+      "stamina_cost": 10,
+      "mobility_distance": 7
+    }
+  ],
+  "transformations": [],
+  "ai": {
+    "defensive_bias": 0.65,
+    "repeat_penalty": 0.17
+  }
+}

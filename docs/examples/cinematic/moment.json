@@ -1,0 +1,31 @@
+{
+  "moment_id": "moment-0040",
+  "source_event_ids": [
+    "event-000368",
+    "event-000372",
+    "event-000375",
+    "event-000376"
+  ],
+  "start_time": 22.35,
+  "end_time": 22.55,
+  "importance_score": 3.273312,
+  "score_components": {
+    "damage": 0.0833115776895631,
+    "special": 0.32,
+    "resource_exhaustion": 0.22,
+    "repetition": -0.4,
+    "momentum_swing": 0.3,
+    "outcome": 2.0,
+    "near_defeat": 0.35,
+    "comeback": 0.4
+  },
+  "moment_type": "finisher",
+  "participants": [
+    "naruto",
+    "omniman"
+  ],
+  "summary": "Naruto lands energy orb, reducing Omni-Man to zero health.",
+  "continuity_consequences": [
+    "26.03 recorded health removed; visual scuffs may persist without anatomical claims."
+  ]
+}

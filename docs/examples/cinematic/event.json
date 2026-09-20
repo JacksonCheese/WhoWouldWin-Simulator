@@ -1,0 +1,130 @@
+{
+  "event_id": "event-000376",
+  "simulation_time": 22.55,
+  "actor_id": "naruto",
+  "target_ids": [
+    "omniman"
+  ],
+  "event_type": "DamageApplied",
+  "ability_id": "energy_orb",
+  "success": null,
+  "damage": 26.034868027988466,
+  "health_after_damage": 0.0,
+  "impact_score": 0.10413947211195386,
+  "location": {
+    "x": 1.0,
+    "y": 1.0
+  },
+  "positions": {
+    "naruto": {
+      "x": 1.0,
+      "y": 1.0
+    },
+    "omniman": {
+      "x": 3.2550090705524526,
+      "y": 2.5049248563438544
+    }
+  },
+  "velocities": {
+    "naruto": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "omniman": {
+      "x": 0.0,
+      "y": -0.017381845919485883
+    }
+  },
+  "actor_state_before": {
+    "health": 19.664260518782758,
+    "health_fraction": 0.02398080551071068,
+    "energy": 6.25,
+    "stamina": 97.90000000000015,
+    "position": {
+      "x": 1.0,
+      "y": 1.0
+    },
+    "velocity": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "transformation": "chakra",
+    "flying": false,
+    "statuses": []
+  },
+  "actor_state_after": {
+    "health": 19.739260518782757,
+    "health_fraction": 0.024072268925344826,
+    "energy": 6.5,
+    "stamina": 98.55000000000015,
+    "position": {
+      "x": 1.0,
+      "y": 1.0
+    },
+    "velocity": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "transformation": "chakra",
+    "flying": false,
+    "statuses": []
+  },
+  "target_state_before": {
+    "omniman": {
+      "health": 26.034868027988466,
+      "health_fraction": 0.026034868027988465,
+      "energy": 100.0,
+      "stamina": 3.7000000000002102,
+      "position": {
+        "x": 3.2550090705524526,
+        "y": 2.5057939486398286
+      },
+      "velocity": {
+        "x": 0.0,
+        "y": -0.020449230493512882
+      },
+      "transformation": null,
+      "flying": true,
+      "statuses": []
+    }
+  },
+  "target_state_after": {
+    "omniman": {
+      "health": 0.0,
+      "health_fraction": 0.0,
+      "energy": 100.0,
+      "stamina": 4.35000000000021,
+      "position": {
+        "x": 3.2550090705524526,
+        "y": 2.5049248563438544
+      },
+      "velocity": {
+        "x": 0.0,
+        "y": -0.017381845919485883
+      },
+      "transformation": null,
+      "flying": true,
+      "statuses": []
+    }
+  },
+  "environment_effect": null,
+  "narrative_tags": [
+    "special_ability",
+    "finishing_blow"
+  ],
+  "source_event_ids": [
+    "sim-000376"
+  ],
+  "source_index": 376,
+  "source_tick": 451,
+  "source_values": {
+    "damage": 26.034868027988466,
+    "health": 0
+  },
+  "derivations": {
+    "states": "previous tick / end of current tick; not per-event intermediate state",
+    "impact_score": "min(1, damage / target max health * 4 + recorded knockback force / 80)",
+    "source_event_ids": "Stable ordinal assigned to original event order, scoped by source checksum.",
+    "success": "Attack outcome: hit/blocked contact true, miss/dodged/interrupted false; other events unknown."
+  }
+}

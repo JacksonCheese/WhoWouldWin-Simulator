@@ -1,0 +1,172 @@
+{
+  "identity": {
+    "id": "omniman",
+    "name": "Omni-Man",
+    "universe": "Invincible",
+    "version": "Development demo / no canonical scaling"
+  },
+  "scaling_note": "Development placeholder scaling. Replace with researched feat-based values before publishing matchup claims.",
+  "physical": {
+    "strength": {
+      "low": 161.5,
+      "expected": 190,
+      "high": 218.5
+    },
+    "striking_power": {
+      "low": 140.25,
+      "expected": 165,
+      "high": 189.75
+    },
+    "durability": {
+      "low": 144.5,
+      "expected": 170,
+      "high": 195.5
+    },
+    "movement_speed": {
+      "low": 16.15,
+      "expected": 19,
+      "high": 21.85
+    },
+    "combat_speed": 1.08,
+    "reaction_speed": 1.12,
+    "stamina": 100,
+    "mass": 115,
+    "reach": 1.5
+  },
+  "resources": {
+    "health": 1000,
+    "stamina": 100,
+    "energy": 100,
+    "stamina_regen": 13,
+    "energy_regen": 5,
+    "regeneration": 0
+  },
+  "combat": {
+    "battle_iq": 0.7,
+    "aggression": 0.9,
+    "risk_tolerance": 0.8,
+    "preferred_range": 2.8,
+    "accuracy": 0.86,
+    "evasion": 0.12,
+    "blocking": 0.75,
+    "grappling": 0.9
+  },
+  "mobility": {
+    "grounded": true,
+    "flight": true,
+    "jump": true,
+    "dash": true,
+    "teleport": false
+  },
+  "resistances": {
+    "physical": 0.12
+  },
+  "abilities": [
+    {
+      "id": "heavy_strike",
+      "name": "Heavy Strike",
+      "type": "charged_melee",
+      "range": 4,
+      "damage": 125,
+      "cooldown": 1.8,
+      "startup": 0.5,
+      "recovery": 0.45,
+      "stamina_cost": 17,
+      "knockback": 18,
+      "stun": 0.25
+    },
+    {
+      "id": "jab",
+      "name": "Close-Range Combination",
+      "type": "melee",
+      "range": 3.8,
+      "damage": 61,
+      "cooldown": 0.85,
+      "stamina_cost": 8,
+      "knockback": 4
+    },
+    {
+      "id": "charge",
+      "name": "High-Speed Charge",
+      "type": "melee",
+      "range": 22,
+      "damage": 105,
+      "cooldown": 4.5,
+      "startup": 0.4,
+      "recovery": 0.55,
+      "stamina_cost": 23,
+      "mobility_distance": 20,
+      "knockback": 23
+    },
+    {
+      "id": "grapple",
+      "name": "Grapple Slam",
+      "type": "grapple",
+      "range": 3.2,
+      "damage": 95,
+      "cooldown": 3.8,
+      "startup": 0.28,
+      "stamina_cost": 18,
+      "stun": 0.7,
+      "knockback": 10
+    },
+    {
+      "id": "fly",
+      "name": "Combat Flight",
+      "type": "flight",
+      "targeting": "self",
+      "active": 8,
+      "startup": 0.15,
+      "recovery": 0.1,
+      "cooldown": 12,
+      "energy_cost": 8
+    },
+    {
+      "id": "evade",
+      "name": "Evasive Step",
+      "type": "dodge",
+      "startup": 0,
+      "active": 0.45,
+      "recovery": 0.12,
+      "cooldown": 1.9,
+      "stamina_cost": 12,
+      "mobility_distance": 5
+    },
+    {
+      "id": "guard",
+      "name": "Focused Guard",
+      "type": "block",
+      "startup": 0,
+      "active": 0.75,
+      "recovery": 0.08,
+      "cooldown": 1.5,
+      "stamina_cost": 7
+    },
+    {
+      "id": "jump",
+      "name": "Combat Leap",
+      "type": "jump",
+      "startup": 0,
+      "active": 0.1,
+      "recovery": 0.12,
+      "cooldown": 2.8,
+      "stamina_cost": 6,
+      "mobility_distance": 17
+    },
+    {
+      "id": "dash",
+      "name": "Quick Dash",
+      "type": "dash",
+      "startup": 0.05,
+      "active": 0.22,
+      "recovery": 0.12,
+      "cooldown": 2.5,
+      "stamina_cost": 10,
+      "mobility_distance": 7
+    }
+  ],
+  "transformations": [],
+  "ai": {
+    "defensive_bias": 0.8
+  }
+}
