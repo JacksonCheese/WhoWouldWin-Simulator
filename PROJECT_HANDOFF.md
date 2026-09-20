@@ -166,11 +166,26 @@ The cleanup removed only reproducible or generated material: Unity `Library`, `B
 
 ## GitHub status
 
-Local Git is ready, but no `origin` remote exists yet. GitHub login was the only blocker. Once authenticated, create the remote and run:
+The repository is configured and synchronized at:
 
-```bash
-git remote add origin https://github.com/<account>/whowouldwin-sim.git
-git push -u origin main
-```
+`https://github.com/JacksonCheese/WhoWouldWin-Simulator.git`
 
-Use the actual GitHub account and repository URL; do not invent either value. Keep the repository private unless the owner explicitly requests public visibility.
+Validated source changes must be committed and pushed to `origin/main`. Generated videos, render frames, Blender backups, caches, credentials, and virtual environments remain local/ignored under the repository policy in `AGENTS.md`.
+
+## Latest milestone: First TikTok Production Slice V2
+
+Local output: `outputs/first_tiktok_production_slice_v2/`
+
+Decision: **A. Aftermath shot approved; lock it and proceed to one authored approach shot.**
+
+- The locked 8.5-second vertical slice retains shots 1–3 exactly.
+- Shot 4 remains two seconds with the same `TIKTOK_CAM_Aftermath` composition, but replaces the editorial hold with one authored reaction over source frames 99–158.
+- Frames 99–108 preserve the approved recoil tail. The new additive body Action then adds pelvis/chest settling, asymmetric arm and leg lag, a controlled recovery, and authored cape follow-through.
+- No new root motion, close contact, combat event, or procedural body motion was added.
+- The canonical event hash remains `4240f6768af86ccecf43d79136bbf5d56200b2358003bc38a9aa338ca4afe861`.
+- Protected body/root Action signatures are unchanged; the frames 82–84 Rasengan hold, contact geometry, and sole-binding correction are preserved.
+- Deliverables include the standalone Blender scene, locked shot manifest, 360×640 clean/preview video, 720×1280 quality preview, contact sheets, provenance, validation, and animation/camera review.
+- No 1080×1920 render was created, as required by the review gate.
+- Validation: JSON/provenance checks passed and the complete Python suite reports 128 passed.
+
+Next step: create exactly one separately reviewed authored approach shot. Do not add another close exchange or expand directly to a 20-second fight.
