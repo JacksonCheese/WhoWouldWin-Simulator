@@ -98,6 +98,20 @@ def main(argv=None):
     export.add_argument(
         "--profiles", type=Path, help="Optional presentation mapping directory"
     )
+    from whowouldwin.cinematic.seedance.cli import (
+        COMMANDS as SEEDANCE_COMMANDS,
+        handle as seedance_handle,
+        register_commands as seedance_register,
+    )
+
+    seedance_register(subs)
+    requested = (argv if argv is not None else sys.argv[1:])
+    if requested and requested[0] in SEEDANCE_COMMANDS:
+        args = parser.parse_args(argv)
+        try:
+            return seedance_handle(args)
+        except (ValueError, OSError, RuntimeError) as error:
+            parser.exit(2, f"Error: {error}\n")
     from whowouldwin.cinematic.episodes.cli import register_commands, handle, COMMANDS
 
     register_commands(subs)
@@ -124,6 +138,8 @@ def main(argv=None):
     asset_register(subs)
     args = parser.parse_args(argv)
     try:
+        if args.command in SEEDANCE_COMMANDS:
+            return seedance_handle(args)
         if args.command in ASSET_COMMANDS:
             return asset_handle(args)
         if args.command in GOLDEN_COMMANDS:

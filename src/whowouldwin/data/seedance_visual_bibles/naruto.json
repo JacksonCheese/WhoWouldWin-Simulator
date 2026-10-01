@@ -1,0 +1,14 @@
+{
+  "character_id": "naruto", "version_id": "seedance-development-v1", "development_fixture": true,
+  "simplified_production_design": "Youthful agile ninja in a simple orange-and-black jacket and trousers; flat comic shapes with lightly textured cloth.",
+  "silhouette_rules": ["Blond spiky hair and forehead band remain visible", "Compact low stance and narrow shoulders", "Orange body mass stays distinct from opponent's red cape"],
+  "face_and_hair_anchors": ["Short blond spikes", "Simple forehead protector", "Youthful determined face"],
+  "costume_colors": ["orange", "black", "small blue chakra accent"],
+  "proportions": "Lean youth, lighter and shorter than Omni-Man.",
+  "signature_poses": ["Low ninja stance", "Cupped palm for spiraling chakra", "Outside slip with planted lead foot"],
+  "movement_personality": "Quick grounded direction changes, short explosive steps, precise hand path.",
+  "allowed_exaggeration": ["Brief speed smear", "Strong crouch and airborne extension"],
+  "forbidden_design_drift": ["No hair-color changes", "No new weapons", "No costume swaps", "Do not portray a recorded miss as contact"],
+  "required_views": ["front", "side", "three_quarter"],
+  "seedance_image_reference_requirements": ["Same approved design in all three views", "Full body including hair, protector, hands, and footwear", "Consistent orange/black palette", "Rights and permission confirmed by owner"]
+}

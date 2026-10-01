@@ -1,0 +1,14 @@
+{
+  "character_id": "aang", "version_id": "seedance-development-v1", "development_fixture": true,
+  "simplified_production_design": "Light, youthful air-focused fighter in a simplified saffron-and-yellow outfit; production fixture, not a verified canonical likeness.",
+  "silhouette_rules": ["Light frame and flowing clothing", "Clearly distinct from dark heavy opponents"],
+  "face_and_hair_anchors": ["Shaved head", "Youthful expressive face"],
+  "costume_colors": ["saffron", "yellow", "pale blue air accents"],
+  "proportions": "Small, light athletic youth.",
+  "signature_poses": ["Open palm air redirection", "Low evasive spin", "Balanced wide stance"],
+  "movement_personality": "Circular steps, evasive flow and soft landings.",
+  "allowed_exaggeration": ["Flowing air ribbons", "Short graceful airborne arcs"],
+  "forbidden_design_drift": ["No costume swaps", "No extra weapons", "No attacks beyond recorded events"],
+  "required_views": ["front", "side", "three_quarter"],
+  "seedance_image_reference_requirements": ["One approved consistent design in all views", "Full body and hands visible", "Rights and permission confirmed by owner"]
+}

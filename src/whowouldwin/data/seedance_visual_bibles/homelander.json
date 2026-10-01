@@ -1,0 +1,14 @@
+{
+  "character_id": "homelander", "version_id": "seedance-development-v1", "development_fixture": true,
+  "simplified_production_design": "Adult caped flying hero with a dark blue suit and red cape; production fixture, not a verified canonical likeness.",
+  "silhouette_rules": ["Tall upright torso and broad shoulders", "Cape remains distinct from body and opponent"],
+  "face_and_hair_anchors": ["Short light hair", "Adult stern face"],
+  "costume_colors": ["dark blue", "red", "muted gold accent"],
+  "proportions": "Tall adult athletic build.",
+  "signature_poses": ["Upright hover", "Focused beam gaze", "Aggressive straight strike"],
+  "movement_personality": "Direct, imposing flight and abrupt aggressive turns.",
+  "allowed_exaggeration": ["Small air wake", "Restrained beam glow when recorded"],
+  "forbidden_design_drift": ["No extra powers", "No costume swaps", "No beam unless recorded"],
+  "required_views": ["front", "side", "three_quarter"],
+  "seedance_image_reference_requirements": ["One approved consistent design in all views", "Full body and cape visible", "Rights and permission confirmed by owner"]
+}

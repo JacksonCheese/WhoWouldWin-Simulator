@@ -1,0 +1,14 @@
+{
+  "character_id": "omniman", "version_id": "seedance-development-v1", "development_fixture": true,
+  "simplified_production_design": "Broad mature flying hero in a simple red-and-white suit and short red cape; graphic comic shapes with restrained fabric texture.",
+  "silhouette_rules": ["Broad chest and cape form a recognizable triangle", "Dark swept hair and mustache remain visible", "White torso and red sleeves remain distinct from Naruto"],
+  "face_and_hair_anchors": ["Dark swept hair", "Clear mustache", "Mature angular face"],
+  "costume_colors": ["white", "scarlet red", "dark hair"],
+  "proportions": "Tall muscular adult with a wider torso and greater mass than Naruto.",
+  "signature_poses": ["Shoulder-led flight line", "Guarded heavy strike", "Controlled airborne recovery"],
+  "movement_personality": "Direct acceleration, heavy body alignment, cape lag on turns and braking.",
+  "allowed_exaggeration": ["Long straight flight streak", "Brief impact recoil"],
+  "forbidden_design_drift": ["No missing cape", "No new powers", "No altered mustache or hair", "No unrecorded finishing hit"],
+  "required_views": ["front", "side", "three_quarter"],
+  "seedance_image_reference_requirements": ["Same approved design in all three views", "Full body with cape, boots, and gloves", "Consistent red/white palette", "Rights and permission confirmed by owner"]
+}

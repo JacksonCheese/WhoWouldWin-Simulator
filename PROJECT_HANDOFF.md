@@ -1,6 +1,14 @@
 # WhoWouldWin Simulator — Agent Handoff
 
-## Current state
+## Current active workflow: local Seedance preparation
+
+The deterministic Python simulator remains authoritative for fighter stats, abilities, event order, outcome, replay checksum and canonical event-log SHA-256. The active visual workflow is now a short-shot 2D/stylized planning package for **manual** Seedance upload. Blender is no longer needed for active preparation. The previous Blender work described below is historical and preserved, not an active production milestone.
+
+Run `wws prepare-seedance naruto omniman --seed 69 --duration 10 --shots 8` from the repository. The generated example is `outputs/seedance_ready/naruto_vs_omniman_seed69_ff4f81ae/`: 8 shots over 10 editorial seconds, 379 source FightBeats, event SHA-256 `117633fb263707e0caad247260edfdd006dfeb62eee719a4a16a54a811502306`. It is **blocked for manual upload** until approved character, style, ability and first/last-frame images are supplied. The missing-asset list is in `validation-summary.md`; no paid provider was called. `shared_reference_requirements.json` lists common assets that can be staged into shot folders with `wws seedance-stage-refs <project>`. Example-video analysis is in `outputs/seedance_ready/reference_analysis/`, with private stills outside distributable shot folders.
+
+The active commands, architecture and boundaries are in [README.md](README.md). The prior README is retained in [docs/legacy-production-workflow.md](docs/legacy-production-workflow.md). Historical generated Blender outputs are ignored by Git and may not exist in a fresh checkout; one provenance test explicitly skips only when all three required historical artifacts are absent. The `origin` remote is configured; source changes should be committed and pushed after validation.
+
+## Historical state (before the Seedance pivot)
 
 This project is a deterministic fictional-character combat simulator plus a cinematic interpretation pipeline. The simulator determines canonical outcomes; Blender and the cinematic systems only interpret those outcomes visually.
 
