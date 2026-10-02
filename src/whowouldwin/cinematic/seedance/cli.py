@@ -29,7 +29,7 @@ def handle(args) -> int:
     if args.command == "seedance-stage-refs":
         result = stage_shared_references(args.project)
         print(f"Staged {result['staged_count']} valid common reference images; still missing/invalid: {result['validation']['missing_count']}")
-        return 0
+        return 0 if result["validation"]["ready_for_manual_upload"] else 2
     if args.command in {"validate-seedance", "seedance-missing"}:
         status = validate_package(args.project)
         if status["issues"]:

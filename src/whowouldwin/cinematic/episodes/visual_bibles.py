@@ -3,12 +3,13 @@ from .schemas import VisualProfile, ArenaVisualProfile
 
 
 def data_directory() -> Path:
+    source_checkout = Path(__file__).resolve().parents[4] / "data"
     installed = Path(__file__).resolve().parents[2] / "data"
-    return (
-        installed
-        if installed.is_dir()
-        else Path(__file__).resolve().parents[4] / "data"
-    )
+    # A source checkout can coexist with an installed data directory containing
+    # only a subset of assets. Prefer the complete checkout for editable installs.
+    if (source_checkout / "visual_bibles").is_dir():
+        return source_checkout
+    return installed
 
 
 def load_visuals(

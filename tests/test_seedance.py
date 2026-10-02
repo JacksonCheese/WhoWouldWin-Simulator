@@ -135,3 +135,40 @@ def test_shared_references_stage_only_valid_user_images(tmp_path, monkeypatch, r
     assert all((output / f"shots/shot_{index:03d}/character_references/naruto_front.png").is_file()
                for index in range(1, 9))
     assert not staged["validation"]["ready_for_manual_upload"]
+
+
+def test_curated_seed69_package_is_complete_and_idempotent(tmp_path, monkeypatch):
+    monkeypatch.setattr(seedance_package, "REFERENCE_VIDEOS", ())
+    output, status = seedance_package.prepare(Matchup(seed=69), output=tmp_path / "episode")
+    assert status["ready_for_manual_upload"]
+    assert status["canonical_event_sha256"] == (
+        "117633fb263707e0caad247260edfdd006dfeb62eee719a4a16a54a811502306"
+    )
+    assert len(list(output.glob("shots/*/keyframe.png"))) == 8
+    assert len(list((output / "shared_references").glob("*.png"))) == 18
+    for shot in status["shots"]:
+        names = shot["required_upload_images"]
+        assert "keyframe.png" in names
+        assert "last_frame/approved.png" not in names
+        assert all("aang" not in name and "homelander" not in name for name in names)
+    assert "projectile" in (output / "shots/shot_007/seedance_prompt.txt").read_text().lower()
+    assert "not rasengan" in (output / "shots/shot_007/seedance_prompt.txt").read_text().lower()
+    assert "rasenshuriken-like" in (output / "shots/shot_002/seedance_prompt.txt").read_text().lower()
+    assert (output / "shots/shot_002/ability_references/naruto_charged_vortex.png").read_bytes() == (
+        output / "shared_references/charged-vortex-projectile.png").read_bytes()
+    assert (output / "shots/shot_007/ability_references/naruto_energy_orb.png").read_bytes() == (
+        output / "shared_references/energy-orb-projectile.png").read_bytes()
+    assert "not" in (output / "source-truth-note.md").read_text()
+    before = _tree_hashes(output)
+    _, repeated = seedance_package.prepare(Matchup(seed=69), output=output)
+    assert repeated == status
+    assert _tree_hashes(output) == before
+
+
+def test_seed69_invalid_keyframe_blocks_manual_upload(tmp_path, monkeypatch):
+    monkeypatch.setattr(seedance_package, "REFERENCE_VIDEOS", ())
+    output, _ = seedance_package.prepare(Matchup(seed=69), output=tmp_path / "episode")
+    Image.new("RGB", (640, 640), (100, 50, 25)).save(output / "shots/shot_007/keyframe.png")
+    status = seedance_package.validate_package(output, write=False)
+    assert not status["ready_for_manual_upload"]
+    assert any("not a usable vertical 9:16" in issue for issue in status["issues"])

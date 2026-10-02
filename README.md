@@ -50,16 +50,22 @@ The result is `outputs/seedance_ready/<episode_id>/`. It includes `simulation.js
 
 The generated `first_frame/blocking.svg` and `last_frame/blocking.svg` are **schematic placement diagrams**. They are deliberately not character art or upload assets. The pipeline never substitutes synthetic artwork for missing references.
 
-For repeated character, style and ability references, place each approved image once under `shared_references/` using `shared_reference_requirements.json`, then run `wws seedance-stage-refs outputs/seedance_ready/<episode_id>`. The command copies only valid images into the shot folders. First and last frames remain shot-specific.
+For repeated character, style and ability references, place each approved image once under `shared_references/` using `shared_reference_requirements.json`, then run `wws seedance-stage-refs outputs/seedance_ready/<episode_id>`. The command copies only valid images into the shot folders. The curated first episode already bundles these images and uses one shot-specific `keyframe.png`; optional end frames can be added after continuity review. Generic packages still support approved first and last frames.
 
 ```bash
 wws seedance-missing outputs/seedance_ready/<episode_id>
 wws validate-seedance outputs/seedance_ready/<episode_id>
 ```
 
-Both validation commands exit with status 2 while approved assets are missing. Each shot's `upload_manifest.json` lists the exact image paths to supply, including front/side/three-quarter fighter boards, approved style, ability images when needed, and approved first/last frames. The JSON batch manifest uses an absolute project root and portable relative paths inside it. Add rights-cleared images, rerun validation, then follow `seedance_upload_guide.md` to upload shots manually. No automatic Seedance API integration or paid generation exists.
+Both validation commands exit with status 2 while required assets are missing. Each shot's `upload_manifest.json` lists the exact images to upload. The JSON batch manifest uses an absolute project root and portable relative paths inside it. The curated first episode validates with zero missing files; use its `seedance-manual-upload-guide.md` and human review checklists. No automatic Seedance API integration or paid video generation exists.
 
 The first reference analysis is under `outputs/seedance_ready/reference_analysis/`. The two supplied example videos are used only for visual study. Extracted frames stay in `private_reference_frames/`, outside distributable shot folders; do not upload or publish them. The source recordings include social-app UI and letterboxing, which the WWS full-frame 9:16 output does not reproduce.
+
+### First curated episode
+
+The seed-69 Naruto versus Omni-Man package includes 18 selected graphic reference images and one reviewed vertical keyframe for each of eight shots. The source art is tracked under `assets/seedance/first_episode/`; preparation copies it into the local output without overwriting later human replacements. Run the three commands above in order; the saved replay, generated prompts, exact source-beat IDs, image inventory and manual guide are written to `outputs/seedance_ready/naruto_vs_omniman_seed69_ff4f81ae/`. The validation command checks image decoding, keyframe aspect ratio, prompt and continuity correspondence, fighter-reference assignment, source order, replay checksum, event hash and outcome. A final human review of the generated art and Seedance motion remains necessary before publication.
+
+The suggested punch → slip → parry → hand-contact Rasengan sequence was not the recorded seed-69 fight. The curated episode therefore preserves the saved order: charged-vortex projectile hit, grapple dodge, heavy-strike block, chakra transformation, Omni-Man charge hit, energy-orb projectile KO, and aftermath. See `source-truth-note.md` in the output. Rasengan is a hand-delivered attack; the charged-vortex projectile has a Rasenshuriken-like visual, while the finishing Energy Orb stays a generic placeholder projectile. Neither is called a thrown Rasengan.
 
 ## Simulator commands
 
@@ -75,4 +81,4 @@ The statistical runner produces win rates, durations, finishers, ability usage, 
 
 ## Boundaries and next steps
 
-The current upload packages are **blocked until real approved reference images are supplied**. The local pipeline is validated, but no Seedance animation or final TikTok episode was generated. The next steps are rights-cleared character/style/ability boards, artist-approved start/end frames, manual shot generation, continuity review, and approved clip assembly. The canonical combat replay must remain unchanged through those stages. Historical Blender work remains available for reference and does not need to be reopened for this workflow.
+The curated seed-69 package is **technically ready for manual upload**, with zero missing image files. The generated graphic art remains subject to human identity/style approval, and no Seedance animation or final TikTok episode has been generated. Other matchups still require their own approved art. Next: review the eight keyframes at phone size, generate one shot at a time, reject motion or identity drift, then assemble only approved clips. The canonical combat replay remains unchanged. Historical Blender work remains available for reference and does not need to be reopened for this workflow.

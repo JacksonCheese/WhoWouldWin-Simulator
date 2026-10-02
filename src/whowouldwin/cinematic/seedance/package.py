@@ -109,6 +109,23 @@ def _reference_analysis(folder: Path) -> None:
         "The screen recordings include social-app UI, captions and black margins. Those are recording artifacts, not a desired video canvas. Private stills remain outside distributable shot folders.\n",
         encoding="utf-8",
     )
+    (folder / "simplified-style-guide.md").write_text(
+        "# Simplified graphic animation direction\n\n"
+        "The two supplied files are 1206×2622 / 60 fps social-app screen recordings. Their embedded action regions are wider than the phone capture; the UI and black margins are not desired output. Extracted stills are private visual study only.\n\n"
+        "| Attribute | ExampleVideo1 | ExampleVideo2 | Chosen WWS direction |\n"
+        "|---|---|---|---|\n"
+        "| Figures | Very simple heads, large flat limb masses, strong costume blocks | More rendered anatomy and texture | Use the simpler first-video construction; retain only key identity anchors |\n"
+        "| Silhouette | Fighters separate cleanly against white space | Large/small body contrast against dark haze | Short angular Naruto versus broad caped Omni-Man, with visible limb gaps |\n"
+        "| Color and edge | Saturated flat fills, obvious contours | Warm/cool painterly accents | Orange/black versus red/white, single dark outline, at most one flat shadow |\n"
+        "| Face | Minimal expressions visible at action scale | More face detail in medium shots | Eyes, brows, mouth, mustache or cheek marks only |\n"
+        "| Framing | Medium fight views and short overhead inserts | Medium-to-wide impact scale | Medium 9:16 two-person shots; no game-camera distance |\n"
+        "| Rhythm | Often roughly 1–3-second pose/cut beats | Longer force arcs with brief inserts | Eight 1–1.6-second shots over 10 seconds, hard cuts on action |\n"
+        "| Motion | Abrupt acceleration and clear pose changes | More continuous force arcs | Short anticipation, one action path, readable support and recovery |\n"
+        "| Impact and effects | Radial marks and brief blue accents | Local red/blue glow, smoke at major beats | One small contact mark; energy remains local and never hides bodies |\n"
+        "| Environment | Intentionally sparse | Painterly arena depth | One road stripe, two simple facades, stable blue-hour light |\n\n"
+        "Omit fabric microdetail, realistic muscles, facial acting, complex architecture and constant particles. Exaggerate pose, spacing and timing only while joints and support feet remain legible. Never copy a source video's exact pose, shot sequence, dialogue, character or choreography.\n",
+        encoding="utf-8",
+    )
 
 
 def _blocking_svg(shot, start: bool) -> str:
@@ -185,15 +202,31 @@ def _shot_files(project: Path, shot) -> dict:
 
 
 def stage_shared_references(project: Path) -> dict:
-    """Copy only real user-supplied common references into each upload folder."""
+    """Copy validated shared references into each shot upload folder."""
     from .schemas import EpisodePlan
+    from .first_episode import EPISODE_ID, apply_first_episode_direction
 
     project = project.resolve()
     plan = EpisodePlan.model_validate_json((project / "episode_plan.json").read_text(encoding="utf-8"))
+    first_episode = plan.episode_id == EPISODE_ID
+    if first_episode:
+        apply_first_episode_direction(project)
+        plan = EpisodePlan.model_validate_json((project / "episode_plan.json").read_text(encoding="utf-8"))
+    aliases = {
+        "style_references/approved_style.png": "simplified-style-reference.png",
+        "ability_references/naruto_chakra_form.png": "naruto-chakra-form-simple.png",
+        "ability_references/naruto_charged_vortex.png": "charged-vortex-projectile.png",
+        "ability_references/naruto_energy_orb.png": "energy-orb-projectile.png",
+        "ability_references/omniman_grapple.png": "omniman-grapple-simple.png",
+        "ability_references/omniman_heavy_strike.png": "omniman-impact-simple.png",
+    }
     staged = []
     for shot in plan.shots:
         for relative in shot.required_reference_images:
             source = (project / "shared_references" / relative).resolve()
+            if first_episode and not source.is_file():
+                basename = Path(relative).name.replace("_", "-")
+                source = (project / "shared_references" / aliases.get(relative, basename)).resolve()
             target = (project / "shots" / shot.shot_id / relative).resolve()
             if not source.is_relative_to(project / "shared_references") or not target.is_relative_to(project):
                 raise ValueError(f"Unsafe shared reference path: {relative}")
@@ -201,6 +234,19 @@ def stage_shared_references(project: Path) -> dict:
                 target.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(source, target)
                 staged.append(str(target.relative_to(project)))
+        if first_episode:
+            folder = project / "shots" / shot.shot_id
+            manifest_path = folder / "upload_manifest.json"
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            manifest["required_upload_images"] = [*shot.required_reference_images, "keyframe.png"]
+            manifest["preferred_start_image"] = "keyframe.png"
+            manifest["optional_end_image"] = "last_frame/approved.png"
+            manifest["manual_actions"] = [
+                "Review the generated keyframe and character design before upload",
+                "Confirm the recorded hit, miss, or ability remains correct",
+                "Review the ending pose against the next shot before adding an optional end frame",
+            ]
+            write_json(manifest_path, manifest)
     return {"staged_files": staged, "staged_count": len(staged), "validation": validate_package(project)}
 
 
@@ -217,6 +263,8 @@ def validate_package(project: Path, *, write: bool = True) -> dict:
     event_sha = digest([event for frame in replay["frames"] for event in frame["events"]])
     if event_sha != plan.canonical_event_sha256:
         raise ValueError("Canonical event log hash does not match episode plan")
+    if plan.outcome != replay["result"]:
+        raise ValueError("Episode outcome differs from the saved simulator result")
     beats = json.loads((project / "fight_beats.json").read_text(encoding="utf-8"))
     source_count = sum(len(frame["events"]) for frame in replay["frames"])
     if len(beats) != source_count:
@@ -235,26 +283,60 @@ def validate_package(project: Path, *, write: bool = True) -> dict:
             issues.append(f"{shot.shot_id}: fighter continuity keys changed")
         if shot.continuity_end.simulation_time < shot.continuity_start.simulation_time:
             issues.append(f"{shot.shot_id}: source simulation time moved backward")
+        if index and shot.source_simulation_time < plan.shots[index - 1].source_simulation_time:
+            issues.append(f"{shot.shot_id}: selected source events are out of order")
         if shot.continuity_end.screen_positions != shot.continuity_start.screen_positions:
             source_events = [beat for beat in beats if beat["beat_id"] in shot.source_beat_ids]
             if not any(beat["event_type"] in {"ActionChosen", "Knockback", "FighterMoved"} for beat in source_events):
                 issues.append(f"{shot.shot_id}: screen lanes flip without a movement beat; manually review")
     for shot in plan.shots:
         folder = (project / "shots" / shot.shot_id).resolve()
+        shot_file = folder / "shot.json"
+        if not shot_file.is_file() or json.loads(shot_file.read_text(encoding="utf-8")) != shot.model_dump(mode="json"):
+            issues.append(f"{shot.shot_id}: shot.json differs from episode plan")
         for beat_id in shot.source_beat_ids:
             if beat_id not in known:
                 issues.append(f"{shot.shot_id}: unknown source beat {beat_id}")
         if not shot.seedance_prompt.strip() or not shot.negative_prompt.strip():
             issues.append(f"{shot.shot_id}: empty prompt or negative prompt")
+        for name, expected in (("seedance_prompt.txt", shot.seedance_prompt),
+                               ("seedance_negative_prompt.txt", shot.negative_prompt)):
+            file = folder / name
+            if not file.is_file() or file.read_text(encoding="utf-8").strip() != expected.strip():
+                issues.append(f"{shot.shot_id}: {name} differs from the episode plan")
+        for name, expected in (("continuity_start.json", shot.continuity_start),
+                               ("continuity_end.json", shot.continuity_end)):
+            file = folder / name
+            if not file.is_file() or json.loads(file.read_text(encoding="utf-8")) != expected.model_dump(mode="json"):
+                issues.append(f"{shot.shot_id}: {name} differs from the episode plan")
         manifest = json.loads((folder / "upload_manifest.json").read_text(encoding="utf-8"))
+        required = manifest["required_upload_images"]
+        if not set(shot.required_reference_images).issubset(required):
+            issues.append(f"{shot.shot_id}: manifest omits required character, style, or ability references")
+        if "keyframe.png" not in required and not {"first_frame/approved.png", "last_frame/approved.png"}.issubset(required):
+            issues.append(f"{shot.shot_id}: manifest lacks a valid start-frame policy")
+        for relative in required:
+            if relative.startswith(("character_references/", "ability_references/")) and not any(
+                Path(relative).name.startswith(f"{fighter}_") for fighter in plan.fighter_ids
+            ):
+                issues.append(f"{shot.shot_id}: unrelated character reference {relative}")
         missing = []
-        for relative in manifest["required_upload_images"]:
+        for relative in required:
             file = (folder / relative).resolve()
             if not file.is_relative_to(folder) or file.suffix.lower() not in ALLOWED_IMAGE_SUFFIXES:
                 issues.append(f"{shot.shot_id}: invalid reference path {relative}")
                 continue
             if not _valid_image(file):
                 missing.append(relative)
+            if relative == "keyframe.png" and _valid_image(file):
+                try:
+                    from PIL import Image
+                    with Image.open(file) as image:
+                        width, height = image.size
+                    if height < 512 or abs(width / height - 9 / 16) > 0.015:
+                        issues.append(f"{shot.shot_id}: keyframe is not a usable vertical 9:16 image")
+                except ImportError:
+                    issues.append(f"{shot.shot_id}: install Pillow to validate keyframe dimensions")
         if missing:
             issues.extend(f"{shot.shot_id}: missing {name}" for name in missing)
         batch.append({"shot_id": shot.shot_id, "relative_shot_directory": f"shots/{shot.shot_id}",
@@ -300,7 +382,20 @@ def _prepare_replay(source: Path, *, output: Path | None, duration: float, shots
     plan, beats, specs = direct(replay, duration=duration, shots=shots, fps=fps)
     project = (output or Path("outputs/seedance_ready") / plan.episode_id).resolve()
     if project.exists() and any(project.iterdir()):
-        raise ValueError(f"Output directory already contains files: {project}; choose a new directory or remove the generated package before reproducing it")
+        existing = project / "episode_plan.json"
+        if existing.is_file():
+            from .schemas import EpisodePlan
+            saved = EpisodePlan.model_validate_json(existing.read_text(encoding="utf-8"))
+            if (saved.source_checksum == plan.source_checksum
+                    and saved.canonical_event_sha256 == plan.canonical_event_sha256
+                    and len(saved.shots) == len(plan.shots)
+                    and saved.duration_seconds == plan.duration_seconds and saved.fps == plan.fps):
+                from .first_episode import EPISODE_ID, install_curated_assets
+                if saved.episode_id == EPISODE_ID:
+                    install_curated_assets(project)
+                    return project, stage_shared_references(project)["validation"]
+                return project, validate_package(project)
+        raise ValueError(f"Output directory contains a different or incomplete episode: {project}")
     project.mkdir(parents=True, exist_ok=True)
     shutil.copyfile(source, project / "simulation.json")
     write_json(project / "fight_beats.json", [beat.model_dump(mode="json") for beat in beats])
@@ -331,6 +426,8 @@ def _prepare_replay(source: Path, *, output: Path | None, duration: float, shots
         (shared / name).mkdir(parents=True, exist_ok=True)
     for shot in plan.shots:
         _shot_files(project, shot)
+    from .first_episode import apply_first_episode_direction
+    apply_first_episode_direction(project)
     write_json(project / "shared_reference_requirements.json", sorted({
         name for shot in plan.shots for name in shot.required_reference_images
     }))
@@ -358,4 +455,8 @@ def _prepare_replay(source: Path, *, output: Path | None, duration: float, shots
         "This command does not call Seedance or another paid API. Provider settings and credentials are not stored.\n",
         encoding="utf-8",
     )
+    from .first_episode import EPISODE_ID, install_curated_assets
+    if plan.episode_id == EPISODE_ID:
+        install_curated_assets(project)
+        return project, stage_shared_references(project)["validation"]
     return project, validate_package(project)
