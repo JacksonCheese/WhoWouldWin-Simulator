@@ -90,7 +90,7 @@ class VisualContinuity(Schema):
 class SeedanceShot(Schema):
     shot_id: str
     sequence_index: int
-    duration_seconds: float = Field(ge=0.5, le=3)
+    duration_seconds: float = Field(ge=0.5, le=3.5)
     purpose: str
     source_beat_ids: list[str] = Field(min_length=1)
     characters_visible: list[str]
@@ -113,6 +113,7 @@ class SeedanceShot(Schema):
     continuity_start: VisualContinuity
     continuity_end: VisualContinuity
     source_simulation_time: float
+    editorial_note: str = ""
 
 
 class EpisodePlan(Schema):
@@ -125,9 +126,9 @@ class EpisodePlan(Schema):
     aspect_ratio: Literal["9:16"] = "9:16"
     target_resolution: list[int] = [1080, 1920]
     fps: Literal[24, 30] = 30
-    duration_seconds: float = Field(ge=8, le=15)
+    duration_seconds: float = Field(ge=8, le=65)
     style: str
-    shots: list[SeedanceShot] = Field(min_length=6, max_length=12)
+    shots: list[SeedanceShot] = Field(min_length=6, max_length=32)
     outcome: dict
 
     @model_validator(mode="after")

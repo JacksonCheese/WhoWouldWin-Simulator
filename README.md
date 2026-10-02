@@ -67,6 +67,17 @@ The seed-69 Naruto versus Omni-Man package includes 18 selected graphic referenc
 
 The suggested punch → slip → parry → hand-contact Rasengan sequence was not the recorded seed-69 fight. The curated episode therefore preserves the saved order: charged-vortex projectile hit, grapple dodge, heavy-strike block, chakra transformation, Omni-Man charge hit, energy-orb projectile KO, and aftermath. See `source-truth-note.md` in the output. Rasengan is a hand-delivered attack; the charged-vortex projectile has a Rasenshuriken-like visual, while the finishing Energy Orb stays a generic placeholder projectile. Neither is called a thrown Rasengan.
 
+### 62-second directed seed-289 episode
+
+The separate long-form package expands the saved 7.55-second seed-289 fight into **62 editorial seconds across 28 image-backed shots and five sequences**. Its real combat outcome is Omni-Man's heavy-strike KO. A late failed Rasengan attempt is clearly labeled **noncanonical editorial staging**: the rotating sphere stays in Naruto's hand, never becomes a projectile, and causes no hit or damage. The recorded charged-vortex projectile is Rasenshuriken-like; the separate generic Energy Orb is a small straight pellet with no spiral.
+
+```bash
+wws prepare-seedance-longform
+wws validate-seedance outputs/seedance_ready/naruto_vs_omniman_60s
+```
+
+The saved replay and 28 keyframes are versioned in `assets/seedance/seed289_60s/`; the output is regenerated locally. Inspect `review/keyframe_camera_contact_sheet.jpg`, `camera_grammar.md`, each `upload_manifest.json`, and the sibling `outputs/seedance_ready/naruto_vs_omniman_production_review.md`. The shots deliberately alternate wide, overhead, ground-level, profile, three-quarter, over-the-shoulder and close angles while holding one understandable fight axis. All required reference files are present, but a valid upload package does not guarantee good generated motion. Make and approve clips one at a time; no paid provider or final video is invoked by these commands.
+
 ## Simulator commands
 
 ```bash

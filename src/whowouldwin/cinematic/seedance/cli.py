@@ -5,10 +5,14 @@ from whowouldwin.combat.environment import Matchup
 from .package import prepare, stage_shared_references, validate_package
 
 
-COMMANDS = {"prepare-seedance", "episode-plan", "validate-seedance", "seedance-missing", "seedance-stage-refs"}
+COMMANDS = {"prepare-seedance", "episode-plan", "prepare-seedance-longform", "validate-seedance", "seedance-missing", "seedance-stage-refs"}
 
 
 def register_commands(subs) -> None:
+    longform = subs.add_parser("prepare-seedance-longform", help="Build the 62-second image-backed seed-289 episode without a provider call")
+    longform.add_argument("--source", type=Path)
+    longform.add_argument("--assets", type=Path)
+    longform.add_argument("--output", type=Path)
     for name in ("prepare-seedance", "episode-plan"):
         parser = subs.add_parser(name, help="Prepare a deterministic local short-shot package without calling Seedance")
         parser.add_argument("source", help="Replay JSON path or first fighter ID")
@@ -26,6 +30,17 @@ def register_commands(subs) -> None:
 
 
 def handle(args) -> int:
+    if args.command == "prepare-seedance-longform":
+        from .longform_seed289 import prepare_longform
+        root = Path(__file__).resolve().parents[4]
+        assets = args.assets or root / "assets/seedance/seed289_60s"
+        source = args.source or assets / "source_replay.json"
+        output = args.output or root / "outputs/seedance_ready/naruto_vs_omniman_60s"
+        project, status = prepare_longform(source, output, assets)
+        print(f"Prepared: {project}")
+        print(f"Canonical event SHA-256: {status['canonical_event_sha256']}")
+        print(f"Manual upload status: {'READY' if status['ready_for_manual_upload'] else 'BLOCKED'}; invalid items: {status['missing_count']}")
+        return 0 if status["ready_for_manual_upload"] else 2
     if args.command == "seedance-stage-refs":
         result = stage_shared_references(args.project)
         print(f"Staged {result['staged_count']} valid common reference images; still missing/invalid: {result['validation']['missing_count']}")
