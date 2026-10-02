@@ -1,9 +1,11 @@
 """The editorial expansion must preserve the short authoritative seed-289 fight."""
 
 from pathlib import Path
+import hashlib
+import json
 
 from whowouldwin.cinematic.seedance.longform_seed289 import (
-    CAMERA_FAMILIES, EVENT_SHA, SOURCE_CHECKSUM, build_plan, prepare_longform,
+    CAMERA_FAMILIES, EVENT_SHA, SOURCE_CHECKSUM, build_plan, finalize_preupload, prepare_longform,
 )
 from whowouldwin.cinematic.seedance.package import validate_package
 from whowouldwin.simulation.replay import load_replay
@@ -36,6 +38,9 @@ def test_seed289_directed_plan_is_varied_and_source_locked():
         assert "never becomes a projectile" in shot.seedance_prompt or "Rasengan" in shot.action_description
         assert "No Rasengan hit" in shot.negative_prompt
     assert "heavy strike" in plan.shots[25].action_description
+    assert plan.shots[-1].transition_out == "clean hold to end"
+    assert "shot 029" not in plan.shots[-1].seedance_prompt
+    assert "no following shot" in plan.shots[-1].seedance_prompt
 
 
 def test_image_backed_longform_package_validates(tmp_path):
@@ -51,3 +56,24 @@ def test_image_backed_longform_package_validates(tmp_path):
         ASSETS / "energy-orb-straight.png").read_bytes()
     assert validate_package(project, write=False)["ready_for_manual_upload"]
     assert (project / "simulation.json").read_bytes() == source.read_bytes()
+    art_before = {p.parent.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in project.glob("shots/*/keyframe.png")}
+    plan_file = project / "episode_plan.json"
+    old = json.loads(plan_file.read_text())
+    old["shots"][-1]["transition_out"] = "quiet end hold"
+    old["shots"][-1]["seedance_prompt"] = old["shots"][-1]["seedance_prompt"].replace(
+        "Clean hold to end; there is no following shot.",
+        "Transition by matching the end pose to shot 029 on a hard action cut.",
+    )
+    plan_file.write_text(json.dumps(old))
+    last = project / "shots/shot_028"
+    (last / "shot.json").write_text(json.dumps(old["shots"][-1]))
+    (last / "seedance_prompt.txt").write_text(old["shots"][-1]["seedance_prompt"] + "\n")
+    repaired = finalize_preupload(project)
+    assert repaired["ready_for_manual_upload"]
+    assert "shot 029" not in (last / "seedance_prompt.txt").read_text()
+    assert json.loads((last / "shot.json").read_text())["transition_out"] == "clean hold to end"
+    art_after = {p.parent.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in project.glob("shots/*/keyframe.png")}
+    assert art_before == art_after
+    audit = json.loads((project / "review/preupload_audit.json").read_text())
+    assert audit["technical_ready_for_manual_generation"]
+    assert "first **five** clips" in (project / "production_readiness.md").read_text()

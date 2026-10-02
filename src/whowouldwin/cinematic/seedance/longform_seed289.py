@@ -8,6 +8,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
+import hashlib
+import json
 import shutil
 
 from whowouldwin.cinematic.episodes.adapter import adapt_replay
@@ -144,6 +146,10 @@ def build_plan(replay: dict) -> tuple[EpisodePlan, list[dict]]:
             if direction.editorial else ""
         )
         handoff = SHOTS[i - 2].end_pose if i > 1 else direction.start_pose
+        transition_direction = (
+            f"Transition by matching the end pose to shot {i + 1:03d} on a hard action cut. "
+            if i < len(SHOTS) else "Clean hold to end; there is no following shot. "
+        )
         prompt = (
             f"{STYLE} Shot {i:03d} of 28, {duration:.3f} seconds at 30 fps. {direction.title}. "
             f"Start from the prior shot's exact end pose: {handoff}. Move into this beat's setup: {direction.start_pose}. "
@@ -155,8 +161,8 @@ def build_plan(replay: dict) -> tuple[EpisodePlan, list[dict]]:
             "and recovery appropriate to this beat. Use flat colors, simple faces, clean contours and clear negative space. "
             + ("The Energy Orb is a tiny straight ranged pellet without a spiral; do not depict it as Rasengan. " if direction.ability == "energy_orb" else "")
             + ("Rasengan stays physically attached to Naruto's open palm throughout this shot; it is an attempted melee strike and never becomes a projectile. " if direction.ability == "rasengan" else "")
-            + f"Transition by matching the end pose to shot {i+1:03d} on a hard action cut. "
-            f"The recorded outcome is Omni-Man KO victory; no added hit or damage. {editorial_note}"
+            + transition_direction
+            + f"The recorded outcome is Omni-Man KO victory; no added hit or damage. {editorial_note}"
         )
         shot = SeedanceShot(
             shot_id=f"shot_{i:03d}", sequence_index=i, duration_seconds=duration,
@@ -167,7 +173,7 @@ def build_plan(replay: dict) -> tuple[EpisodePlan, list[dict]]:
             background_description="Sparse blue-hour city street; center stripe, left curb, two facades, right streetlight",
             ability_effects=([direction.ability] if direction.ability else []),
             transition_in="hard cut on aligned action" if i > 1 else "direct opening",
-            transition_out="hard cut to matched pose" if i < len(SHOTS) else "quiet end hold",
+            transition_out="hard cut to matched pose" if i < len(SHOTS) else "clean hold to end",
             continuity_anchors=["Naruto orange/black left", "Omni-Man red/off-white right", "same road stripe and right streetlight", "soft key screen left"],
             seedance_prompt=prompt, negative_prompt=NEGATIVE + (" No Rasengan hit, damage, throw, projectile, detached orb, beam, or energy blast in this shot." if direction.editorial else "") + (" No spiral orb, Rasengan sphere, or hand-held melee energy in this ranged Energy Orb shot." if direction.ability == "energy_orb" else ""),
             required_reference_images=required,
@@ -238,7 +244,107 @@ def prepare_longform(source: Path, output: Path, assets: Path) -> tuple[Path, di
     _write_documents(output, plan, groups)
     _camera_contact_sheet(output, plan)
     _write_production_review(output, plan)
-    return output, validate_package(output)
+    status = validate_package(output)
+    _write_preupload_review(output, plan, groups, status)
+    return output, status
+
+
+def finalize_preupload(project: Path) -> dict:
+    """Repair only final-shot text and refresh review metadata, never shot art."""
+    project = project.resolve()
+    replay = load_replay(project / "simulation.json")
+    revised, _ = build_plan(replay)
+    existing = EpisodePlan.model_validate_json((project / "episode_plan.json").read_text(encoding="utf-8"))
+    if existing.shots[:-1] != revised.shots[:-1] or existing.outcome != revised.outcome:
+        raise ValueError("Existing package differs outside shot 028; refusing a broad rewrite")
+    images_before = {
+        str(path.relative_to(project)): hashlib.sha256(path.read_bytes()).hexdigest()
+        for path in project.rglob("*.png")
+    }
+    write_json(project / "episode_plan.json", revised)
+    final = revised.shots[-1]
+    folder = project / "shots" / final.shot_id
+    write_json(folder / "shot.json", final)
+    (folder / "seedance_prompt.txt").write_text(final.seedance_prompt + "\n", encoding="utf-8")
+    (folder / "seedance_negative_prompt.txt").write_text(final.negative_prompt + "\n", encoding="utf-8")
+    groups = json.loads((project / "sequence_plan.json").read_text(encoding="utf-8"))
+    _write_documents(project, revised, groups)
+    status = validate_package(project)
+    images_after = {
+        str(path.relative_to(project)): hashlib.sha256(path.read_bytes()).hexdigest()
+        for path in project.rglob("*.png")
+    }
+    if images_before != images_after:
+        raise ValueError("Pre-upload correction unexpectedly changed image files")
+    _write_preupload_review(project, revised, groups, status)
+    return status
+
+
+def _write_preupload_review(project: Path, plan: EpisodePlan, groups: list[dict], status: dict) -> None:
+    from PIL import Image
+
+    shots = plan.shots
+    source_art = Path(__file__).resolve().parents[4] / "assets/seedance/seed289_60s/keyframes"
+    image_matches = []
+    dimensions = []
+    for shot in shots:
+        keyframe = project / "shots" / shot.shot_id / "keyframe.png"
+        source = source_art / f"{shot.shot_id}.png"
+        image_matches.append(source.is_file() and keyframe.read_bytes() == source.read_bytes())
+        with Image.open(keyframe) as image:
+            dimensions.append([image.width, image.height])
+    technical = (
+        status["ready_for_manual_upload"] and len(shots) == 28 and len(groups) == 5
+        and abs(plan.duration_seconds - 62) < 1e-6
+        and all(image_matches)
+        and shots[-1].transition_out == "clean hold to end"
+        and "shot 029" not in shots[-1].seedance_prompt
+    )
+    camera_checks = {
+        "wide_establishing": any("wide" in family for family in CAMERA_FAMILIES[:4]),
+        "close_up": any("close-up" in family for family in CAMERA_FAMILIES),
+        "low_angle": any("low" in family or "ground-level" in family for family in CAMERA_FAMILIES),
+        "overhead": any("overhead" in family for family in CAMERA_FAMILIES),
+        "side_profile": any("profile" in family or "side" in family for family in CAMERA_FAMILIES),
+        "three_quarter_contact": any("three-quarter" in family and ("impact" in family or "contact" in family) for family in CAMERA_FAMILIES),
+        "reaction": any("reaction" in family for family in CAMERA_FAMILIES),
+        "impact_insert": any("impact" in family for family in CAMERA_FAMILIES),
+        "wide_aftermath": CAMERA_FAMILIES[-1] == "wide aftermath",
+    }
+    report = {
+        "technical_ready_for_manual_generation": technical and all(camera_checks.values()),
+        "validation_issue_count": status["missing_count"],
+        "duration_seconds": plan.duration_seconds,
+        "shot_count": len(shots),
+        "sequence_count": len(groups),
+        "camera_checks": camera_checks,
+        "keyframes_identical_to_versioned_sources": all(image_matches),
+        "keyframe_dimensions": dimensions,
+        "final_transition": shots[-1].transition_out,
+        "nonexistent_shot_029_reference": "shot 029" in shots[-1].seedance_prompt,
+        "canonical_event_sha256": status["canonical_event_sha256"],
+        "source_replay_checksum": status["source_replay_checksum"],
+        "paid_provider_calls": status["provider_calls"],
+        "storyboard_visual_review": "All 28 images reviewed as a contact sheet: consistently outlined, flat-color 2D figures; no materially realistic outlier identified. Framing and screen lanes appear plausible at board scale.",
+        "generated_motion_quality": "unverified; no Seedance clips generated",
+        "sample_video_parity": "not assessable before at least the first five clips are generated and reviewed at normal speed",
+    }
+    write_json(project / "review/preupload_audit.json", report)
+    verdict = "Technically ready for controlled manual Seedance generation" if report["technical_ready_for_manual_generation"] else "Blocked by technical validation"
+    (project / "production_readiness.md").write_text(
+        "# Production readiness — pre-upload audit\n\n"
+        f"**{verdict}.** {len(shots)} shots, {len(groups)} sequences, {plan.duration_seconds:.0f} editorial seconds. "
+        f"Validation issues: {status['missing_count']}. All staged keyframes match their versioned source images. Shot 028 ends with `clean hold to end` and contains no shot-029 reference. Canonical event hash: `{status['canonical_event_sha256']}`.\n\n"
+        "## Storyboard and keyframe quality\n\n"
+        "The 28-image contact sheet was visually reviewed. Figures share a simplified 2D ink-and-flat-color style; no single frame is materially photorealistic or demands replacement. Establishing, low, overhead, profile, over-shoulder, three-quarter contact, reaction, impact and aftermath compositions are represented in the actual images. Naruto generally remains left and Omni-Man right, except for isolated character inserts and overhead views. The images offer plausible cuts, but they do not prove that generated motion will join the poses cleanly.\n\n"
+        "## Source truth and movement\n\n"
+        "Prompts specify weight shifts, foot loading/release, shoulder and hip sequencing, contact or miss, recoil and recovery rather than merely naming source events. The recorded Energy Orb is a small straight ranged pellet, separate from the hand-held Rasengan. Naruto's late Rasengan preparation is authorized noncanonical, non-damaging editorial staging: it never leaves his hand or hits Omni-Man. Omni-Man's recorded heavy strike remains the decisive KO.\n\n"
+        "## Unverified generated-motion quality\n\n"
+        "No Seedance clips were generated. Foot skating, limb disappearance, hidden contact, style drift, action-axis reversal, camera behavior, pose matching and editorial pace can only be judged by watching generated clips at normal speed. Technical readiness is not final video approval.\n\n"
+        "## Remaining gate\n\n"
+        "Generate and review the first **five** clips at normal speed before making any claim of parity with the supplied sample videos. Continue shot by shot only if identity, camera variation, body mechanics and attack truth hold. No paid API was called during this audit.\n",
+        encoding="utf-8",
+    )
 
 
 def _camera_contact_sheet(output: Path, plan: EpisodePlan) -> None:

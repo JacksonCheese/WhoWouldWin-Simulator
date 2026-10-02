@@ -5,7 +5,7 @@ from whowouldwin.combat.environment import Matchup
 from .package import prepare, stage_shared_references, validate_package
 
 
-COMMANDS = {"prepare-seedance", "episode-plan", "prepare-seedance-longform", "validate-seedance", "seedance-missing", "seedance-stage-refs"}
+COMMANDS = {"prepare-seedance", "episode-plan", "prepare-seedance-longform", "finalize-seedance-longform", "validate-seedance", "seedance-missing", "seedance-stage-refs"}
 
 
 def register_commands(subs) -> None:
@@ -13,6 +13,8 @@ def register_commands(subs) -> None:
     longform.add_argument("--source", type=Path)
     longform.add_argument("--assets", type=Path)
     longform.add_argument("--output", type=Path)
+    finalize = subs.add_parser("finalize-seedance-longform", help="Audit the image-backed episode and repair only final-shot metadata")
+    finalize.add_argument("project", type=Path)
     for name in ("prepare-seedance", "episode-plan"):
         parser = subs.add_parser(name, help="Prepare a deterministic local short-shot package without calling Seedance")
         parser.add_argument("source", help="Replay JSON path or first fighter ID")
@@ -30,6 +32,12 @@ def register_commands(subs) -> None:
 
 
 def handle(args) -> int:
+    if args.command == "finalize-seedance-longform":
+        from .longform_seed289 import finalize_preupload
+        status = finalize_preupload(args.project)
+        print(f"Pre-upload status: {'READY' if status['ready_for_manual_upload'] else 'BLOCKED'}; issues: {status['missing_count']}")
+        print(f"Audit: {args.project / 'review/preupload_audit.json'}")
+        return 0 if status["ready_for_manual_upload"] else 2
     if args.command == "prepare-seedance-longform":
         from .longform_seed289 import prepare_longform
         root = Path(__file__).resolve().parents[4]

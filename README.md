@@ -73,10 +73,11 @@ The separate long-form package expands the saved 7.55-second seed-289 fight into
 
 ```bash
 wws prepare-seedance-longform
+wws finalize-seedance-longform outputs/seedance_ready/naruto_vs_omniman_60s
 wws validate-seedance outputs/seedance_ready/naruto_vs_omniman_60s
 ```
 
-The saved replay and 28 keyframes are versioned in `assets/seedance/seed289_60s/`; the output is regenerated locally. Inspect `review/keyframe_camera_contact_sheet.jpg`, `camera_grammar.md`, each `upload_manifest.json`, and the sibling `outputs/seedance_ready/naruto_vs_omniman_production_review.md`. The shots deliberately alternate wide, overhead, ground-level, profile, three-quarter, over-the-shoulder and close angles while holding one understandable fight axis. All required reference files are present, but a valid upload package does not guarantee good generated motion. Make and approve clips one at a time; no paid provider or final video is invoked by these commands.
+The saved replay and 28 keyframes are versioned in `assets/seedance/seed289_60s/`; the output is regenerated locally. The finalizer checks the existing art without replacing it, corrects shot 028's end hold, and refreshes the inventory and pre-upload audit. Inspect `review/keyframe_camera_contact_sheet.jpg`, `review/preupload_audit.json`, `production_readiness.md`, `camera_grammar.md`, each `upload_manifest.json`, and the sibling `outputs/seedance_ready/naruto_vs_omniman_production_review.md`. The shots deliberately alternate wide, overhead, ground-level, profile, three-quarter, over-the-shoulder and close angles while holding one understandable fight axis. All required reference files are present, but a valid upload package does not guarantee good generated motion. Make and approve clips one at a time; review the first five at normal speed before comparing quality with the supplied examples. No paid provider or final video is invoked by these commands.
 
 ## Simulator commands
 
