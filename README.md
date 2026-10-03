@@ -79,6 +79,15 @@ wws validate-seedance outputs/seedance_ready/naruto_vs_omniman_60s
 
 The saved replay and 28 keyframes are versioned in `assets/seedance/seed289_60s/`; the output is regenerated locally. The finalizer checks the existing art without replacing it, corrects shot 028's end hold, and refreshes the inventory and pre-upload audit. Inspect `review/keyframe_camera_contact_sheet.jpg`, `review/preupload_audit.json`, `production_readiness.md`, `camera_grammar.md`, each `upload_manifest.json`, and the sibling `outputs/seedance_ready/naruto_vs_omniman_production_review.md`. The shots deliberately alternate wide, overhead, ground-level, profile, three-quarter, over-the-shoulder and close angles while holding one understandable fight axis. All required reference files are present, but a valid upload package does not guarantee good generated motion. Make and approve clips one at a time; review the first five at normal speed before comparing quality with the supplied examples. No paid provider or final video is invoked by these commands.
 
+### Dreamina Seedance 2.5 five-sequence test
+
+```bash
+wws prepare-seedance25
+wws validate-seedance25 outputs/seedance_ready/naruto_vs_omniman_seedance25
+```
+
+This additive package keeps the 28-shot plan in `internal/` but exports five connected sequence folders totaling 62 seconds. Each has opening/ending frames, a lightweight 2D motion-reference video, prompts, continuity and a restrained reference manifest. The shared set has exactly 12 flat graphic boards instead of the old detailed per-shot art. The locally drawn animatics communicate blocking and camera movement; they are not generated fight footage. Read `seedance25_manual_workflow.md` in the output, then test **sequence 01 only** in Dreamina before generating the rest. Naruto's editorial Rasengan attempt remains a hand-held melee entry that misses; Omni-Man's recorded heavy strike remains the decisive KO. No Blender or paid video service is called by this preparation command. Local package validation does not establish generated-motion quality or sample-video parity.
+
 ## Simulator commands
 
 ```bash
