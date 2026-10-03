@@ -88,6 +88,15 @@ wws validate-seedance25 outputs/seedance_ready/naruto_vs_omniman_seedance25
 
 This additive package keeps the 28-shot plan in `internal/` but exports five connected sequence folders totaling 62 seconds. Each has opening/ending frames, a lightweight 2D motion-reference video, prompts, continuity and a restrained reference manifest. The shared set has exactly 12 flat graphic boards instead of the old detailed per-shot art. The locally drawn animatics communicate blocking and camera movement; they are not generated fight footage. Read `seedance25_manual_workflow.md` in the output, then test **sequence 01 only** in Dreamina before generating the rest. Naruto's editorial Rasengan attempt remains a hand-held melee entry that misses; Omni-Man's recorded heavy strike remains the decisive KO. No Blender or paid video service is called by this preparation command. Local package validation does not establish generated-motion quality or sample-video parity.
 
+For a faster edit with more distinct combat clips, keep the first package and build its standalone derivative:
+
+```bash
+wws prepare-seedance25-v2
+wws validate-seedance25-v2 outputs/seedance_ready/naruto_vs_omniman_seedance25_v2
+```
+
+This version covers the same canonical 28-shot plan in **nine sequences totaling 60 seconds** (5, 7, 7, 7, 7, 7, 6, 7, 7 seconds). The longest generation falls from 18 to 7 seconds. The recorded flight hit, wind-shuriken miss, heavy reply, jab slip, Energy Orb hit, grapple, block, second charge, failed hand-held Rasengan entry and final KO receive their own compact action windows. `review/pacing_comparison.md` explains the edit. No additional damaging action or altered result is introduced. As with the first package, validate locally, then generate and review sequence 01 at normal speed before spending credits on the rest.
+
 ## Simulator commands
 
 ```bash

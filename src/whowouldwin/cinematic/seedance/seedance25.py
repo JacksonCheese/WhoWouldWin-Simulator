@@ -278,13 +278,13 @@ def build(output: Path = DEFAULT_OUTPUT, *, fps: int = 15) -> tuple[Path, dict]:
     return output, status
 
 
-def _review_sheet(output: Path) -> None:
+def _review_sheet(output: Path, sequences: tuple[Sequence, ...] = SEQUENCES) -> None:
     thumbs = []
-    for seq in SEQUENCES:
+    for seq in sequences:
         for ratio in (0, .25, .5, .75, 1):
             thumb = frame_at(seq.keys, seq.duration * ratio, size=(180, 320))
             thumbs.append(thumb)
-    sheet = Image.new("RGB", (180 * 5, 320 * 5), (20, 25, 34))
+    sheet = Image.new("RGB", (180 * 5, 320 * len(sequences)), (20, 25, 34))
     for i, thumb in enumerate(thumbs):
         sheet.paste(thumb, ((i % 5) * 180, (i // 5) * 320))
     review = output / "review"
@@ -324,7 +324,8 @@ def _documents(output: Path, plan) -> None:
     })
 
 
-def validate(output: Path) -> dict:
+def validate(output: Path, *, sequences: tuple[Sequence, ...] = SEQUENCES,
+             target_seconds: int = 62) -> dict:
     output = output.resolve()
     issues: list[str] = []
     shared = output / "shared_references"
@@ -342,7 +343,7 @@ def validate(output: Path) -> dict:
         except OSError:
             issues.append(f"Invalid shared image: {name}")
     durations = []
-    for seq in SEQUENCES:
+    for seq in sequences:
         folder = output / "sequences" / f"sequence_{seq.index:02d}"
         needed = ("start_frame.png", "end_frame.png", "motion_reference.mp4", "sequence_prompt.txt",
                   "sequence_negative_prompt.txt", "continuity_start.json", "continuity_end.json",
@@ -395,13 +396,17 @@ def validate(output: Path) -> dict:
                 issues.append(f"sequence_{seq.index:02d}: motion-reference video dimensions/duration mismatch")
         except (OSError, KeyError, ValueError, subprocess.CalledProcessError):
             issues.append(f"sequence_{seq.index:02d}: unreadable motion reference")
-        master = output / "motion_refs" / ["motion_ref_01_faceoff_and_charge.mp4", "motion_ref_02_opening_attack_and_evasion.mp4", "motion_ref_03_close_exchange.mp4", "motion_ref_04_ability_preparation.mp4", "motion_ref_05_final_clash_and_aftermath.mp4"][seq.index - 1]
+        old_masters = ["motion_ref_01_faceoff_and_charge.mp4", "motion_ref_02_opening_attack_and_evasion.mp4",
+                       "motion_ref_03_close_exchange.mp4", "motion_ref_04_ability_preparation.mp4",
+                       "motion_ref_05_final_clash_and_aftermath.mp4"]
+        master_name = manifest.get("motion_reference_master") or (old_masters[seq.index - 1] if seq.index <= 5 else "")
+        master = output / "motion_refs" / master_name
         if not master.is_file():
             issues.append(f"sequence_{seq.index:02d}: named master motion reference missing")
         elif hashlib.sha256((folder / "motion_reference.mp4").read_bytes()).digest() != hashlib.sha256(master.read_bytes()).digest():
             issues.append(f"sequence_{seq.index:02d}: motion reference differs from named master")
-    if sum(durations) != 62 or len(durations) != 5:
-        issues.append(f"Sequence durations must total 62 seconds, got {durations}")
+    if sum(durations) != target_seconds or len(durations) != len(sequences):
+        issues.append(f"Sequence durations must total {target_seconds} seconds across {len(sequences)} sequences, got {durations}")
     replay_path = output / "internal/source_replay.json"
     if replay_path.is_file():
         replay = load_replay(replay_path)
