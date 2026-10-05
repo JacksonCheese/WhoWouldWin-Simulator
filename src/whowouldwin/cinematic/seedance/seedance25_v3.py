@@ -7,6 +7,7 @@ changes combat data nor calls a paid generation provider.
 from __future__ import annotations
 
 from collections import Counter
+from fractions import Fraction
 import hashlib
 import json
 from pathlib import Path
@@ -38,6 +39,155 @@ EXACT_STYLE_SENTENCE = (
     "expressive anatomy, dynamic pose design, controlled painterly shading, impact timing, "
     "and camera rhythm. Do not copy its characters or exact choreography."
 )
+
+SEEDANCE_MOTION_SIZE = (720, 1280)
+SEEDANCE_MIN_PIXELS = 409_600
+
+
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _motion_probe(path: Path) -> dict:
+    probe = _ffprobe(path)
+    probe["pixel_count"] = probe["width"] * probe["height"]
+    return probe
+
+
+def _matching_timing(source: dict, upload: dict) -> bool:
+    return (Fraction(source["fps"]) == Fraction(upload["fps"])
+            and source["frame_count"] == upload["frame_count"]
+            and abs(source["duration_seconds"] - upload["duration_seconds"]) <= .005)
+
+
+def upgrade_motion_references(output: Path) -> dict:
+    """Replace 360p guides with 720p upload masters after complete validation.
+
+    The originals remain untouched while FFmpeg scales and verifies all nine
+    outputs. Once all are valid, the old masters are removed. Sequence upload
+    paths become hard links to their masters, avoiding duplicate video storage.
+    Only pixels are scaled; no action or timing is regenerated.
+    """
+    output = output.resolve()
+    source_dir = output / "motion_refs"
+    upload_dir = output / "motion_refs_seedance"
+    upload_dir.mkdir(parents=True, exist_ok=True)
+    rows: list[dict] = []
+    for sequence, name in zip(SEQUENCES, MOTION_NAMES, strict=True):
+        source = source_dir / name
+        upload = upload_dir / name
+        folder = output / "sequences" / f"sequence_{sequence.index:02d}"
+        manifest_path = folder / "reference_manifest.json"
+        if not manifest_path.is_file():
+            raise FileNotFoundError(f"Missing manifest for sequence {sequence.index:02d}")
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        if source.is_file():
+            source_hash = _sha256(source)
+            source_probe = _motion_probe(source)
+            if (source_probe["width"], source_probe["height"]) != (W, H):
+                raise ValueError(f"Original guide must be {W}x{H}: {source}")
+        elif upload.is_file() and manifest.get("motion_reference_source_sha256") and manifest.get("motion_reference_original_probe"):
+            source_hash = manifest["motion_reference_source_sha256"]
+            source_probe = manifest["motion_reference_original_probe"]
+        else:
+            raise FileNotFoundError(f"Missing both original and verified upscale for sequence {sequence.index:02d}")
+        if upload.is_file():
+            if manifest.get("motion_reference_source_sha256") != source_hash:
+                raise ValueError(f"Existing upload copy has unverified source revision: {upload}")
+        else:
+            temporary = upload_dir / f".{name}.building.mp4"
+            try:
+                subprocess.run([
+                    "ffmpeg", "-loglevel", "error", "-nostdin", "-y", "-i", str(source),
+                    "-vf", "scale=720:1280:flags=lanczos,setsar=1", "-fps_mode", "passthrough",
+                    "-an", "-c:v", "libx264", "-preset", "medium", "-crf", "18",
+                    "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(temporary),
+                ], check=True)
+                candidate = _motion_probe(temporary)
+                if ((candidate["width"], candidate["height"]) != SEEDANCE_MOTION_SIZE
+                        or candidate["pixel_count"] < SEEDANCE_MIN_PIXELS
+                        or not _matching_timing(source_probe, candidate)):
+                    raise ValueError(f"FFmpeg upscale changed timing or has incorrect dimensions: {temporary}")
+                temporary.replace(upload)
+            finally:
+                if temporary.is_file():
+                    temporary.unlink()
+        upload_probe = _motion_probe(upload)
+        if ((upload_probe["width"], upload_probe["height"]) != SEEDANCE_MOTION_SIZE
+                or upload_probe["pixel_count"] < SEEDANCE_MIN_PIXELS
+                or not _matching_timing(source_probe, upload_probe)):
+            raise ValueError(f"Noncompliant upload motion reference: {upload}")
+        if source.is_file() and _sha256(source) != source_hash:
+            raise ValueError(f"Original motion reference changed during upscale: {source}")
+        upload_hash = _sha256(upload)
+        local_copy = folder / "motion_reference.mp4"
+        if not local_copy.is_file() or not local_copy.samefile(upload):
+            temporary_link = folder / ".motion_reference.upscaled.mp4"
+            if temporary_link.exists():
+                temporary_link.unlink()
+            temporary_link.hardlink_to(upload)
+            temporary_link.replace(local_copy)
+        manifest["motion_reference_master_directory"] = "motion_refs_seedance"
+        manifest.pop("motion_reference_source_master", None)
+        manifest["motion_reference_source_sha256"] = source_hash
+        manifest["motion_reference_original_probe"] = source_probe
+        manifest["motion_reference_sha256"] = upload_hash
+        manifest["motion_reference_resolution"] = {
+            "width": upload_probe["width"], "height": upload_probe["height"],
+            "pixel_count": upload_probe["pixel_count"], "minimum_pixels": SEEDANCE_MIN_PIXELS,
+            "scaling_filter": "Lanczos", "original_width": W, "original_height": H,
+            "spatial_only": True,
+        }
+        write_json(manifest_path, manifest)
+        rows.append({
+            "filename": name, "sequence": f"sequence_{sequence.index:02d}",
+            "width": upload_probe["width"], "height": upload_probe["height"],
+            "pixel_count": upload_probe["pixel_count"], "duration_seconds": upload_probe["duration_seconds"],
+            "frame_rate": upload_probe["fps"], "frame_count": upload_probe["frame_count"],
+            "original_sha256": source_hash, "upload_sha256": upload_hash,
+            "original_path": "removed after validated upscale", "upload_path": str(upload.relative_to(output)),
+            "sequence_upload_path": str(local_copy.relative_to(output)),
+        })
+    # The user's storage preference supersedes retaining the 360p masters.
+    # This runs only after every output, sequence link and timing check passed.
+    for name in MOTION_NAMES:
+        source = source_dir / name
+        if source.is_file():
+            source.unlink()
+    if source_dir.is_dir() and not any(source_dir.iterdir()):
+        source_dir.rmdir()
+    report = {
+        "threshold_pixels": SEEDANCE_MIN_PIXELS, "target_width": 720, "target_height": 1280,
+        "scaling_filter": "Lanczos", "all_compliant": len(rows) == len(SEQUENCES)
+        and all(row["pixel_count"] >= SEEDANCE_MIN_PIXELS for row in rows),
+        "originals_removed": all(not (source_dir / name).exists() for name in MOTION_NAMES),
+        "sequence_files_hardlinked_to_masters": all(
+            (output / "sequences" / f"sequence_{sequence.index:02d}" / "motion_reference.mp4").samefile(upload_dir / name)
+            for sequence, name in zip(SEQUENCES, MOTION_NAMES, strict=True)),
+        "provider_calls": 0, "references": rows,
+    }
+    write_json(output / "review/motion_resolution_compliance.json", report)
+    lines = ["# Dreamina motion-reference resolution", "",
+             "Upload the 720×1280 videos in each sequence folder. Their masters are in `motion_refs_seedance/`; the sequence files are hard links, so they occupy no additional video storage. The nine 360×640 originals were removed only after all upscales passed. FFmpeg applied Lanczos scaling only; frame count, frame rate and duration are unchanged. Original hashes and metadata remain in this report.", "",
+             "| Sequence | Filename | Resolution | Pixels | Duration | FPS |", "|---|---|---:|---:|---:|---:|"]
+    for row in rows:
+        lines.append(f"| {row['sequence']} | `{row['filename']}` | {row['width']}×{row['height']} | "
+                     f"{row['pixel_count']:,} | {row['duration_seconds']:.3f}s | {row['frame_rate']} |")
+    lines += ["", "Pixel threshold: 409,600. Sequence 01's `motion_reference.mp4` is the compliant upload copy. The separate 360×640 episode animatic is local review only and is not an upload reference.", ""]
+    (output / "review/motion_resolution_compliance.md").write_text("\n".join(lines), encoding="utf-8")
+    playlist = output / "review/motion_concat.txt"
+    playlist.write_text("".join(f"file '../motion_refs_seedance/{name}'\n" for name in MOTION_NAMES), encoding="utf-8")
+    provenance_path = output / "provenance.json"
+    if provenance_path.is_file():
+        provenance = json.loads(provenance_path.read_text(encoding="utf-8"))
+        provenance["motion_reference_delivery"] = "720x1280 Lanczos upload masters; 360x640 individual masters removed after validation"
+        write_json(provenance_path, provenance)
+    _documents(output)
+    return report
 def _selected_references(index: int) -> tuple[list[str], str]:
     if index == 1:
         variants = ("front", "action")
@@ -160,7 +310,6 @@ def build(output: Path = DEFAULT_OUTPUT, *, fps: int = 15) -> tuple[Path, dict]:
         frame_at(seq.keys, seq.index, 0, size=(720, 1280)).save(folder / "start_frame.png")
         frame_at(seq.keys, seq.index, seq.duration, size=(720, 1280)).save(folder / "end_frame.png")
         metadata = motion_video(seq.keys, seq.index, seq.duration, motion_root / motion_name, fps=fps)
-        shutil.copyfile(motion_root / motion_name, folder / "motion_reference.mp4")
         (folder / "sequence_prompt.txt").write_text(_prompt(seq), encoding="utf-8")
         (folder / "sequence_negative_prompt.txt").write_text(_negative(seq), encoding="utf-8")
         write_json(folder / "continuity_start.json", _continuity(seq.keys[0]))
@@ -207,8 +356,10 @@ def build(output: Path = DEFAULT_OUTPUT, *, fps: int = 15) -> tuple[Path, dict]:
         "visual_assets": "ten original simplified flat 2D reference stills in assets/seedance/seed289_60s/style_matched_v3",
         "private_example_video": "creative style, motion and camera reference only; not copied or bundled",
         "motion_guides": "locally rendered flat 2D articulated blocking with original camera cuts; not generated final motion",
+        "motion_reference_delivery": "720x1280 Lanczos upload masters; 360x640 individual masters removed after validation",
     })
     _documents(output)
+    upgrade_motion_references(output)
     status = validate_v3(output)
     _readiness(output, status)
     return output, status
@@ -276,13 +427,35 @@ def validate_v3(output: Path) -> dict:
                 issues.append(f"sequence_{seq.index:02d}: continuity handoff differs")
         try:
             probe = _ffprobe(folder / "motion_reference.mp4")
-            if (probe["width"], probe["height"]) != (W, H) or abs(probe["duration_seconds"] - seq.duration) > .15:
+            if ((probe["width"], probe["height"]) != SEEDANCE_MOTION_SIZE
+                    or probe["width"] * probe["height"] < SEEDANCE_MIN_PIXELS
+                    or abs(probe["duration_seconds"] - seq.duration) > .005):
                 issues.append(f"sequence_{seq.index:02d}: motion video dimensions/duration wrong")
         except (OSError, KeyError, ValueError, subprocess.CalledProcessError):
             issues.append(f"sequence_{seq.index:02d}: motion video unreadable")
-        master = output / "motion_refs" / manifest["motion_reference_master"]
-        if not master.is_file() or hashlib.sha256(master.read_bytes()).digest() != hashlib.sha256((folder / "motion_reference.mp4").read_bytes()).digest():
+        master = output / "motion_refs_seedance" / manifest["motion_reference_master"]
+        if (manifest.get("motion_reference_master_directory") != "motion_refs_seedance"
+                or not master.is_file()
+                or _sha256(master) != _sha256(folder / "motion_reference.mp4")):
             issues.append(f"sequence_{seq.index:02d}: master motion video mismatch")
+        else:
+            if not master.samefile(folder / "motion_reference.mp4"):
+                issues.append(f"sequence_{seq.index:02d}: upload is not space-saving hard link to master")
+            if manifest.get("motion_reference_sha256") != _sha256(master):
+                issues.append(f"sequence_{seq.index:02d}: motion SHA-256 does not match manifest")
+        source_probe = manifest.get("motion_reference_original_probe")
+        if (not isinstance(source_probe, dict)
+                or (source_probe.get("width"), source_probe.get("height")) != (W, H)
+                or not manifest.get("motion_reference_source_sha256")):
+            issues.append(f"sequence_{seq.index:02d}: original timing/hash provenance missing")
+        else:
+            try:
+                if not _matching_timing(source_probe, _motion_probe(folder / "motion_reference.mp4")):
+                    issues.append(f"sequence_{seq.index:02d}: frame count/rate/duration changed on upscale")
+            except (OSError, KeyError, ValueError, subprocess.CalledProcessError):
+                issues.append(f"sequence_{seq.index:02d}: cannot compare original and upload timing")
+        if (output / "motion_refs" / manifest["motion_reference_master"]).exists():
+            issues.append(f"sequence_{seq.index:02d}: redundant 360x640 original still present")
     required_angles = {"low", "side", "three_quarter", "high", "overhead", "over_shoulder"}
     if not required_angles.issubset(camera_distribution):
         issues.append("Missing required camera viewpoints")
@@ -306,9 +479,19 @@ def validate_v3(output: Path) -> dict:
                 issues.append("Stitched animatic dimensions/duration wrong")
         except (OSError, KeyError, ValueError, subprocess.CalledProcessError):
             issues.append("Stitched animatic unreadable")
+    compliance_path = output / "review/motion_resolution_compliance.json"
+    if not compliance_path.is_file():
+        issues.append("Dreamina motion-resolution report missing")
+    else:
+        compliance = json.loads(compliance_path.read_text())
+        if (not compliance.get("all_compliant") or not compliance.get("originals_removed")
+                or not compliance.get("sequence_files_hardlinked_to_masters")
+                or len(compliance.get("references", [])) != len(SEQUENCES)):
+            issues.append("Dreamina motion-resolution report is incomplete")
     status = {"ready_for_sequence_01_test": not issues, "final_production_approved": False,
               "issues": issues, "sequence_count": len(durations), "total_target_duration_seconds": sum(durations),
-              "shared_reference_count": len(names), "motion_reference_count": len(list((output / "motion_refs").glob("*.mp4"))),
+              "shared_reference_count": len(names), "motion_reference_count": len(list((output / "motion_refs_seedance").glob("*.mp4"))),
+              "dreamina_motion_refs_compliant": not any("motion" in issue.lower() or "360" in issue for issue in issues),
               "camera_distribution": dict(camera_distribution), "source_replay_checksum": SOURCE_CHECKSUM,
               "canonical_event_sha256": EVENT_SHA, "provider_calls": 0, "generated_motion_reviewed": False}
     write_json(output / "validation_seedance25_v3.json", status)
@@ -320,14 +503,15 @@ def _documents(output: Path) -> None:
             "This is a new 60-second, nine-sequence derivative of the same canonical seed-289 replay. It is an upload/test package, not a generated episode.", "",
             "1. Review `review/motion_camera_contact_sheet.jpg` and the full `review/episode_motion_animatic.mp4` at phone size.",
             "2. In Dreamina, choose vertical 9:16 and test `sequences/sequence_01` only. Load its start/end frames and the six image references in its manifest (four character, one scene-style, one environment).",
-            "3. Use its `motion_reference.mp4` for body travel and **camera cuts**. Paste its positive and negative prompts. The private ExampleVideo1 recording is optional inspiration only if Dreamina permits video references; it is not bundled and must never replace the sequence motion guide.",
+            "3. Use its 720×1280 `motion_reference.mp4` for body travel and **camera cuts**. Paste its positive and negative prompts. The private ExampleVideo1 recording is optional inspiration only if Dreamina permits video references; it is not bundled and must never replace the sequence motion guide.",
             "4. Review generated sequence 01 at normal speed: actual viewpoint changes, no frozen fighter, stable identities, readable anatomy, no missing striking limb and no copied social UI.",
             "5. Continue only after that test succeeds. Keep each approved end frame aligned with the next start and document any replacement. Reject a clip with an airborne Rasengan or an added hit.", "",
             "| Sequence | Seconds | Camera views |", "|---|---:|---|" ]
     for seq in SEQUENCES:
         views = ", ".join(dict.fromkeys(cue.angle.replace("_", "-") for cue in CAMERAS[seq.index]))
         rows.append(f"| {seq.index:02d} {seq.name} | {seq.duration} | {views} |")
-    rows += ["", "The source video guided broad camera grammar and minimal animation style only. Its exact characters, poses, UI and cuts are not reproduced. The generated stills are simpler than a detailed comic illustration: flat costume color masses, sparse pale ground, readable face marks and body silhouettes.",
+    rows += ["", "The nine motion uploads meet Dreamina's 409,600-pixel minimum: each is 720×1280 (921,600 pixels). See `review/motion_resolution_compliance.md`. The individual 360×640 source guides are removed after validation to save space; the separate 360×640 stitched review animatic is not for upload.",
+             "", "The source video guided broad camera grammar and minimal animation style only. Its exact characters, poses, UI and cuts are not reproduced. The generated stills are simpler than a detailed comic illustration: flat costume color masses, sparse pale ground, readable face marks and body silhouettes.",
              "", "The 28-shot attribution and event hash are unchanged. The hand-held Rasengan entry is an editorial attempt that misses; the final heavy strike alone records Omni-Man's KO. Motion-guide quality is not proof of generated-motion quality. No provider call has been made.", ""]
     (output / "seedance25_manual_workflow.md").write_text("\n".join(rows), encoding="utf-8")
     write_json(output / "review/camera_distribution.json", {
@@ -342,7 +526,7 @@ def _readiness(output: Path, status: dict) -> None:
         "# V3 visual and camera readiness\n\n"
         f"**{'Technically ready for sequence-01 generation test' if status['ready_for_sequence_01_test'] else 'Blocked'}.** "
         f"{status['sequence_count']} sequences, {status['total_target_duration_seconds']} seconds, "
-        f"{status['shared_reference_count']} flat style-matched stills, {status['motion_reference_count']} local multi-angle guides. "
+        f"{status['shared_reference_count']} flat style-matched stills, {status['motion_reference_count']} Dreamina-compliant 720×1280 multi-angle guides. "
         f"Validation issues: {len(status['issues'])}.\n\n"
         "Compared with v2, the visual reference layer now has minimal recognizable faces and solid body masses in the pale, sparse aesthetic of the private example. "
         "The motion guides contain explicit cuts among wide, low, side, high, overhead, over-shoulder and three-quarter views. "
