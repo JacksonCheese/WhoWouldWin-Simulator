@@ -5,7 +5,7 @@ from whowouldwin.combat.environment import Matchup
 from .package import prepare, stage_shared_references, validate_package
 
 
-COMMANDS = {"prepare-seedance", "episode-plan", "prepare-seedance-longform", "finalize-seedance-longform", "validate-seedance", "seedance-missing", "seedance-stage-refs", "prepare-seedance25", "validate-seedance25", "prepare-seedance25-v2", "validate-seedance25-v2"}
+COMMANDS = {"prepare-seedance", "episode-plan", "prepare-seedance-longform", "finalize-seedance-longform", "validate-seedance", "seedance-missing", "seedance-stage-refs", "prepare-seedance25", "validate-seedance25", "prepare-seedance25-v2", "validate-seedance25-v2", "prepare-seedance25-v3", "validate-seedance25-v3"}
 
 
 def register_commands(subs) -> None:
@@ -19,6 +19,11 @@ def register_commands(subs) -> None:
     fast.add_argument("--fps", type=int, default=15)
     fast_validate = subs.add_parser("validate-seedance25-v2", help="Validate the faster nine-sequence Seedance 2.5 package")
     fast_validate.add_argument("project", type=Path)
+    multi = subs.add_parser("prepare-seedance25-v3", help="Build nine simplified 2D, multi-angle Seedance 2.5 sequences")
+    multi.add_argument("--output", type=Path)
+    multi.add_argument("--fps", type=int, default=15)
+    multi_validate = subs.add_parser("validate-seedance25-v3", help="Validate simplified multi-angle Seedance 2.5 package")
+    multi_validate.add_argument("project", type=Path)
     longform = subs.add_parser("prepare-seedance-longform", help="Build the 62-second image-backed seed-289 episode without a provider call")
     longform.add_argument("--source", type=Path)
     longform.add_argument("--assets", type=Path)
@@ -42,6 +47,20 @@ def register_commands(subs) -> None:
 
 
 def handle(args) -> int:
+    if args.command == "prepare-seedance25-v3":
+        from .seedance25_v3 import DEFAULT_OUTPUT, build
+        project, status = build(args.output or DEFAULT_OUTPUT, fps=args.fps)
+        print(f"Prepared: {project}")
+        print(f"Sequence 01 test: {'READY' if status['ready_for_sequence_01_test'] else 'BLOCKED'}")
+        print(f"Sequences: {status['sequence_count']}; target length: {status['total_target_duration_seconds']}s")
+        return 0 if status["ready_for_sequence_01_test"] else 2
+    if args.command == "validate-seedance25-v3":
+        from .seedance25_v3 import validate_v3
+        status = validate_v3(args.project)
+        print(f"Sequence 01 test: {'READY' if status['ready_for_sequence_01_test'] else 'BLOCKED'}")
+        for issue in status["issues"]:
+            print(f"  {issue}")
+        return 0 if status["ready_for_sequence_01_test"] else 2
     if args.command == "prepare-seedance25-v2":
         from .seedance25_v2 import DEFAULT_OUTPUT, build
         project, status = build(args.output or DEFAULT_OUTPUT, fps=args.fps)

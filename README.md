@@ -97,6 +97,15 @@ wws validate-seedance25-v2 outputs/seedance_ready/naruto_vs_omniman_seedance25_v
 
 This version covers the same canonical 28-shot plan in **nine sequences totaling 60 seconds** (5, 7, 7, 7, 7, 7, 6, 7, 7 seconds). The longest generation falls from 18 to 7 seconds. The recorded flight hit, wind-shuriken miss, heavy reply, jab slip, Energy Orb hit, grapple, block, second charge, failed hand-held Rasengan entry and final KO receive their own compact action windows. `review/pacing_comparison.md` explains the edit. No additional damaging action or altered result is introduced. As with the first package, validate locally, then generate and review sequence 01 at normal speed before spending credits on the rest.
 
+For simpler character artwork closer to the supplied private example and visibly varied camera views, build the standalone v3 derivative:
+
+```bash
+wws prepare-seedance25-v3
+wws validate-seedance25-v3 outputs/seedance_ready/naruto_vs_omniman_seedance25_v3
+```
+
+V3 preserves the same nine sequences, 60-second target, event hash and Omni-Man KO. It includes ten original, minimal 2D image references and nine guides with cuts between low, side, overhead, high, over-the-shoulder and three-quarter compositions. Inspect `review/motion_camera_contact_sheet.jpg`, `review/episode_motion_animatic.mp4`, and `camera_plan.json`. The private example recording is not bundled or copied. These locally rendered guides explain body spacing and camera rhythm; actual Seedance motion and identity stability are unverified until sequence 01 is generated and reviewed at normal speed. Naruto's editorial Rasengan stays in his hand and misses; the wind shuriken and Energy Orb are separate projectile abilities.
+
 ## Simulator commands
 
 ```bash
